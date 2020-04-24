@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import scrapy
 from scrapy.item import Item
 from scrapy.item import Field
@@ -6,9 +7,12 @@ from datetime import datetime
 import urllib.request
 import string
 import pandas as pd
+import glob
+import xml.etree.ElementTree as ET
 
 #pip install scrapy
 #url https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-finales-de-gasolina-y-diesel
+#ElementTree https://docs.python.org/3/library/xml.etree.elementtree.html
 
 class GasItem(Item):
     Name=Field()
