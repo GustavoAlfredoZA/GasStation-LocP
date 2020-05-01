@@ -32,10 +32,10 @@ class GasSpider(scrapy.Spider):
             item['DateTime'] = T
             item['Type']=i
             #record.loc[len(record)]=[item['Name'],item['Link'],item['DateTime'],item['Type']]
-            urllib.request.urlretrieve(item['Link'],item['Name']+".csv")
+            urllib.request.urlretrieve(item['Link'],item['Name']+".xml")
             i+=1
             yield item
-            filename=item['Name']+".csv"
+            filename=item['Name']+".xml"
             output = subprocess.run(["scp",filename,"quantics@132.247.186.67:public_html/static"])
             output = subprocess.run(["mv",filename,"backup/"])
 
