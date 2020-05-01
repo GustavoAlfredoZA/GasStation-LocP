@@ -15,9 +15,13 @@ for file in glob.glob(PATH+"*0.xml"):
         location = GasStation.find('location')
         x = location.find('x').text
         y = location.find('y').text
-        print(id,(x,y))
+        #print(id,(x,y))
 
 
 for file in glob.glob("*1.xml"):
     tree = ET.parse(file)
     root = tree.getroot()
+    for place in root:
+        id = place.get('place_id')
+        for gas_price in place.iter('gas_price'):
+            print(gas_price)
