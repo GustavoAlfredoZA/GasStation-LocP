@@ -11,6 +11,7 @@ for file in glob.glob(PATH+"*0.xml"):
     for GasStation in root:
         id = GasStation.get('place_id')
         name = GasStation.find('name').text
+        cre_id = GasStation.find('cre_id').text
         location = GasStation.find('location')
         x = location.find('x').text
         y = location.find('y').text
