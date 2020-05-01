@@ -10,7 +10,7 @@ for file in glob.glob(PATH+"*0.xml"):
     root = tree.getroot()
     for GasStation in root:
         id = GasStation.get('place_id')
-        name = country.find('name').text
+        name = GasStation.find('name').text
         location = GasStation.find('location')
         print(id,location[0])
 
