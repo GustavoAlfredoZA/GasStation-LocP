@@ -9,9 +9,10 @@ for file in glob.glob(PATH+"*0.xml"):
     tree = ET.parse(file)
     root = tree.getroot()
     for GasStation in root:
-        location = GasStation.find('location')
         id = GasStation.get('place_id')
-        print(id,location)
+        name = country.find('name').text
+        location = GasStation.find('location')
+        print(id,location[0])
 
 
 for file in glob.glob("*1.xml"):
