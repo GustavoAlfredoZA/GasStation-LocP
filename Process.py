@@ -24,4 +24,4 @@ for file in glob.glob("*1.xml"):
     for place in root:
         id = place.get('place_id')
         for gas_price in place.iter('gas_price'):
-            print(gas_price)
+            print(gas_price.tag)
