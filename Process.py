@@ -8,10 +8,11 @@ os.chdir(PATH)
 for file in glob.glob(PATH+"*0.xml"):
     tree = ET.parse(file)
     root = tree.getroot()
-    print(root)
+    for GasStation in root:
+        print(GasStation.tag, GasStation.attrib)
+
 
 
 for file in glob.glob("*1.xml"):
     tree = ET.parse(file)
     root = tree.getroot()
-    print(root)
