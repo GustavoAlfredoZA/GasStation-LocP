@@ -11,7 +11,7 @@ for file in glob.glob(PATH+"*0.xml"):
     for GasStation in root:
         location = GasStation.find('location')
         id = GasStation.get('place_id')
-
+        print(id,location)
 
 
 for file in glob.glob("*1.xml"):
