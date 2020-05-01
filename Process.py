@@ -35,4 +35,4 @@ for file in glob.glob("*1.xml"):
             price=gas_price.text
             print(gas_price.attrib['type'],price)
 plt.plot(X,Y,"o")
-plt.savefig("/home/quantics/public_html/static/map.png"
+plt.savefig("/home/quantics/public_html/static/map.png")
