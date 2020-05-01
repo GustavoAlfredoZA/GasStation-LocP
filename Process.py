@@ -2,7 +2,7 @@
 import glob, os
 
 PATH='/home/quantics/public_html/static/'
-os.chdir("/home/quantics/public_html/static/backup/")
+os.chdir(PATH)
 
 for file in glob.glob("*0.xml"):
     print(file,"locs")
