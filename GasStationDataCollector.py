@@ -6,9 +6,11 @@ from scrapy.crawler import CrawlerProcess
 from datetime import datetime
 import urllib.request
 import string
-import pandas as pd
+#import pandas as pd
 import glob
 import xml.etree.ElementTree as ET
+import sys
+import subprocess
 
 #pip install scrapy
 #url https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-finales-de-gasolina-y-diesel
@@ -32,18 +34,22 @@ class GasSpider(scrapy.Spider):
             item['Link'] = sel.xpath('@href').extract()[0]
             item['DateTime'] = T
             item['Type']=i
-            record.loc[len(record)]=[item['Name'],item['Link'],item['DateTime'],item['Type']]
+            #record.loc[len(record)]=[item['Name'],item['Link'],item['DateTime'],item['Type']]
             urllib.request.urlretrieve(item['Link'],item['Name']+".csv")
             i+=1
             yield item
-try:
-    record=pd.DataFrame(pd.read_csv("record.csv"))
-except Exception as e:
-    record=pd.DataFrame(columns=['Name','Link','DateTime','Type'])
+            filename=item['Name']+".csv"
+            output = subprocess.run(["scp",filename,"quantics@132.247.186.67:public_html/static"])
+            #output = subprocess.run(["mv",filename,"xml/backup/"])
+
+#try:
+#    record=pd.DataFrame(pd.read_csv("record.csv"))
+#except Exception as e:
+#    record=pd.DataFrame(columns=['Name','Link','DateTime','Type'])
 process = CrawlerProcess({
     'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
 })
 process.crawl(GasSpider)
 process.start()
-print(record)
-record.to_csv("record.csv",index=False)
+#print(record)
+#record.to_csv("record.csv",index=False)
