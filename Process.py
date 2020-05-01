@@ -12,7 +12,7 @@ for file in glob.glob(PATH+"*0.xml"):
         id = GasStation.get('place_id')
         name = GasStation.find('name').text
         location = GasStation.find('location')
-        print(id,name,location.x)
+        print(id,name,type(location))
 
 
 for file in glob.glob("*1.xml"):
