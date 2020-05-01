@@ -7,9 +7,6 @@ from datetime import datetime
 import urllib.request
 import string
 #import pandas as pd
-import glob
-import xml.etree.ElementTree as ET
-import sys
 import subprocess
 
 #pip install scrapy
@@ -40,7 +37,7 @@ class GasSpider(scrapy.Spider):
             yield item
             filename=item['Name']+".csv"
             output = subprocess.run(["scp",filename,"quantics@132.247.186.67:public_html/static"])
-            #output = subprocess.run(["mv",filename,"xml/backup/"])
+            output = subprocess.run(["mv",filename,"backup/"])
 
 #try:
 #    record=pd.DataFrame(pd.read_csv("record.csv"))
