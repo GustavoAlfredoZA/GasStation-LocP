@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
+import matplotlib
+matplotlib.use('GTKAgg')
 import glob, os
 import xml.etree.ElementTree as ET
+import matplotlib.pyplot as plt
+import numpy as np
 
 PATH='/home/quantics/public_html/static/'
 os.chdir(PATH)
-
+X=[]
+Y=[]
 for file in glob.glob(PATH+"*0.xml"):
     tree = ET.parse(file)
     root = tree.getroot()
@@ -15,6 +20,8 @@ for file in glob.glob(PATH+"*0.xml"):
         location = GasStation.find('location')
         x = location.find('x').text
         y = location.find('y').text
+        X.append(x)
+        Y.append(y)
         #print(id,(x,y))
 
 
@@ -27,3 +34,5 @@ for file in glob.glob("*1.xml"):
             type=gas_price.attrib['type']
             price=gas_price.text
             print(gas_price.attrib['type'],price)
+plt.plot(X,Y,"o")
+plt.show()
