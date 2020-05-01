@@ -12,3 +12,6 @@ for file in glob.glob(PATH+"*0.xml"):
 
 
 for file in glob.glob("*1.xml"):
+    tree = ET.parse(file)
+    root = tree.getroot()
+    print(root)
