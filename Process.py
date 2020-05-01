@@ -9,7 +9,7 @@ for file in glob.glob(PATH+"*0.xml"):
     tree = ET.parse(file)
     root = tree.getroot()
     for GasStation in root:
-        print(GasStation.tag, GasStation.attrib)
+        print(GasStation.attrib[2])
 
 
 
