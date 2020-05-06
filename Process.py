@@ -36,7 +36,8 @@ for file in glob.glob("*1.xml"):
             #print(gas_price.attrib['type'],price)
 
 
-fig, ax = plt.subplots()
+fig = plt.figure()
+ax = plt.subplots()
 ax.set(title='Gas Station Mexico')
 #plt.axis([x_A, x_B,  y_A, y_B])
 ax.grid()
