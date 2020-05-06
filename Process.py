@@ -33,8 +33,14 @@ for file in glob.glob("*1.xml"):
         for gas_price in place.iter('gas_price'):
             type=gas_price.attrib['type']
             price=gas_price.text
-            print(gas_price.attrib['type'],price)
+            #print(gas_price.attrib['type'],price)
 
-print(X,Y)
+
+fig, ax = plt.subplots()
+ax.set(title='Gas Station Mexico')
+#plt.axis([x_A, x_B,  y_A, y_B])
+ax.grid()
+ax.plot(x, y)
+fig.savefig("/public_html/static/last_flux.png")
 #plt.plot(X,Y,"o")
 #plt.savefig("/home/quantics/public_html/static/map.png")
