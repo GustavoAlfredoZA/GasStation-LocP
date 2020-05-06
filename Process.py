@@ -37,11 +37,11 @@ for file in glob.glob("*1.xml"):
 
 
 fig = plt.figure()
-ax = plt.subplots()
+#ax = plt.subplots()
 #ax.set(title='Gas Station Mexico')
 #plt.axis([x_A, x_B,  y_A, y_B])
 #ax.grid()
-ax.plot(X, Y,"o")
+plt.plot(X, Y,"o")
 fig.savefig("/home/quantics/public_html/static/map.png")
 #plt.plot(X,Y,"o")
 #plt.savefig("/home/quantics/public_html/static/map.png")
