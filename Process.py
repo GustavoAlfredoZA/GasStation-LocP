@@ -38,7 +38,7 @@ for file in glob.glob("*1.xml"):
 
 fig = plt.figure()
 ax = plt.subplots()
-ax.set(title='Gas Station Mexico')
+#ax.set(title='Gas Station Mexico')
 #plt.axis([x_A, x_B,  y_A, y_B])
 ax.grid()
 ax.plot(X, Y,"o")
