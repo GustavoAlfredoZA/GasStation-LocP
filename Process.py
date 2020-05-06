@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import matplotlib
-matplotlib.use('Agg')
 import glob, os
 import xml.etree.ElementTree as ET
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 PATH='/home/quantics/public_html/static/'
 os.chdir(PATH)
@@ -34,5 +34,7 @@ for file in glob.glob("*1.xml"):
             type=gas_price.attrib['type']
             price=gas_price.text
             print(gas_price.attrib['type'],price)
-plt.plot(X,Y,"o")
-plt.savefig("/home/quantics/public_html/static/map.png")
+
+print(X,Y)
+#plt.plot(X,Y,"o")
+#plt.savefig("/home/quantics/public_html/static/map.png")
