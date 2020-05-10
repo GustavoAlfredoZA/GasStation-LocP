@@ -16,8 +16,25 @@ try:
     cursor = cnx.cursor()
     query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id")
     cursor.execute(query)
+    places=[]
     for a in cursor:
-        print(type(a))
+        place={'name' : a[1],'cre_id' : a[2], 'x' : a[3], 'y' : a[4]}
+
+        if(a[5]!=None):
+            place['regular']=a[5]
+        if(a[6]!=None):
+            place['regular']=a[6]
+        if(a[7]!=None):
+            place['regular']=a[7]
+
+        places.append(place)
+
+    #f= open(PublicPATH+"data.json","w+")
+    with open(PublicPATH+'data.json', 'w') as outfile:
+        json.dump(places, outfile)
+
+
+
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print("Something is wrong with your user name or password")
