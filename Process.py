@@ -1,6 +1,7 @@
 import json
 import mysql.connector
 from mysql.connector import errorcode
+import subprocess
 
 p = open("routes.json")
 routes = json.load(p)
@@ -14,7 +15,7 @@ with open('db.json') as json_file:
 try:
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE places.place_id>5000 AND places.place_id<10000 and places.x > 1 and places.y>1")
+    query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE places.place_id>5000 AND places.place_id<10000 ")
     cursor.execute(query)
     places=[]
     places
@@ -37,9 +38,9 @@ try:
     doc={ 'type' : 'FeatureCollection' , 'features' : places }
     with open(PublicPATH+'data.json', 'w') as outfile:
         json.dump(doc, outfile, indent=4, sort_keys=True)
-
-
-
+        print(PublicPATH+"data.json")
+    output = subprocess.run(["scp",PublicPATH+"data.json","quantics@132.247.186.67:public_html/static"])
+    
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print("Something is wrong with your user name or password")
