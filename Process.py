@@ -14,7 +14,7 @@ with open('db.json') as json_file:
 try:
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE places.place_id>5000 AND places.place_id<10000")
+    query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE places.place_id>5000 AND places.place_id<10000 and places.x > 1 and places.y>1")
     cursor.execute(query)
     places=[]
     places
