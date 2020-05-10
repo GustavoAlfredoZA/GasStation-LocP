@@ -14,24 +14,29 @@ with open('db.json') as json_file:
 try:
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id")
+    query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE places.place_id>5000 AND places.place_id<10000")
     cursor.execute(query)
     places=[]
+    places
     for a in cursor:
-        place={'name' : a[1],'cre_id' : a[2], 'x' : a[3], 'y' : a[4]}
+        #place={'name' : a[1],'cre_id' : a[2], 'x' : a[3], 'y' : a[4]}
 
+
+        place = { 'type' : 'Feature' , 'geometry' : { 'type' : 'Point' , 'coordinates' : [ a[3] , a[4] ] }}
+        properties={ 'name' : a[1] }
         if(a[5]!=None):
-            place['regular']=a[5]
+            properties['regular']=a[5]
         if(a[6]!=None):
-            place['regular']=a[6]
+            properties['premium']=a[6]
         if(a[7]!=None):
-            place['regular']=a[7]
-
+            properties['diesel']=a[7]
+        place['properties']=properties
         places.append(place)
 
     #f= open(PublicPATH+"data.json","w+")
+    doc={ 'type' : 'FeatureCollection' , 'features' : places }
     with open(PublicPATH+'data.json', 'w') as outfile:
-        json.dump(places, outfile)
+        json.dump(doc, outfile, indent=4, sort_keys=True)
 
 
 
