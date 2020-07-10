@@ -1,2 +1,4 @@
 *.csv
 /backup/*
+mezzanine-plugin/mezzanine_gasStation_map/__pycache__
+routes.json
