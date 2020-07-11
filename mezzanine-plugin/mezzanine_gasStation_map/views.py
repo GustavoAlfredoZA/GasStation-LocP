@@ -21,3 +21,7 @@ class map_View(View):
     def get(self, request, *args, **kwargs):
         #var1 = self.kwargs['var1']
         return render(request, self.template_name)
+
+#@method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(map_View, self).dispatch(*args, **kwargs)

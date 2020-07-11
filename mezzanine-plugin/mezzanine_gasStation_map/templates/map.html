@@ -15,6 +15,46 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 {% endblock %}
 {% block main %}
+  <div class="filtersSection">
+    <form class="filters" action="#" method="post">
+      <select name="StatesM" class="list">
+        <option disabled="" selected="">Choose your state</option>
+        <option value="All">Todo el país</option>
+        <option value="AGS">Aguascalientes</option>
+        <option value="BCN">Baja California</option>
+        <option value="BCS">Baja California Sur</option>
+        <option value="CAM">Campeche</option>
+        <option value="CHP">Chiapas</option>
+        <option value="CHI">Chihuahua</option>
+        <option value="DIF">Ciudad de México</option>
+        <option value="COA">Coahuila</option>
+        <option value="COL">Colima</option>
+        <option value="DUR">Durango</option>
+        <option value="GTO">Guanajuato</option>
+        <option value="GRO">Guerrero</option>
+        <option value="HGO">Hidalgo</option>
+        <option value="JAL">Jalisco</option>
+        <option value="MEX">Estado de México</option>
+        <option value="MIC">Michoacan</option>
+        <option value="NAY">Nayarit</option>
+        <option value="NLE">Nuevo Leon</option>
+        <option value="OAX">Oaxaca</option>
+        <option value="PUE">Puebla</option>
+        <option value="QRO">Queretaro</option>
+        <option value="ROO">Quintana Roo</option>
+        <option value="SLP">San Luis Potosi</option>
+        <option value="SIN">Sinaloa</option>
+        <option value="SON">Sonora</option>
+        <option value="TAB">Tabasco</option>
+        <option value="TAM">Tamaulipas</option>
+        <option value="TLX">Tlaxcala</option>
+        <option value="VER">Veracruz</option>
+        <option value="YUC">Yucatan</option>
+        <option value="ZAC">Zacatecas</option>
+      </select>
+    </form>
+  </div>
+  <hr>
   <div id="mapid" style="width: 90%; height: 600px;"></div>
   <p>Basado en datos de la <a href="https://www.gob.mx/cre"> Comisión Reguladora de Energía </a></p>
   <script src="{% static 'mezzanine_gasStation_map/js/jquery-3.5.1.min.js' %}" charset="utf-8"></script>

@@ -37,7 +37,7 @@ function onMapClick(e) {
 }
 
 $.getJSON("../static/mezzanine_gasStation_map/js/data.json", function(data) {
-    var geojson = L.geoJson(data, {
+    var alldata = L.geoJson(data, {
 
       onEachFeature: function (feature, layer) {
         var label = "<b>" + feature.properties.name + "</b><br/>"
@@ -53,5 +53,14 @@ $.getJSON("../static/mezzanine_gasStation_map/js/data.json", function(data) {
         layer.bindPopup(label);
       }
     });
-    geojson.addTo(mymap);
+    alldata.addTo(mymap);
+});
+$.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
+    var mexstates = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        var label = feature.properties.gns_name
+        layer.bindPopup(label);
+      }
+    });
+    mexstates.addTo(mymap);
 });
