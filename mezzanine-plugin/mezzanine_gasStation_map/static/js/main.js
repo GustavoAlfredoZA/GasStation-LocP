@@ -13,13 +13,14 @@ function onLocationFound(e) {
         var radius = e.accuracy / 2;
         var curr_latitude = e.latitude;
         var curr_longitude = e.longitude
-        L.marker(e.latlng).addTo(mymap).bindPopup("Estas cerca de aquí").openPopup();
+        L.circle(e.latlng,{color:'red', radius: '10'}).addTo(mymap).bindPopup("Estas cerca de aquí").openPopup();
         L.circle(e.latlng, radius).addTo(mymap);
 }
 
 function onLocationError(e) {
         alert(e.message);
 }
+
 mymap.on('locationfound', onLocationFound);
 mymap.on('locationerror', onLocationError);
 mymap.locate({setView: false, maxZoom: 16});
@@ -55,11 +56,19 @@ $.getJSON("../static/mezzanine_gasStation_map/js/data.json", function(data) {
     });
     alldata.addTo(mymap);
 });
+
 $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
     var mexstates = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         var label = feature.properties.gns_name
         layer.bindPopup(label);
+      },
+      style: function(){
+        return {
+          color: 'white',
+          fillOpacity: 0.1,
+          weight: 0.1
+        }
       }
     });
     mexstates.addTo(mymap);

@@ -18,7 +18,7 @@ try:
     query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE places.place_id>5000 AND places.place_id<10000 ")
     cursor.execute(query)
     places=[]
-
+    
     for a in cursor:
         #place={'name' : a[1],'cre_id' : a[2], 'x' : a[3], 'y' : a[4]}
 
