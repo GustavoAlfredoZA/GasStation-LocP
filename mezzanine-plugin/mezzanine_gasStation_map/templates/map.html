@@ -13,11 +13,13 @@
   <!--<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 {% endblock %}
 {% block main %}
   <div class="filtersSection">
     <select name="StatesM" class="list" id="list" onchange="stateSelect()">
-      <option disabled="" selected="">Choose your state</option>
+      <option disabled="" selected="All" >Choose your state</option>
       <option value="All" id="All">Todo el país</option>
       <option value="AG" id="AG" >Aguascalientes</option>
       <option value="BC" id="BC" >Baja California</option>
@@ -55,21 +57,35 @@
   <hr>
   <div class="mainMap">
     <div id="mapid" style="width: 90%; height: 600px;"></div>
-    <script src="{% static 'mezzanine_gasStation_map/js/jquery-3.5.1.min.js' %}" charset="utf-8"></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-    <script src="{% static 'mezzanine_gasStation_map/js/main.js' %}" charset="utf-8"></script>
   </div>
   <hr>
   <div class="tableInfo">
+    <div class="test" id=test>
+
+    </div>
+    <table id="table_all" class="display">
+      <thead>
+        <tr>
+          <th  class="th-sm">Nombre</th>
+          <th  class="th-sm">Estado</th>
+          <th  class="th-sm">Precio de gasolina regular</th>
+          <th  class="th-sm">Precio de gasolina premium</th>
+          <th  class="th-sm">Precio de diesel</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>Hola</td>
+            <td>Mundo</td>
+          </tr>
+      </tbody>
+    </table>
   </div>
   <hr>
-  <table>
-    <thead>
-
-    </thead>
-    <tbody>
-
-    </tbody>
-  </table>
+  <script src="{% static 'mezzanine_gasStation_map/js/jquery-3.5.1.min.js' %}" charset="utf-8"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous" ></script>-->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js" defer></script>
+  <script src="{% static 'mezzanine_gasStation_map/js/main.js' %}" charset="utf-8"></script>
   <p>Basado en datos de la <a href="https://www.gob.mx/cre"> Comisión Reguladora de Energía </a></p>
 {% endblock %}

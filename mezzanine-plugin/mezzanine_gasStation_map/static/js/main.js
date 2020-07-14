@@ -69,7 +69,6 @@ function stateSelect(){
   });
 }
 
-
 $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
     var mexstates = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
@@ -87,12 +86,29 @@ $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", functio
     mexstates.addTo(mymap);
 });
 
-$( "select" )
-  .change(function () {
-    var str = "";
-    $( "select option:selected" ).each(function() {
-      str += $( this ).text() + " ";
+//$( "select" )
+//  .change(function () {
+//    var str = "";
+//    $( "select option:selected" ).each(function() {
+//      str += $( this ).text() + " ";
+//    });
+//    $( ".tableInfo" ).text( str );
+//}).change();
+$(document).ready( function () {
+  alldatageojson.then( function(data){
+    $('#table_all').DataTable( {
+      deferRender:    true,
+      scrollY:        200,
+      scrollCollapse: true,
+      scroller:       true,
+      data: data['features'],
+      columns:[
+        {data:'properties.name'},
+        {data:'properties.state'},
+        {data:'properties.regular'},
+        {data:'properties.premium'},
+        {data:'properties.diesel'}
+      ]
     });
-    $( ".tableInfo" ).text( str );
-  })
-  .change();
+  });
+});
