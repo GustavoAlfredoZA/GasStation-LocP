@@ -37,9 +37,19 @@ function onMapClick(e) {
   .openOn(mymap);
 }
 
-$.getJSON("../static/mezzanine_gasStation_map/js/data.json", function(data) {
-    var alldata = L.geoJson(data, {
+var stateFilters = L.layerGroup().addTo(mymap);
+var alldatageojson = $.getJSON("../static/mezzanine_gasStation_map/js/data.json");
 
+function stateSelect(){
+  alldatageojson.then( function(data) {
+    var miSelect = document.getElementById("list").value;
+    var alldata = L.geoJson(data, {
+      filter: function(feature, layer){
+        if(miSelect != "All")
+        return (feature.properties.state == miSelect );
+        else
+        return true;
+      },
       onEachFeature: function (feature, layer) {
         var label = "<b>" + feature.properties.name + "</b><br/>"
         if(feature.properties.regular!=null){
@@ -54,8 +64,11 @@ $.getJSON("../static/mezzanine_gasStation_map/js/data.json", function(data) {
         layer.bindPopup(label);
       }
     });
-    alldata.addTo(mymap);
-});
+    stateFilters.clearLayers();
+    stateFilters.addLayer(alldata);
+  });
+}
+
 
 $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
     var mexstates = L.geoJson(data, {
@@ -73,3 +86,13 @@ $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", functio
     });
     mexstates.addTo(mymap);
 });
+
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( ".tableInfo" ).text( str );
+  })
+  .change();
