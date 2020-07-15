@@ -96,18 +96,60 @@ $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", functio
 //}).change();
 $(document).ready( function () {
   alldatageojson.then( function(data){
+
+    $.fn.dataTable.ext.search.push(
+      function( settings, data, dataIndex ) {
+        var min = parseInt( $('#min').val(), 10 );
+        var max = parseInt( $('#max').val(), 10 );
+        var pricer = parseFloat( data[2] ) || 0; // use data for the age column
+        var pricep = parseFloat( data[3] ) || 0;
+        var priced = parseFloat( data[4] ) || 0;
+
+        if ( ( isNaN( min ) && isNaN( max ) ) ||
+        ( isNaN( min ) && pricer <= max ) ||
+        ( min <= pricer   && isNaN( max ) ) ||
+        ( min <= pricer   && pricer <= max ) ||
+
+        ( isNaN( min ) && isNaN( max ) ) ||
+        ( isNaN( min ) && pricep <= max ) ||
+        ( min <= pricep   && isNaN( max ) ) ||
+        ( min <= pricep   && pricep <= max ) ||
+
+        ( isNaN( min ) && isNaN( max ) ) ||
+        ( isNaN( min ) && priced <= max ) ||
+        ( min <= priced   && isNaN( max ) ) ||
+        ( min <= priced   && priced <= max ) )
+        {
+          return true;
+        }
+        return false;
+      }
+
+    );
+
+    $(document).ready(function() {
+        var table = $('#table_all').DataTable();
+        // Event listener to the two range filtering inputs to redraw on input
+        $('#min, #max').keyup( function() {
+            table.draw();
+        } );
+    } );
+
+
     $('#table_all').DataTable( {
       deferRender:    true,
       scrollY:        200,
       scrollCollapse: true,
       scroller:       true,
       data: data['features'],
+      orderCellsTop: true,
       columns:[
         {data:'properties.name'},
-        {data:'properties.state'},
-        {data:'properties.regular'},
-        {data:'properties.premium'},
-        {data:'properties.diesel'}
+        {data:'properties.state',defaultContent: "Sin información"},
+        {data:'properties.regular',defaultContent: "Sin información"},
+        {data:'properties.premium',defaultContent: "Sin información"},
+        {data:'properties.diesel',defaultContent: "Sin información"},
+
       ]
     });
   });
