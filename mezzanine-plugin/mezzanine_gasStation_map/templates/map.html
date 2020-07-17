@@ -18,8 +18,8 @@
 {% endblock %}
 {% block main %}
   <div class="filtersSection">
-    <select name="StatesM" class="list" id="list" onchange="stateSelect()">
-      <option disabled="" selected="All" >Choose your state</option>
+    <!--<select name="StatesM" class="list" id="list" onchange="stateSelect()">
+      <option disabled="" selected="" value="" >Choose your state</option>
       <option value="All" id="All">Todo el país</option>
       <option value="AG" id="AG" >Aguascalientes</option>
       <option value="BC" id="BC" >Baja California</option>
@@ -52,7 +52,7 @@
       <option value="VE" id="VE" >Veracruz</option>
       <option value="YU" id="YU" >Yucatan</option>
       <option value="ZA" id="ZA" >Zacatecas</option>
-    </select>
+    </select>-->
   </div>
   <hr>
   <div class="mainMap">
@@ -67,6 +67,43 @@
     <table cellspacing="5" cellpadding="5" border="0">
       <tbody>
         <tr>
+          <td rowspan="2">
+            <select name="StatesM" class="list" id="list" onchange="stateSelect()">
+              <option disabled="" selected="" >Choose your state</option>
+              <option value="All" id="All">Todo el país</option>
+              <option value="AG" id="AG" >Aguascalientes</option>
+              <option value="BC" id="BC" >Baja California</option>
+              <option value="BS" id="BS" >Baja California Sur</option>
+              <option value="CM" id="CM" >Campeche</option>
+              <option value="CS" id="CS" >Chiapas</option>
+              <option value="CH" id="CH" >Chihuahua</option>
+              <option value="DF" id="DF" >Ciudad de México</option>
+              <option value="CO" id="CO" >Coahuila</option>
+              <option value="CL" id="CL" >Colima</option>
+              <option value="DG" id="DG" >Durango</option>
+              <option value="GJ" id="GJ" >Guanajuato</option>
+              <option value="GR" id="GR" >Guerrero</option>
+              <option value="HG" id="HG" >Hidalgo</option>
+              <option value="JA" id="JA" >Jalisco</option>
+              <option value="MX" id="MX" >Estado de México</option>
+              <option value="MI" id="MI" >Michoacan</option>
+              <option value="NA" id="NA" >Nayarit</option>
+              <option value="NL" id="NL" >Nuevo Leon</option>
+              <option value="OA" id="OA" >Oaxaca</option>
+              <option value="PU" id="PU" >Puebla</option>
+              <option value="QT" id="QT" >Queretaro</option>
+              <option value="QR" id="QR" >Quintana Roo</option>
+              <option value="SL" id="SL" >San Luis Potosi</option>
+              <option value="SI" id="SI" >Sinaloa</option>
+              <option value="SO" id="SO" >Sonora</option>
+              <option value="TB" id="TB" >Tabasco</option>
+              <option value="TM" id="TM" >Tamaulipas</option>
+              <option value="TL" id="TL" >Tlaxcala</option>
+              <option value="VE" id="VE" >Veracruz</option>
+              <option value="YU" id="YU" >Yucatan</option>
+              <option value="ZA" id="ZA" >Zacatecas</option>
+            </select>
+          </td>
           <td>Precio minimo:</td>
           <td><input type="text" id="min" name="min"></td>
         </tr>

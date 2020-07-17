@@ -94,31 +94,41 @@ $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", functio
 //    });
 //    $( ".tableInfo" ).text( str );
 //}).change();
+
+
 $(document).ready( function () {
   alldatageojson.then( function(data){
 
     $.fn.dataTable.ext.search.push(
+
       function( settings, data, dataIndex ) {
+
+        var stateSelectl = String($("#list").val() || "");
         var min = parseInt( $('#min').val(), 10 );
         var max = parseInt( $('#max').val(), 10 );
-        var pricer = parseFloat( data[2] ) || 0; // use data for the age column
+        var pricer = parseFloat( data[2] ) || 0;
         var pricep = parseFloat( data[3] ) || 0;
         var priced = parseFloat( data[4] ) || 0;
+        var namestate = String( data[1] ) ;
+        document.getElementById("test").innerHTML = stateSelectl
+        if (namestate != stateSelectl && stateSelectl != "All" && stateSelectl != ""){
+          return false;
+        }
 
-        if ( ( isNaN( min ) && isNaN( max ) ) ||
+        if ( ( ( isNaN( min ) && isNaN( max ) ) ||
         ( isNaN( min ) && pricer <= max ) ||
         ( min <= pricer   && isNaN( max ) ) ||
-        ( min <= pricer   && pricer <= max ) ||
+        ( min <= pricer   && pricer <= max ) ) &&
 
-        ( isNaN( min ) && isNaN( max ) ) ||
+        ( ( isNaN( min ) && isNaN( max ) ) ||
         ( isNaN( min ) && pricep <= max ) ||
         ( min <= pricep   && isNaN( max ) ) ||
-        ( min <= pricep   && pricep <= max ) ||
+        ( min <= pricep   && pricep <= max ) ) &&
 
-        ( isNaN( min ) && isNaN( max ) ) ||
+        ( ( isNaN( min ) && isNaN( max ) ) ||
         ( isNaN( min ) && priced <= max ) ||
         ( min <= priced   && isNaN( max ) ) ||
-        ( min <= priced   && priced <= max ) )
+        ( min <= priced   && priced <= max ) ) )
         {
           return true;
         }
@@ -133,14 +143,22 @@ $(document).ready( function () {
         $('#min, #max').keyup( function() {
             table.draw();
         } );
+        $('#list').on('change', function(){
+            table.draw();
+        });
+
+
     } );
 
 
+
     $('#table_all').DataTable( {
+
       deferRender:    true,
       scrollY:        200,
       scrollCollapse: true,
       scroller:       true,
+      info:           true,
       data: data['features'],
       orderCellsTop: true,
       columns:[
@@ -150,7 +168,30 @@ $(document).ready( function () {
         {data:'properties.premium',defaultContent: "Sin información"},
         {data:'properties.diesel',defaultContent: "Sin información"},
 
-      ]
+      ],
+      initComplete: function () {
+        this.api().columns().every( function () {
+          var column = this;
+          var select = $('<select><option value=""></option></select>')
+          .appendTo( $(column.footer()).empty() )
+          .on( 'change', function () {
+            var val = $.fn.dataTable.util.escapeRegex(
+              $(this).val()
+            );
+
+            column
+            .search( val ? '^'+val+'$' : '', true, false )
+            .draw();
+          } );
+
+          column.data().unique().sort().each( function ( d, j ) {
+            select.append( '<option value="'+d+'">'+d+'</option>' )
+          } );
+        } );
+      }
+
     });
+
   });
+
 });
