@@ -24,75 +24,80 @@
     <hr>
   </div>
   <div class="filtersSection">
-    <div class="form-group">
-      <label for="list">Selecciona un estado</label>
-      <select name="StatesM" class="form-control list" id="list" onchange="stateSelect()">
-        <option disabled selected>Selecciona un estado</option>
-        <option value="All" id="All">Todo el país</option>
-        <option value="AG" id="AG" >Aguascalientes</option>
-        <option value="BC" id="BC" >Baja California</option>
-        <option value="BS" id="BS" >Baja California Sur</option>
-        <option value="CM" id="CM" >Campeche</option>
-        <option value="CS" id="CS" >Chiapas</option>
-        <option value="CH" id="CH" >Chihuahua</option>
-        <option value="DF" id="DF" >Ciudad de México</option>
-        <option value="CO" id="CO" >Coahuila</option>
-        <option value="CL" id="CL" >Colima</option>
-        <option value="DG" id="DG" >Durango</option>
-        <option value="GJ" id="GJ" >Guanajuato</option>
-        <option value="GR" id="GR" >Guerrero</option>
-        <option value="HG" id="HG" >Hidalgo</option>
-        <option value="JA" id="JA" >Jalisco</option>
-        <option value="MX" id="MX" >Estado de México</option>
-        <option value="MI" id="MI" >Michoacan</option>
-        <option value="NA" id="NA" >Nayarit</option>
-        <option value="NL" id="NL" >Nuevo Leon</option>
-        <option value="OA" id="OA" >Oaxaca</option>
-        <option value="PU" id="PU" >Puebla</option>
-        <option value="QT" id="QT" >Queretaro</option>
-        <option value="QR" id="QR" >Quintana Roo</option>
-        <option value="SL" id="SL" >San Luis Potosi</option>
-        <option value="SI" id="SI" >Sinaloa</option>
-        <option value="SO" id="SO" >Sonora</option>
-        <option value="TB" id="TB" >Tabasco</option>
-        <option value="TM" id="TM" >Tamaulipas</option>
-        <option value="TL" id="TL" >Tlaxcala</option>
-        <option value="VE" id="VE" >Veracruz</option>
-        <option value="YU" id="YU" >Yucatan</option>
-        <option value="ZA" id="ZA" >Zacatecas</option>
-      </select>
-      <span id="selectHelpBlock" class="form-text text-muted">Haz click y selecciona un estado o todo el país</span>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Precio minimo</label>
-        <input type="number" step="0.01" class="form-control" placeholder="00.00"  id="min" name="min">
-        <span id="minHelpBlock" class="form-text text-muted">Ingresa a partir de que precio mostrar</span>
+    <form>
+      <div class="form-group">
+        <label for="list">Selecciona un estado</label>
+        <select name="StatesM" class="form-control list" id="list">
+          <option disabled selected>Selecciona un estado</option>
+          <option value="All" id="All">Todo el país</option>
+          <option value="AG" id="AG" >Aguascalientes</option>
+          <option value="BC" id="BC" >Baja California</option>
+          <option value="BS" id="BS" >Baja California Sur</option>
+          <option value="CM" id="CM" >Campeche</option>
+          <option value="CS" id="CS" >Chiapas</option>
+          <option value="CH" id="CH" >Chihuahua</option>
+          <option value="DF" id="DF" >Ciudad de México</option>
+          <option value="CO" id="CO" >Coahuila</option>
+          <option value="CL" id="CL" >Colima</option>
+          <option value="DG" id="DG" >Durango</option>
+          <option value="GJ" id="GJ" >Guanajuato</option>
+          <option value="GR" id="GR" >Guerrero</option>
+          <option value="HG" id="HG" >Hidalgo</option>
+          <option value="JA" id="JA" >Jalisco</option>
+          <option value="MX" id="MX" >Estado de México</option>
+          <option value="MI" id="MI" >Michoacan</option>
+          <option value="NA" id="NA" >Nayarit</option>
+          <option value="NL" id="NL" >Nuevo Leon</option>
+          <option value="OA" id="OA" >Oaxaca</option>
+          <option value="PU" id="PU" >Puebla</option>
+          <option value="QT" id="QT" >Queretaro</option>
+          <option value="QR" id="QR" >Quintana Roo</option>
+          <option value="SL" id="SL" >San Luis Potosi</option>
+          <option value="SI" id="SI" >Sinaloa</option>
+          <option value="SO" id="SO" >Sonora</option>
+          <option value="TB" id="TB" >Tabasco</option>
+          <option value="TM" id="TM" >Tamaulipas</option>
+          <option value="TL" id="TL" >Tlaxcala</option>
+          <option value="VE" id="VE" >Veracruz</option>
+          <option value="YU" id="YU" >Yucatan</option>
+          <option value="ZA" id="ZA" >Zacatecas</option>
+        </select>
+        <span id="selectHelpBlock" class="form-select text-muted">Haz click y selecciona un estado o todo el país</span>
       </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Precio maximo</label>
-        <input type="number" step="0.01" class="form-control" placeholder="99.99"  id="max" name="max">
-        <span id="maxHelpBlock" class="form-text text-muted">Ingresa hasta que precio mostrar</span>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Precio minimo</label>
+          <input type="number" step="0.01" class="form-control" placeholder="00.00"  id="min" name="min">
+          <span id="minHelpBlock" class="form-number text-muted">Ingresa a partir de que precio mostrar</span>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Precio maximo</label>
+          <input type="number" step="0.01" class="form-control" placeholder="99.99"  id="max" name="max">
+          <span id="maxHelpBlock" class="form-number text-muted">Ingresa hasta que precio mostrar</span>
+        </div>
       </div>
-    </div>
-    <label class="form-check-label" for="form-group">Selecciona donde quieres aplicar el filtro de precio</label>
-    <div class="form-group">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="regular" value="regular">
-        <label class="form-check-label" for="inlineCheckbox1">Gasolina regular</label>
+      <label class="form-check-label" for="form-group">Selecciona donde quieres aplicar el filtro de precio</label>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="regular" value="regular">
+          <label class="form-check-label" for="inlineCheckbox1">Gasolina regular</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="premium" value="premium">
+          <label class="form-check-label" for="inlineCheckbox2">Gasolina premium</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="diesel" value="diesel">
+          <label class="form-check-label" for="inlineCheckbox3">Diesel</label>
+        </div>
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="premium" value="premium">
-        <label class="form-check-label" for="inlineCheckbox2">Gasolina premium</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="diesel" value="diesel">
-        <label class="form-check-label" for="inlineCheckbox3">Diesel</label>
-      </div>
-    </div>
-    <span id="rowHelpBlock" class="form-text text-muted">
-      Selecciona sobre donde se van aplicar los filtros de precios con cualquier combinacion, si no selecciona ninguno se muestran los lugares sin el filtro de precio.
-    </span>
+      <span id="rowHelpBlock" class="form-text text-muted">
+        Selecciona sobre donde se van aplicar los filtros de precios con cualquier combinacion, si no selecciona ninguno se muestran los lugares sin el filtro de precio.
+      </span>
+      <button type="button" class="btn btn-primary filterbutton" id="filterbutton"  onclick="stateSelect()">Aplicar filtros</button>
+      <button type="reset" class="btn btn-secondary reset" onclick="stateSelect()" id="reset">Limpiar filtros</button>
+
+    </form>
     <hr>
   </div>
   <div class="tableInfo">

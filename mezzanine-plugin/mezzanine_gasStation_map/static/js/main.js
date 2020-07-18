@@ -43,12 +43,36 @@ var alldatageojson = $.getJSON("../static/mezzanine_gasStation_map/js/data.json"
 
 function stateSelect(){
   alldatageojson.then( function(data) {
-    var min = parseInt( $('#min').val(), 10 );
-    var max = parseInt( $('#max').val(), 10 );
+
+    var min = parseFloat( $('#min').val(), 10 );
+    var max = parseFloat( $('#max').val(), 10 );
     var miSelect = String($("#list").val() || "");
-    document.getElementById("test").innerHTML = miSelect;
+    var checkregular = document.getElementById('regular').checked;
+    var checkpremium = document.getElementById('premium').checked;
+    var checkdiesel = document.getElementById('diesel').checked;
+    document.getElementById("test").innerHTML = checkregular;
     var alldata = L.geoJson(data, {
       filter: function(feature, layer){
+        var pricer = parseFloat(feature.properties.regular);
+        var pricep = parseFloat(feature.properties.premium);
+        var priced = parseFloat(feature.properties.diesel);
+
+        if( ( ( ( isNaN( min ) == false ) && ( pricer < min ) ) ||
+        ( ( isNaN( max ) == false ) && ( pricer > max ) ) ) && ( checkregular == true ) ){
+          return false;
+        }
+
+        if( ( ( ( isNaN( min ) == false ) && ( pricep < min ) ) ||
+        ( ( isNaN( max ) == false ) && ( pricep > max ) ) ) && ( checkpremium == true ) ){
+          return false;
+        }
+
+        if( ( ( ( isNaN( min ) == false ) && ( priced < min ) ) ||
+        ( ( isNaN( max ) == false ) && ( priced > max ) ) ) && ( checkdiesel == true ) ){
+          return false;
+        }
+
+
         if(miSelect != "All" && miSelect!= "")
         return (feature.properties.state == miSelect );
         return true;
@@ -99,9 +123,12 @@ $(document).ready( function () {
 
       function( settings, data, dataIndex ) {
 
+        var checkregular = document.getElementById('regular').checked;
+        var checkpremium = document.getElementById('premium').checked;
+        var checkdiesel = document.getElementById('diesel').checked;
         var stateSelectl = String($("#list").val() || "");
-        var min = parseInt( $('#min').val(), 10 );
-        var max = parseInt( $('#max').val(), 10 );
+        var min = parseFloat( $('#min').val(), 10 );
+        var max = parseFloat( $('#max').val(), 10 );
         var pricer = parseFloat( data[2] ) || 0;
         var pricep = parseFloat( data[3] ) || 0;
         var priced = parseFloat( data[4] ) || 0;
@@ -111,24 +138,21 @@ $(document).ready( function () {
           return false;
         }
 
-        if ( ( ( isNaN( min ) && isNaN( max ) ) ||
-        ( isNaN( min ) && pricer <= max ) ||
-        ( min <= pricer   && isNaN( max ) ) ||
-        ( min <= pricer   && pricer <= max ) ) &&
-
-        ( ( isNaN( min ) && isNaN( max ) ) ||
-        ( isNaN( min ) && pricep <= max ) ||
-        ( min <= pricep   && isNaN( max ) ) ||
-        ( min <= pricep   && pricep <= max ) ) &&
-
-        ( ( isNaN( min ) && isNaN( max ) ) ||
-        ( isNaN( min ) && priced <= max ) ||
-        ( min <= priced   && isNaN( max ) ) ||
-        ( min <= priced   && priced <= max ) ) )
-        {
-          return true;
+        if( ( ( ( isNaN( min ) == false ) && ( pricer < min ) ) ||
+        ( ( isNaN( max ) == false ) && ( pricer > max ) ) ) && ( checkregular == true ) ){
+          return false;
         }
-        return false;
+
+        if( ( ( ( isNaN( min ) == false ) && ( pricep < min ) ) ||
+        ( ( isNaN( max ) == false ) && ( pricep > max ) ) ) && ( checkpremium == true ) ){
+          return false;
+        }
+
+        if( ( ( ( isNaN( min ) == false ) && ( priced < min ) ) ||
+        ( ( isNaN( max ) == false ) && ( priced > max ) ) ) && ( checkdiesel == true ) ){
+          return false;
+        }
+        return true;
       }
 
     );
@@ -136,11 +160,9 @@ $(document).ready( function () {
     $(document).ready(function() {
         var table = $('#table_all').DataTable();
         // Event listener to the two range filtering inputs to redraw on input
-        $('#min, #max').keyup( function() {
-            table.draw();
-        } );
-        $('#list').on('change', function(){
-            table.draw();
+
+        $('#filterbutton, #reset').on('click', function(){
+          table.draw();
         });
 
 
@@ -165,26 +187,6 @@ $(document).ready( function () {
         {data:'properties.diesel',defaultContent: "Sin información"},
 
       ],
-      initComplete: function () {
-        this.api().columns().every( function () {
-          var column = this;
-          var select = $('<select><option value=""></option></select>')
-          .appendTo( $(column.footer()).empty() )
-          .on( 'change', function () {
-            var val = $.fn.dataTable.util.escapeRegex(
-              $(this).val()
-            );
-
-            column
-            .search( val ? '^'+val+'$' : '', true, false )
-            .draw();
-          } );
-
-          column.data().unique().sort().each( function ( d, j ) {
-            select.append( '<option value="'+d+'">'+d+'</option>' )
-          } );
-        } );
-      }
 
     });
 
