@@ -134,9 +134,39 @@ $(document).ready( function () {
         var priced = parseFloat( data[4] ) || 0;
         var namestate = String( data[1] ) ;
 
-        if (namestate != stateSelectl && stateSelectl != "All" && stateSelectl != ""){
-          return false;
-        }
+        if( ( namestate != "Baja California" && stateSelectl == "BC" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Baja California Sur" && stateSelectl == "BS" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Coahuila" && stateSelectl == "CO" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Chihuahua" && stateSelectl == "CH" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Durango" && stateSelectl == "DG" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Sinaloa" && stateSelectl == "SI" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Sonora" && stateSelectl == "SO" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Zacatecas" && stateSelectl == "ZA" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Nuevo León" && stateSelectl == "NL" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "San Luis Potosí" && stateSelectl == "SL" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Tamaulipas" && stateSelectl == "TM" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Aguascalientes" && stateSelectl == "AG" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Colima" && stateSelectl == "CL" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Jalisco" && stateSelectl == "JA" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Michoacán" && stateSelectl == "MI" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Nayarit" && stateSelectl == "NA" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Campeche" && stateSelectl == "CM" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Oaxaca" && stateSelectl == "OA" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Puebla" && stateSelectl == "PU" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Tabasco" && stateSelectl == "TB" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Tlaxcala" && stateSelectl == "TL" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Ciudad de México" && stateSelectl == "DF" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Guanajuato" && stateSelectl == "GJ" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Guerrero" && stateSelectl == "GR" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Hidalgo" && stateSelectl == "HG" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Estado de México" && stateSelectl == "MX" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Morelos" && stateSelectl == "MO" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Querétaro" && stateSelectl == "QT" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Veracruz" && stateSelectl == "VE" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Chiapas" && stateSelectl == "CS" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Quintana Roo" && stateSelectl == "QR" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+        else if( ( namestate != "Yucatán" && stateSelectl == "YU" ) && stateSelectl != "All" && stateSelectl != ""){return false;}
+
 
         if( ( ( ( isNaN( min ) == false ) && ( pricer < min ) ) ||
         ( ( isNaN( max ) == false ) && ( pricer > max ) ) ) && ( checkregular == true ) ){
@@ -181,7 +211,47 @@ $(document).ready( function () {
       orderCellsTop: true,
       columns:[
         {data:'properties.name'},
-        {data:'properties.state',defaultContent: "Sin información"},
+        {
+          data:'properties.state',
+          defaultContent: "Sin información",
+          render: function (data, type, row) {
+            if (row.properties.state === 'BC') {return 'Baja California';}
+            else if (row.properties.state === 'BS') {return 'Baja California Sur';}
+            else if (row.properties.state === 'CO') {return 'Coahuila';}
+            else if (row.properties.state === 'CH') {return 'Chihuahua';}
+            else if (row.properties.state === 'DG') {return 'Durango';}
+            else if (row.properties.state === 'SI') {return 'Sinaloa';}
+            else if (row.properties.state === 'SO') {return 'Sonora';}
+            else if (row.properties.state === 'ZA') {return 'Zacatecas';}
+            else if (row.properties.state === 'NL') {return 'Nuevo León';}
+            else if (row.properties.state === 'SL') {return 'San Luis Potosí';}
+            else if (row.properties.state === 'TM') {return 'Tamaulipas';}
+            else if (row.properties.state === 'AG') {return 'Aguascalientes';}
+            else if (row.properties.state === 'CL') {return 'Colima';}
+            else if (row.properties.state === 'JA') {return 'Jalisco';}
+            else if (row.properties.state === 'MI') {return 'Michoacán';}
+            else if (row.properties.state === 'NA') {return 'Nayarit';}
+            else if (row.properties.state === 'CM') {return 'Campeche';}
+            else if (row.properties.state === 'OA') {return 'Oaxaca';}
+            else if (row.properties.state === 'PU') {return 'Puebla';}
+            else if (row.properties.state === 'TB') {return 'Tabasco';}
+            else if (row.properties.state === 'TL') {return 'Tlaxcala';}
+            else if (row.properties.state === 'DF') {return 'Ciudad de México';}
+            else if (row.properties.state === 'GJ') {return 'Guanajuato';}
+            else if (row.properties.state === 'GR') {return 'Guerrero';}
+            else if (row.properties.state === 'HG') {return 'Hidalgo';}
+            else if (row.properties.state === 'MX') {return 'Estado de México';}
+            else if (row.properties.state === 'MO') {return 'Morelos';}
+            else if (row.properties.state === 'QT') {return 'Querétaro';}
+            else if (row.properties.state === 'VE') {return 'Veracruz';}
+            else if (row.properties.state === 'CS') {return 'Chiapas';}
+            else if (row.properties.state === 'QR') {return 'Quintana Roo';}
+            else if (row.properties.state === 'YU') {return 'Yucatán';}
+            else {
+                return row.properties.state;
+              }
+            }
+        },
         {data:'properties.regular',defaultContent: "Sin información"},
         {data:'properties.premium',defaultContent: "Sin información"},
         {data:'properties.diesel',defaultContent: "Sin información"},
