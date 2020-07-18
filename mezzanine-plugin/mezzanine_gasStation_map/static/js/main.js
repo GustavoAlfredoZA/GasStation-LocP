@@ -1,3 +1,4 @@
+
 var mymap = L.map('mapid').setView([19.6493721,-101.2209878], 13);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -42,12 +43,14 @@ var alldatageojson = $.getJSON("../static/mezzanine_gasStation_map/js/data.json"
 
 function stateSelect(){
   alldatageojson.then( function(data) {
-    var miSelect = document.getElementById("list").value;
+    var min = parseInt( $('#min').val(), 10 );
+    var max = parseInt( $('#max').val(), 10 );
+    var miSelect = String($("#list").val() || "");
+    document.getElementById("test").innerHTML = miSelect;
     var alldata = L.geoJson(data, {
       filter: function(feature, layer){
-        if(miSelect != "All")
+        if(miSelect != "All" && miSelect!= "")
         return (feature.properties.state == miSelect );
-        else
         return true;
       },
       onEachFeature: function (feature, layer) {
@@ -86,17 +89,10 @@ $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", functio
     mexstates.addTo(mymap);
 });
 
-//$( "select" )
-//  .change(function () {
-//    var str = "";
-//    $( "select option:selected" ).each(function() {
-//      str += $( this ).text() + " ";
-//    });
-//    $( ".tableInfo" ).text( str );
-//}).change();
 
 
 $(document).ready( function () {
+  stateSelect();
   alldatageojson.then( function(data){
 
     $.fn.dataTable.ext.search.push(
@@ -110,7 +106,7 @@ $(document).ready( function () {
         var pricep = parseFloat( data[3] ) || 0;
         var priced = parseFloat( data[4] ) || 0;
         var namestate = String( data[1] ) ;
-        document.getElementById("test").innerHTML = stateSelectl
+
         if (namestate != stateSelectl && stateSelectl != "All" && stateSelectl != ""){
           return false;
         }
