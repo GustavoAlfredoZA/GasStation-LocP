@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Linux (x86_64)
 --
 -- Host: localhost    Database: GasStationDB
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,10 +24,11 @@ DROP TABLE IF EXISTS `places`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `places` (
   `place_id` int NOT NULL,
-  `name` varchar(64) DEFAULT NULL,
+  `name` varchar(128) DEFAULT NULL,
   `cre_id` varchar(32) DEFAULT NULL,
   `x` float NOT NULL,
   `y` float NOT NULL,
+  `state` varchar(8) DEFAULT NULL,
   PRIMARY KEY (`place_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -53,7 +54,7 @@ CREATE TABLE `prices` (
   `regular` float(8,2) DEFAULT NULL,
   `premium` float(8,2) DEFAULT NULL,
   `diesel` float(8,2) DEFAULT NULL,
-  KEY `prices_place_id` (`prices_place_id`),
+  PRIMARY KEY (`prices_place_id`),
   CONSTRAINT `prices_ibfk_1` FOREIGN KEY (`prices_place_id`) REFERENCES `places` (`place_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -66,6 +67,33 @@ LOCK TABLES `prices` WRITE;
 /*!40000 ALTER TABLE `prices` DISABLE KEYS */;
 /*!40000 ALTER TABLE `prices` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `pricesTime`
+--
+
+DROP TABLE IF EXISTS `pricesTime`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pricesTime` (
+  `statec` char(2) NOT NULL,
+  `number` int NOT NULL,
+  `datec` date NOT NULL,
+  `priceregular` float(8,2) NOT NULL,
+  `pricepremium` float(8,2) NOT NULL,
+  `pricediesel` float(8,2) NOT NULL,
+  PRIMARY KEY (`statec`,`datec`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pricesTime`
+--
+
+LOCK TABLES `pricesTime` WRITE;
+/*!40000 ALTER TABLE `pricesTime` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pricesTime` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -76,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-08 21:03:04
+-- Dump completed on 2020-07-19 17:15:15

@@ -42,22 +42,22 @@ def searchstate(x,y,allStates):
         if(state[0].contains(Point(x,y))):
             return(state[1])
 
-
-
-
 try:
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
+    updatestates = "INSERT INTO pricesTime(statec,number,datec,priceregular,pricepremium,pricediesel,nregular,npremium,ndiesel) SELECT tmp.state, tmp.numberplaces ,tmp. today, tmp.pricer, tmp.pricep, tmp.pricep, tmp.numberr, tmp.numberp, tmp.numberd FROM ( SELECT places.state AS state, COUNT(*) AS numberplaces, CURDATE() AS today, SUM(regular) AS pricer, SUM(premium) AS pricep, SUM(diesel) AS priced, COUNT(regular) AS numberr, COUNT(premium) AS numberp, COUNT(diesel) AS numberd FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE state is not null GROUP BY places.state ) AS tmp ON DUPLICATE KEY UPDATE priceregular = tmp.pricer, pricepremium = tmp.pricep, pricediesel = tmp.priced, nregular = tmp.numberr, npremium = tmp.numberp, ndiesel = tmp.numberd"
+    cursor.execute(updatestates)
     query1 = ("INSERT INTO places(place_id,name,cre_id,x,y,state) VALUES (%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE name = %s , cre_id = %s , x = %s , y = %s , state = %s ")
     queryr = ("INSERT INTO prices( prices_place_id , regular ) VALUES ( %s , %s ) ON DUPLICATE KEY UPDATE regular = %s ")
     queryp = ("INSERT INTO prices( prices_place_id , premium ) VALUES ( %s , %s ) ON DUPLICATE KEY UPDATE premium = %s ")
     queryd = ("INSERT INTO prices( prices_place_id , diesel ) VALUES ( %s , %s ) ON DUPLICATE KEY UPDATE diesel = %s ")
 
-    os.chdir(PublicPATH)
-    for file in glob.glob(PublicPATH+"*0.xml"):
+    os.chdir(ProyectPATH)
+    for file in glob.glob("*0.xml"):
         tree = ET.parse(file)
         root = tree.getroot()
         for GasStation in root:
+
             id = GasStation.get('place_id')
             name = GasStation.find('name').text
             cre_id = GasStation.find('cre_id').text
@@ -69,7 +69,7 @@ try:
             cursor.execute(query1,data_query)
 
 
-    for file in glob.glob(PublicPATH+"*1.xml"):
+    for file in glob.glob("*1.xml"):
         tree = ET.parse(file)
         root = tree.getroot()
         for place in root:
@@ -88,6 +88,7 @@ try:
                     query2 = queryd
 
                 cursor.execute(query2,data_query2)
+
 
     cnx.commit()
 

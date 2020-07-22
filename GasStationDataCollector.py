@@ -19,6 +19,7 @@ routes = json.load(p)
 ProyectPATH=routes['proyect']
 PublicPATH=routes['public']
 p.close()
+
 class GasItem(Item):
     Name=Field()
     Link=Field()
@@ -42,8 +43,8 @@ class GasSpider(scrapy.Spider):
             i+=1
             yield item
             filename=item['Name']+".xml"
-            output = subprocess.run(["scp",filename,"quantics@132.247.186.67:public_html/static"])
-            output = subprocess.run(["mv",filename,"backup/"])
+            #output = subprocess.run(["scp",filename,"quantics@132.247.186.67:public_html/static"])
+            #output = subprocess.run(["mv",filename,"backup/"])
 
 #try:
 #    record=pd.DataFrame(pd.read_csv("record.csv"))

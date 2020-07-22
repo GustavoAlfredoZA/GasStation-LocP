@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{%block extra_js}
+
+{%endblock}
+
+{% block meta_title %}{% trans "Map" %}{% endblock %}
+{% block title %}{% trans "Map" %}{% endblock %}
+
+
+
+
+
+{% block main %}
+<h1>
+  Servicio de graficación
+</h1>
+
+<p>
+
+  <img src="{{ urlpic  }}" />
+  <img src="{{ urlpic2  }}" />
+
+</p>
+
+{% endblock %}

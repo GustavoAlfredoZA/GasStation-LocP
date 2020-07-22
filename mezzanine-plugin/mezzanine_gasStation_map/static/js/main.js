@@ -39,7 +39,7 @@ function onMapClick(e) {
 }
 
 var stateFilters = L.layerGroup().addTo(mymap);
-var alldatageojson = $.getJSON("../static/mezzanine_gasStation_map/js/data.json");
+var alldatageojson = $.getJSON("../../static/mezzanine_gasStation_map/js/data.json");
 
 function stateSelect(){
   alldatageojson.then( function(data) {
@@ -53,9 +53,9 @@ function stateSelect(){
     document.getElementById("test").innerHTML = checkregular;
     var alldata = L.geoJson(data, {
       filter: function(feature, layer){
-        var pricer = parseFloat(feature.properties.regular);
-        var pricep = parseFloat(feature.properties.premium);
-        var priced = parseFloat(feature.properties.diesel);
+        var pricer = parseFloat(feature.properties.regular)  || 0;
+        var pricep = parseFloat(feature.properties.premium)  || 0;
+        var priced = parseFloat(feature.properties.diesel)  || 0;
 
         if( ( ( ( isNaN( min ) == false ) && ( pricer < min ) ) ||
         ( ( isNaN( max ) == false ) && ( pricer > max ) ) ) && ( checkregular == true ) ){
@@ -96,7 +96,7 @@ function stateSelect(){
   });
 }
 
-$.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
+$.getJSON("../../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
     var mexstates = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         var label = feature.properties.gns_name
@@ -117,6 +117,8 @@ $.getJSON("../static/mezzanine_gasStation_map/js/mexicostatesprod.json", functio
 
 $(document).ready( function () {
   stateSelect();
+
+
   alldatageojson.then( function(data){
 
     $.fn.dataTable.ext.search.push(
@@ -186,6 +188,7 @@ $(document).ready( function () {
       }
 
     );
+
 
     $(document).ready(function() {
         var table = $('#table_all').DataTable();

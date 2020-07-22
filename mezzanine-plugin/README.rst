@@ -12,15 +12,18 @@ Quick start
     pip install django-leaflet
     pip install folium
     pip install shapely
+    pip install django-crispy-forms
 
-2.- Add mezzanine map to INSTALLED_APPS::
+2.- Add mezzanine map to INSTALLED_APPS in yourProject/yourProject/settings.py ::
 
   INSTALLED_APPS = [
     ...
     'leaflet',
     'mezzanine_gasStation_map',
+    'crispy_forms',
     ...
   ]
+  CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 3.- Include in yourProject/yourProject/urls.py::
 
