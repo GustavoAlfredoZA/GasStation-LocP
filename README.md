@@ -35,5 +35,11 @@ The process to obtain the data is through GasStation.by, which first extracts th
 ![México](IMG1.png) 
 #### Michoacan Fuel Price Chart
 ![Michoacán](IMG2.png)
+#### Filtering
+![Filtering](Form1.png) 
+#### Graphics
+![Graph](Form2.png) 
 #### Map
-![Map](Form1.png) 
+![Map](Map.png) 
+#### Table
+![Table](Table.png) 
