@@ -13,15 +13,15 @@ This proyect use Python v. 3.7, MySQLServer version: 8.0.21 MySQL Community Serv
 2. Matplotlib
      - ```pip install matplotlib==3.0.2```
 3. MySQL
-     - ```mysql==0.0.2```
-     - ```mysql-connector==2.2.9```
-     - ```mysql-connector-python==8.0.21```
+     - ```pip install mysql==0.0.2```
+     - ```pip install mysql-connector==2.2.9```
+     - ```pip install mysql-connector-python==8.0.21```
 4. Numpy
-     - ```numpy==1.16```
+     - ```pip install numpy==1.16```
 5. Scrapy
-     - ```scrapy==2.0.0```
+     - ```pip install scrapy==2.0.0```
 6. Urllib3
-     - ```urllib3==1.24.1```
+     - ```pip install urllib3==1.24.1```
    
 ## Data source
 Our data source comes from the Energy Regulatory Commission, which is the Coordinated Energy Regulatory Body promoting the efficient development of the sector and the reliable supply of hydrocarbons and electricity.
@@ -30,7 +30,8 @@ https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-
 The process to obtain the data is through GasStation.by, which first extracts the download URL from the xml files using Scrapy, then sets the names to 0 for places and 1 for prices, plus the download datatime with extention xml , finally, they are added to a record csv with names date and type.
 ## Tree
 ![Directory tree](tree.jpg) 
-## Graph of fuel prices in Mexico 
+## Results
+#### Graph of fuel prices in Mexico 
 ![México](IMG1.png) 
-## Michoacan Fuel Price Chart
+#### Michoacan Fuel Price Chart
 ![Michoacán](IMG2.png) 
