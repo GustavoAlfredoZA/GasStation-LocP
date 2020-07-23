@@ -44,9 +44,9 @@ class map_View(View):
             form = self.form_class(request.POST)
             if form.is_valid():
                 plotForm = form.save()
-                PATH_FILE = '/home/gustavo/GIT/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/img/'
+                PATH_FILE = '/home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/img/'
                 PATH_URL = '/static/mezzanine_gasStation_map/img/'
-                with open('/home/gustavo/GIT/GasStation-LocP/db.json') as json_file:
+                with open('/home/user/git/GasStation-LocP/db.json') as json_file:
                     config = json.load(json_file)
 
                 states = []
