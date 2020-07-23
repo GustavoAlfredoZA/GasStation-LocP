@@ -34,4 +34,6 @@ The process to obtain the data is through GasStation.by, which first extracts th
 #### Graph of fuel prices in Mexico 
 ![México](IMG1.png) 
 #### Michoacan Fuel Price Chart
-![Michoacán](IMG2.png) 
+![Michoacán](IMG2.png)
+#### Map
+![Map](Form1.png) 
