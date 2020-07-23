@@ -50,7 +50,7 @@ function stateSelect(){
     var checkregular = document.getElementById('regular').checked;
     var checkpremium = document.getElementById('premium').checked;
     var checkdiesel = document.getElementById('diesel').checked;
-    document.getElementById("test").innerHTML = checkregular;
+    
     var alldata = L.geoJson(data, {
       filter: function(feature, layer){
         var pricer = parseFloat(feature.properties.regular)  || 0;
