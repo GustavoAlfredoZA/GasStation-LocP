@@ -28,6 +28,11 @@ Our data source comes from the Energy Regulatory Commission, which is the Coordi
 https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-finales-de-gasolina-y-diesel .
 ## Data collection
 The process to obtain the data is through GasStation.by, which first extracts the download URL from the xml files using Scrapy, then sets the names to 0 for places and 1 for prices, plus the download datatime with extention xml , finally, they are added to a record csv with names date and type.
+## Setup
+- ```mysql -u root -p #login in mysql to create the database```
+- ```mysql > CREATE DATABASE GasStationDB```
+- ```mysql > exit```
+- ```mysql -u root -p GasStationDB < GasStationDB.sql```
 ## Tree
 ![Directory tree](tree.jpg) 
 ## Results
