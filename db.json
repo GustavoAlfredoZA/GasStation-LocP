@@ -1,6 +1,6 @@
 {
     "user" : "gustavo",
-    "password" : "23112000Gustavo;",
+    "password" : "",
     "host" : "localhost",
     "database" : "GasStationDB",
     "auth_plugin" : "mysql_native_password"
