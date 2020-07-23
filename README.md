@@ -36,7 +36,7 @@ mysql > CREATE DATABASE GasStationDB
 mysql > exit
 mysql -u root -p GasStationDB < GasStationDB.sql
 ```
-[install mezzanine-plugin](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/mezzanine-plugin/README.rst)
+- [install mezzanine-plugin](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/mezzanine-plugin/README.rst)
 ## Tree
 ![Directory tree](tree.jpg) 
 ## Results
