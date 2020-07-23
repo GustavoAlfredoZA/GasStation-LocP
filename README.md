@@ -6,8 +6,23 @@ The objective of this project is to help people make decisions about where to bu
 ## Software
 In this project, most of the code is in Python with libraries like Pandas, Scrapy and some data visualization libraries, and some technology to work with maps, routes and layers.
 ## Architecture of the system
-This proyect use Python v.3.7, Pandas v.0.25, Numpy v.1.17, Scrapy v.2.0.
-And libraries, an api, whatever it takes for to plot maps and routes.
+This proyect use Python v. 3.7, MySQLServer version: 8.0.21 MySQL Community Server - GPL, Django v. 1.11.29, Mezzanine v. 4.3.1. And libraries, an api, whatever it takes for to plot maps and routes.
+###### Dependencies
+1. Django Leaflet
+     - ```pip install django-leaflet==0.26.0```
+2. Matplotlib
+     - ```pip install matplotlib==3.0.2```
+3. MySQL
+     - ```mysql==0.0.2```
+     - ```mysql-connector==2.2.9```
+     - ```mysql-connector-python==8.0.21```
+4. Numpy
+     - ```numpy==1.16```
+5. Scrapy
+     - ```scrapy==2.0.0```
+6. Urllib3
+     - ```urllib3==1.24.1```
+   
 ## Data source
 Our data source comes from the Energy Regulatory Commission, which is the Coordinated Energy Regulatory Body promoting the efficient development of the sector and the reliable supply of hydrocarbons and electricity.
 https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-finales-de-gasolina-y-diesel .
