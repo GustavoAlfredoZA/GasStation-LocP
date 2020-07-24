@@ -37,6 +37,9 @@ mysql > exit
 mysql -u root -p GasStationDB < GasStationDB.sql
 ```
 - [install mezzanine-plugin](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/mezzanine-plugin/README.rst)
+- #### Scripts
+Change db.json with your mysql login credentials, paths.json lines 2 and 3, mezzanine-plugin / mezzanine_gasStation_map / views.py lines 47 and 49 based on [your directory tree](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/tree.jpg).
+Run DataCollector.py, StoreDB.py and Process.py, ideally run in this order with a difference of 10 minutes between each, each day.
 ## Tree
 ![Directory tree](tree.jpg) 
 ## Results
