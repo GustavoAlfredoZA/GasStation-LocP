@@ -32,7 +32,7 @@ The process to obtain the data is through GasStation.by, which first extracts th
 - Install DB
 ```bash
 $ mysql -u root -p #login in mysql to create the database
-mysql> CREATE DATABASE GasStationDB
+mysql> CREATE DATABASE GasStationDB;
 mysql> exit;
 $ mysql -u root -p GasStationDB < GasStationDB.sql
 ```
