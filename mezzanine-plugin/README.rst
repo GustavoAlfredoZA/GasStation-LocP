@@ -7,12 +7,10 @@ Plugin for mezzanine
 Quick start
 ------------
 
-1.-Install leaflet for django::
+1.-Install libreries ::
 
     pip install django-leaflet
-    pip install folium
     pip install shapely
-    pip install django-crispy-forms
 
 2.- Add mezzanine map to INSTALLED_APPS in yourProject/yourProject/settings.py ::
 
@@ -20,10 +18,10 @@ Quick start
     ...
     'leaflet',
     'mezzanine_gasStation_map',
-    'crispy_forms',
+    #'crispy_forms',
     ...
   ]
-  CRISPY_TEMPLATE_PACK = 'bootstrap4'
+  
 
 3.- Include in yourProject/yourProject/urls.py::
 
