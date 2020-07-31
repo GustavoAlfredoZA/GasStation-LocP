@@ -136,11 +136,23 @@
     <form method="post" action="/map/map/" enctype="multipart/form-data">
       {% csrf_token %}
       <label for="plot"><h2>Servicio de graficación</h2></label>
-      {{ form.as_ul }}
-      <button type="submit" name="execute_page_button" class="btn btn-primary btn-lg btn-block">Ejecutar</button>
+      {{ formPlot.as_ul }}
+      <button type="submit" name="execute_form_plot" class="btn btn-primary btn-lg btn-block" value="Polt">Ejecutar</button>
       <input type="submit" value="Cancelar" name="cancel_page_button" class="btn btn-secondary" formnovalidate></input>
 
     </form>
+  </div>
+  <div class="cal">
+    <hr>
+    <form method="post" action="/map/map/" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="cal"><h2>Cálculo y búsqueda de gasolineras</h2></label>
+      {{ formCal.as_ul }}
+      <button type="submit" name="execute_form_cal" class="btn btn-primary btn-lg btn-block" vualue="Cal">Buscar</button>
+      <input type="submit" value="Cancelar" name="cancel_page_button" class="btn btn-secondary" formnovalidate></input>
+
+    </form>
+    <hr>
   </div>
 
   <script src="{% static 'mezzanine_gasStation_map/js/jquery-3.5.1.min.js' %}" charset="utf-8"></script>

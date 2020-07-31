@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.views.generic import View
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from mezzanine_gasStation_map.models import plotModel
-from mezzanine_gasStation_map.forms import Plot_Form
+from mezzanine_gasStation_map.models import plotModel, calModel
+from mezzanine_gasStation_map.forms import Plot_Form, Cal_Form
 from django.conf import settings
 from django.conf.urls.static import static
 from django.utils import timezone
@@ -16,7 +16,10 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+import openrouteservice
+import requests
 
+convtime = lambda s: '{:01}:{:02}:{:02}'.format(int(s//3600), int(s%3600//60), int(s%60))
 
 #def index(request):
 #    HttpResponse("Hello, world. You're at the polls index.")
@@ -28,24 +31,44 @@ class map(View):
         super(map, self).__init__()
         self.arg = arg
 
+
+
 class map_View(View):
     initial={'kay':'value'}
     #form_class=Paciente_Form
     form_class = Plot_Form
+    formP_class = Plot_Form
+    formC_class = Cal_Form
+
     template_name = 'mezzanine_gasStation_map/map.html'
 
+    #def multiple_forms(self, request, *args, **kwargs):
+
     def get(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            formPlot = self.formP_class(request.POST)
+            formCal = self.formC_class(request.POST)
+            if formPlot.is_valid() or formCal().is_valid():
+                return HttpResponseRedirect(reverse('form-redirect'))
+        else:
+            formPlot = self.formP_class()
+            formCal = self.formC_class()
+            return render(request, self.template_name,{
+                'formPlot' : formPlot,
+                'formCal' : formCal
+            })
         #var1 = self.kwargs['var1']
-        form=self.form_class(initial=self.initial)
-        return render(request, self.template_name,{'form':form})
+    #    form=self.form_class(initial=self.initial)
+    #    return render(request, self.template_name,{'form':form})
 
     def post(self, request,*args, **kwargs):
-        if 'execute_page_button' in request.POST:
+
+        PATH_FILE = '/home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/'
+        PATH_URL = '/static/mezzanine_gasStation_map/'
+        if 'execute_form_plot' in request.POST:
             form = self.form_class(request.POST)
             if form.is_valid():
                 plotForm = form.save()
-                PATH_FILE = '/home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/img/'
-                PATH_URL = '/static/mezzanine_gasStation_map/img/'
                 with open('/home/user/git/GasStation-LocP/db.json') as json_file:
                     config = json.load(json_file)
 
@@ -92,7 +115,10 @@ class map_View(View):
                         adieselq2.append(pricediesel/ndiesel)
 
                     if( len(datesq2) == 0 ):
-                        return render(request, self.template_name, {'form': form})
+                        return render(request, self.template_name,{
+                            'formPlot' : formPlot,
+                            'formCal' : formCal
+                        })
 
                 except mysql.connector.Error as err:
                     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -143,14 +169,100 @@ class map_View(View):
                 ax2.legend()
                 ax2.grid()
                 fig2.tight_layout()
-                fig2.savefig(PATH_FILE+"/plotTime2.png",dpi=150)
-                urlpic2 = PATH_URL+"plotTime2.png"
-
+                fig2.savefig(PATH_FILE+"/img/plotTime2.png",dpi=150)
+                urlpic2 = PATH_URL+"/img/plotTime2.png"
 
                 return render(request, 'mezzanine_gasStation_map/plot.html' , {'urlpic': urlpic, 'urlpic2': urlpic2})
             else:
                 print('form not valid')
-                return render(request, self.template_name, {'form': form})
+                return render(request, self.template_name,{
+                    'formPlot' : formPlot,
+                    'formCal' : formCal
+                })
+        elif 'execute_form_cal' in request.POST:
+            form = self.formC_class(request.POST)
+            if form.is_valid():
+                calForm = form.save()
+                with open('/home/user/git/GasStation-LocP/db.json') as json_file:
+                    config = json.load(json_file)
+                try:
+                    cnx = mysql.connector.connect(**config)
+                    cursor = cnx.cursor()
+                    data_query = (calForm.startX, calForm.startX, calForm.startY)
+                    #SELECT places.place_id,places.name,(acos(sin(radians(20.135936)) * sin(radians(places.Y)) + cos(radians(20.135936)) * cos(radians(places.Y)) * cos(radians(-102.744064) - radians(places.X))) * 6378) as distance,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id ORDER BY distance LIMIT 5;
+                    query = ("SELECT places.place_id,places.name,(acos(sin(radians(%s)) * sin(radians(places.Y)) + cos(radians(%s)) * cos(radians(places.Y)) * cos(radians(%s) - radians(places.X))) * 6378) as distance,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id ORDER BY distance LIMIT 5")
+                    cursor.execute(query,data_query)
+                    places = []
+                    loclist = []
+                    with open('/home/user/git/GasStation-LocP/key.json') as json_file:
+                        ORS = json.load(json_file)
+
+                    for a in cursor:
+                        place = { 'type' : 'Feature' , 'geometry' : { 'type' : 'Point' , 'coordinates' : [ a[3] , a[4] ] }}
+                        properties={ 'name' : a[1] , 'distance' : a[2] , 'money' : calForm.money, 'economy' : calForm.economy , 'startX' : calForm.startX, 'startY': calForm.startY}
+                        if(a[5]!=None):
+                            properties['regular']=a[5]
+                        if(a[6]!=None):
+                            properties['premium']=a[6]
+                        if(a[7]!=None):
+                            properties['diesel']=a[7]
+                        if(a[8]!=None):
+                            properties['state']=a[8]
+                        place['properties']=properties
+                        places.append(place)
+                        loclist.append([ a[3] , a[4] ])
+                except mysql.connector.Error as err:
+                    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+                        print("Something is wrong with your user name or password")
+                    elif err.errno == errorcode.ER_BAD_DB_ERROR:
+                        print("Database does not exist")
+                    else:
+                        print(err)
+                else:
+                    cnx.close()
+
+                body = {"locations":[[calForm.startY,calForm.startX]]+loclist,"destinations":[0],"metrics":["distance","duration"],"units":"km"}
+                headers = {
+                'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
+                'Authorization': ORS['ORSkey'],
+                'Content-Type': 'application/json; charset=utf-8'
+                }
+                call = requests.post('https://api.openrouteservice.org/v2/matrix/driving-car', json=body, headers=headers)
+                reqORS=call.json()
+                print(reqORS)
+
+                for i in range(len(places)):
+                    print(places[i]['properties'])
+                    places[i]['properties']['realdistance'] = '%.3f'%(reqORS['distances'][i+1][0])
+
+                    places[i]['properties']['duration'] = convtime(reqORS['durations'][i+1][0])
+                    if('regular' in places[i]['properties']):
+                        places[i]['properties']['spendr'] = '%.3f'%((reqORS['distances'][i+1][0]/calForm.economy)*places[i]['properties']['regular'])
+                        places[i]['properties']['realmoneyr'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendr']))
+                        places[i]['properties']['realGasr'] = '%.3f'%(float(places[i]['properties']['realmoneyr']) / float(places[i]['properties']['regular']))
+                    if('premium' in places[i]['properties']):
+                        places[i]['properties']['spendp'] = '%.3f'%((reqORS['distances'][i+1][0]/calForm.economy)*places[i]['properties']['premium'])
+                        places[i]['properties']['realmoneyp'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendp']))
+                        places[i]['properties']['realGasp'] = '%.3f'%(float(places[i]['properties']['realmoneyp']) / float(places[i]['properties']['premium']))
+                    if('diesel' in places[i]['properties']):
+                        places[i]['properties']['spendd'] = '%.3f'%((reqORS['distances'][i+1][0]/calForm.economy)*places[i]['properties']['diesel'])
+                        places[i]['properties']['realmoneyd'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendd']))
+                        places[i]['properties']['realGasd'] = '%.3f'%(float(places[i]['properties']['realmoneyd']) / float(places[i]['properties']['diesel']))
+
+                print(places)
+                doc={ 'type' : 'FeatureCollection' , 'features' : places }
+                print(doc)
+                with open(PATH_FILE+'/js/tmp.json', 'w') as outfile:
+                    json.dump(doc, outfile, indent=4, sort_keys=True)
+                return render(request, 'mezzanine_gasStation_map/request.html')
+            else:
+                print('form not valid')
+                return render(request, self.template_name,{
+                    'formPlot' : formPlot,
+                    'formCal' : formCal
+                })
+
+
 
         return HttpResponseRedirect('/')
 

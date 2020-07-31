@@ -13,8 +13,11 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 function onLocationFound(e) {
         var radius = e.accuracy / 2;
         var curr_latitude = e.latitude;
-        var curr_longitude = e.longitude
-        L.circle(e.latlng,{color:'red', radius: '10'}).addTo(mymap).bindPopup("Estas cerca de aquí").openPopup();
+        var curr_longitude = e.longitude;
+        //id_startX
+        document.getElementById("id_startX").value = curr_latitude;
+        document.getElementById("id_startY").value = curr_longitude;
+        L.circle(e.latlng,{color:'red', radius: '10'}).addTo(mymap).bindPopup("Te encuentras cerca de aquí").openPopup();
         L.circle(e.latlng, radius).addTo(mymap);
 }
 
@@ -22,9 +25,6 @@ function onLocationError(e) {
         alert(e.message);
 }
 
-mymap.on('locationfound', onLocationFound);
-mymap.on('locationerror', onLocationError);
-mymap.locate({setView: false, maxZoom: 16});
 mymap.on('locationfound', onLocationFound);
 mymap.on('locationerror', onLocationError);
 mymap.locate({setView: false, maxZoom: 16});
@@ -50,7 +50,7 @@ function stateSelect(){
     var checkregular = document.getElementById('regular').checked;
     var checkpremium = document.getElementById('premium').checked;
     var checkdiesel = document.getElementById('diesel').checked;
-    
+
     var alldata = L.geoJson(data, {
       filter: function(feature, layer){
         var pricer = parseFloat(feature.properties.regular)  || 0;
@@ -189,19 +189,9 @@ $(document).ready( function () {
 
     );
 
-
-    $(document).ready(function() {
-        var table = $('#table_all').DataTable();
-        // Event listener to the two range filtering inputs to redraw on input
-
-        $('#filterbutton, #reset').on('click', function(){
-          table.draw();
-        });
-
-
-    } );
-
-
+    $('#filterbutton, #reset').on('click', function(){
+      table.draw();
+    });
 
     $('#table_all').DataTable( {
 

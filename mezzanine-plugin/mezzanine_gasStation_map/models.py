@@ -47,6 +47,13 @@ class plotModel(models.Model):
     initial_date = models.DateField("Fecha de inicio", default=today)
     end_date = models.DateField("Fecha final", default=today)
 
+class calModel(models.Model):
+    startX = models.FloatField("Latitud (aproximación)")
+    startY = models.FloatField("Longitud (aproximación)")
+    economy = models.FloatField("Rendimiento de tu automovil (km/lt)")
+    money = models.FloatField("Cuanto dinero tienes para comprar gasolina (MXN)")
+
+
 class Place(models.Model):
     name = models.CharField(max_length=128)
     cre_id = models.CharField(max_length=32)

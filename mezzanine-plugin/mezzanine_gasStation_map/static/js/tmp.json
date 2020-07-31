@@ -1,0 +1,170 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.718,
+                    20.0007
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.45,
+                "distance": 0.696830923684652,
+                "duration": "0:01:43",
+                "economy": 20.0,
+                "money": 100.0,
+                "name": "SUPER SERVICIO JIQUILPAN SA DE CV",
+                "premium": 19.96,
+                "realGasd": "4.827",
+                "realGasp": "4.947",
+                "realGasr": "5.078",
+                "realdistance": "1.260",
+                "realmoneyd": "98.712",
+                "realmoneyp": "98.743",
+                "realmoneyr": "98.775",
+                "regular": 19.45,
+                "spendd": "1.288",
+                "spendp": "1.257",
+                "spendr": "1.225",
+                "startX": 19.9948,
+                "startY": -102.7197,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.717,
+                    20.0027
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.44,
+                "distance": 0.934238796984902,
+                "duration": "0:03:41",
+                "economy": 20.0,
+                "money": 100.0,
+                "name": "SILVIA SALAS TREJO",
+                "premium": 19.95,
+                "realGasd": "4.734",
+                "realGasp": "4.855",
+                "realGasr": "4.986",
+                "realdistance": "3.160",
+                "realmoneyd": "96.770",
+                "realmoneyp": "96.848",
+                "realmoneyr": "96.928",
+                "regular": 19.44,
+                "spendd": "3.230",
+                "spendp": "3.152",
+                "spendr": "3.072",
+                "startX": 19.9948,
+                "startY": -102.7197,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.698,
+                    19.9851
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.41,
+                "distance": 2.55992504187113,
+                "duration": "0:04:43",
+                "economy": 20.0,
+                "money": 100.0,
+                "name": "INMOBILIARIA SAMICH, S.A. DE C.V.",
+                "premium": 19.99,
+                "realGasd": "4.746",
+                "realGasp": "4.849",
+                "realGasr": "4.993",
+                "realdistance": "3.070",
+                "realmoneyd": "96.867",
+                "realmoneyp": "96.932",
+                "realmoneyr": "97.017",
+                "regular": 19.43,
+                "spendd": "3.133",
+                "spendp": "3.068",
+                "spendr": "2.983",
+                "startX": 19.9948,
+                "startY": -102.7197,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.717,
+                    20.0254
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.45,
+                "distance": 3.4126983800296338,
+                "duration": "0:04:14",
+                "economy": 20.0,
+                "money": 100.0,
+                "name": "GRUPO ESPECIALIZADO CASTELLANOS SA DE CV",
+                "premium": 19.91,
+                "realGasd": "4.698",
+                "realGasp": "4.831",
+                "realGasr": "4.971",
+                "realdistance": "3.840",
+                "realmoneyd": "96.074",
+                "realmoneyp": "96.177",
+                "realmoneyr": "96.281",
+                "regular": 19.37,
+                "spendd": "3.926",
+                "spendp": "3.823",
+                "spendr": "3.719",
+                "startX": 19.9948,
+                "startY": -102.7197,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.716,
+                    20.0368
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.45,
+                "distance": 4.690200624122499,
+                "duration": "0:08:12",
+                "economy": 20.0,
+                "money": 100.0,
+                "name": "SERVICIO LA YERBABUENA SA DE CV",
+                "premium": 19.95,
+                "realGasd": "4.505",
+                "realGasp": "4.628",
+                "realGasr": "4.756",
+                "realdistance": "7.700",
+                "realmoneyd": "92.127",
+                "realmoneyp": "92.319",
+                "realmoneyr": "92.512",
+                "regular": 19.45,
+                "spendd": "7.873",
+                "spendp": "7.681",
+                "spendr": "7.488",
+                "startX": 19.9948,
+                "startY": -102.7197,
+                "state": "MI"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
