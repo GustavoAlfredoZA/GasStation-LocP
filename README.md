@@ -55,3 +55,15 @@ Run DataCollector.py, StoreDB.py and Process.py, ideally run in this order with 
 ![Map](Map.png)
 #### Table
 ![Table](Table.png)
+#### Calculation and search of gasolineries
+![Calculation](resultados1.png)
+#### Location
+![Location](resultados2.png)
+#### Nearby Gasolineries
+![Nearby](resultados3.png)
+#### Gas station information
+![Information](resultados4.png)
+#### Map with the information of the gas station
+![Map information](resultados5.png)
+#### Gas station information requested above
+![Requested](resultados6.png)
