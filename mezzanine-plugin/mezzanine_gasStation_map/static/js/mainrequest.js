@@ -269,9 +269,32 @@ $(document).ready( function () {
     });
 
     function format ( d ) {
-      var litrosr = (d.properties.money/d.properties.regular).toFixed(3);
-      var litrosp = (d.properties.money/d.properties.premium).toFixed(3);
-      var litrosd = (d.properties.money/d.properties.diesel).toFixed(3);
+      if(d.properties.regular == undefined ){
+        var litrosr = 0;
+        var realr = 0;
+      }
+      else {
+        var litrosr = (d.properties.money/d.properties.regular).toFixed(3);
+        var realr = d.properties.realGasr;
+      }
+      if(d.properties.premium == undefined ){
+        var litrosp = 0;
+        var realp = 0;
+      }
+      else {
+        var litrosp = (d.properties.money/d.properties.premium).toFixed(3);
+        var realp = d.properties.realGasp;
+      }
+      if(d.properties.diesel == undefined ){
+        var litrosd = 0;
+        var reald = 0;
+
+      }
+      else {
+        var litrosd = (d.properties.money/d.properties.diesel).toFixed(3);
+        var reald = d.properties.realGasd;
+      }
+
       var spend = (d.properties.realdistance/d.properties.economy);
 
       // `d` is the original data object for the row
@@ -296,9 +319,9 @@ $(document).ready( function () {
               '</tr>'+
               '<tr>'+
                 '<td>Tiempo aproximado a llegar '+d.properties.duration+'</td>'+
-                '<td>Por lo que te qudarian '+d.properties.realGasr+' litros</td>'+
-                '<td>Por lo que te qudarian '+d.properties.realGasp+' litros</td>'+
-                '<td>Por lo que te qudarian '+d.properties.realGasd+' litros</td>'+
+                '<td>Por lo que te qudarian '+realr+' litros</td>'+
+                '<td>Por lo que te qudarian '+realp+' litros</td>'+
+                '<td>Por lo que te qudarian '+reald+' litros</td>'+
               '</tr>'+
             '</table>';
     }

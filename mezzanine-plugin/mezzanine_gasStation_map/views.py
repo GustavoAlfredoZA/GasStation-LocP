@@ -62,14 +62,13 @@ class map_View(View):
     #    return render(request, self.template_name,{'form':form})
 
     def post(self, request,*args, **kwargs):
-
-        PATH_FILE = '/home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/'
+        PATH_FILE = '/home/gustavo/GIT/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/'
         PATH_URL = '/static/mezzanine_gasStation_map/'
         if 'execute_form_plot' in request.POST:
             form = self.form_class(request.POST)
             if form.is_valid():
                 plotForm = form.save()
-                with open('/home/user/git/GasStation-LocP/db.json') as json_file:
+                with open('/home/gustavo/GIT/GasStation-LocP/db.json') as json_file:
                     config = json.load(json_file)
 
                 states = []
@@ -183,18 +182,24 @@ class map_View(View):
             form = self.formC_class(request.POST)
             if form.is_valid():
                 calForm = form.save()
-                with open('/home/user/git/GasStation-LocP/db.json') as json_file:
+                if(calForm.money < 0 or calForm.economy < 0 ):
+                    return render(request, self.template_name,{
+                        'formPlot' : formPlot,
+                        'formCal' : formCal
+                    })
+
+                with open('/home/gustavo/GIT/GasStation-LocP/db.json') as json_file:
                     config = json.load(json_file)
                 try:
                     cnx = mysql.connector.connect(**config)
                     cursor = cnx.cursor()
                     data_query = (calForm.startX, calForm.startX, calForm.startY)
                     #SELECT places.place_id,places.name,(acos(sin(radians(20.135936)) * sin(radians(places.Y)) + cos(radians(20.135936)) * cos(radians(places.Y)) * cos(radians(-102.744064) - radians(places.X))) * 6378) as distance,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id ORDER BY distance LIMIT 5;
-                    query = ("SELECT places.place_id,places.name,(acos(sin(radians(%s)) * sin(radians(places.Y)) + cos(radians(%s)) * cos(radians(places.Y)) * cos(radians(%s) - radians(places.X))) * 6378) as distance,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id ORDER BY distance LIMIT 5")
+                    query = ("SELECT places.place_id,places.name,(acos(sin(radians(%s)) * sin(radians(places.Y)) + cos(radians(%s)) * cos(radians(places.Y)) * cos(radians(%s) - radians(places.X))) * 6378) as distance,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE prices.regular IS NOT NULL ORDER BY distance LIMIT 50")
                     cursor.execute(query,data_query)
                     places = []
                     loclist = []
-                    with open('/home/user/git/GasStation-LocP/key.json') as json_file:
+                    with open('/home/gustavo/GIT/GasStation-LocP/key.json') as json_file:
                         ORS = json.load(json_file)
 
                     for a in cursor:
@@ -229,23 +234,29 @@ class map_View(View):
                 }
                 call = requests.post('https://api.openrouteservice.org/v2/matrix/driving-car', json=body, headers=headers)
                 reqORS=call.json()
-                print(reqORS)
 
                 for i in range(len(places)):
-                    print(places[i]['properties'])
-                    places[i]['properties']['realdistance'] = '%.3f'%(reqORS['distances'][i+1][0])
 
-                    places[i]['properties']['duration'] = convtime(reqORS['durations'][i+1][0])
+                    try:
+                        places[i]['properties']['realdistance'] = '%.3f'%(float(reqORS['distances'][i+1][0]))
+                    except Exception as e:
+                        places[i]['properties']['realdistance'] = '%.3f'%(float(places[i]['properties']['distance']))
+
+                    try:
+                        places[i]['properties']['duration'] = convtime(reqORS['durations'][i+1][0])
+                    except Exception as e:
+                        places[i]['properties']['duration'] = "00:00:00"
+
                     if('regular' in places[i]['properties']):
-                        places[i]['properties']['spendr'] = '%.3f'%((reqORS['distances'][i+1][0]/calForm.economy)*places[i]['properties']['regular'])
+                        places[i]['properties']['spendr'] = '%.3f'%((float(places[i]['properties']['realdistance'])/float(calForm.economy))*float(places[i]['properties']['regular']))
                         places[i]['properties']['realmoneyr'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendr']))
                         places[i]['properties']['realGasr'] = '%.3f'%(float(places[i]['properties']['realmoneyr']) / float(places[i]['properties']['regular']))
                     if('premium' in places[i]['properties']):
-                        places[i]['properties']['spendp'] = '%.3f'%((reqORS['distances'][i+1][0]/calForm.economy)*places[i]['properties']['premium'])
+                        places[i]['properties']['spendp'] = '%.3f'%((float(places[i]['properties']['realdistance'])/float(calForm.economy))*places[i]['properties']['premium'])
                         places[i]['properties']['realmoneyp'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendp']))
                         places[i]['properties']['realGasp'] = '%.3f'%(float(places[i]['properties']['realmoneyp']) / float(places[i]['properties']['premium']))
                     if('diesel' in places[i]['properties']):
-                        places[i]['properties']['spendd'] = '%.3f'%((reqORS['distances'][i+1][0]/calForm.economy)*places[i]['properties']['diesel'])
+                        places[i]['properties']['spendd'] = '%.3f'%((float(places[i]['properties']['realdistance'])/float(calForm.economy))*places[i]['properties']['diesel'])
                         places[i]['properties']['realmoneyd'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendd']))
                         places[i]['properties']['realGasd'] = '%.3f'%(float(places[i]['properties']['realmoneyd']) / float(places[i]['properties']['diesel']))
 

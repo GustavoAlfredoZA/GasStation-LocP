@@ -189,14 +189,14 @@ $(document).ready( function () {
 
     );
 
-    $('#filterbutton, #reset').on('click', function(){
+    $('#filterbutton , #reset').on('click', function(){
       table.draw();
     });
 
-    $('#table_all').DataTable( {
+    table = $('#table_all').DataTable( {
 
       deferRender:    true,
-      scrollY:        200,
+      scrollY:        400,
       scrollCollapse: true,
       scroller:       true,
       info:           true,
