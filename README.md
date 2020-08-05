@@ -16,12 +16,19 @@ This proyect use Python v. 3.7, MySQLServer version: 8.0.21 MySQL Community Serv
      - ```pip install mysql==0.0.2```
      - ```pip install mysql-connector==2.2.9```
      - ```pip install mysql-connector-python==8.0.21```
+     - ```pip install mysqlclient==1.4.6```
 4. Numpy
-     - ```pip install numpy==1.16```
+     - ```pip install numpy==1.61.2```
 5. Scrapy
      - ```pip install scrapy==2.0.0```
 6. Urllib3
      - ```pip install urllib3==1.24.1```
+7. Openrouteservice
+     - ```pip install openrouteservice==2.3.0```
+8. Shapely
+     - ```pip install shapely==1.7.0```
+9. Setuptools
+     - ```pip install setuptools=40.8.0```
 
 ## Data source
 Our data source comes from the Energy Regulatory Commission, which is the Coordinated Energy Regulatory Body promoting the efficient development of the sector and the reliable supply of hydrocarbons and electricity.
