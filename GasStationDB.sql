@@ -30,7 +30,7 @@ CREATE TABLE `places` (
   `y` float NOT NULL,
   `state` varchar(8) DEFAULT NULL,
   PRIMARY KEY (`place_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `prices` (
   `diesel` float(8,2) DEFAULT NULL,
   PRIMARY KEY (`prices_place_id`),
   CONSTRAINT `prices_ibfk_1` FOREIGN KEY (`prices_place_id`) REFERENCES `places` (`place_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `pricesTime` (
   `pricepremium` float(8,2) NOT NULL,
   `pricediesel` float(8,2) NOT NULL,
   PRIMARY KEY (`statec`,`datec`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -41,11 +41,11 @@ class plotModel(models.Model):
     )
 
     state = models.CharField(max_length=20, choices=STATE_CHOICES)
-    tnow=timezone.now()
-    today=str(timezone.localtime(tnow).date())
+    #tnow=timezone.now()
+    #today=str(timezone.localtime(tnow).date())
 
-    initial_date = models.DateField("Fecha de inicio", default=today)
-    end_date = models.DateField("Fecha final", default=today)
+    initial_date = models.DateField("Fecha de inicio", blank=True, null=True)
+    end_date = models.DateField("Fecha final", blank=True, null=True)
 
 class calModel(models.Model):
     startX = models.FloatField("Latitud (aproximación, si deseas que se llene autimaticamente recarga la página y acepta el permiso de localización)")
