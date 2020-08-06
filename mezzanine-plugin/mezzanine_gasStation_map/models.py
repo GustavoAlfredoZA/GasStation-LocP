@@ -48,8 +48,8 @@ class plotModel(models.Model):
     end_date = models.DateField("Fecha final", default=today)
 
 class calModel(models.Model):
-    startX = models.FloatField("Latitud (aproximación)")
-    startY = models.FloatField("Longitud (aproximación)")
+    startX = models.FloatField("Latitud (aproximación, si deseas que se llene autimaticamente recarga la página y acepta el permiso de localización)")
+    startY = models.FloatField("Longitud (aproximación, si deseas que se llene autimaticamente recarga la página y acepta el permiso de localización)")
     economy = models.FloatField("Rendimiento de tu automovil (km/lt)")
     money = models.FloatField("Cuanto dinero tienes para comprar gasolina (MXN)")
 

@@ -1,4 +1,3 @@
-
 var mymap = L.map('mapid').setView([19.6493721,-101.2209878], 13);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -10,6 +9,24 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1
 }).addTo(mymap);
 
+$.getJSON("../../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
+    var mexstates = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        var label = feature.properties.gns_name;
+        layer.bindPopup(label);
+      },
+      style: function(){
+        return {
+          color: 'white',
+          fillOpacity: 0.1,
+          weight: 0.1
+        };
+      }
+    });
+    mexstates.addTo(mymap);
+});
+
+
 function flyTo(Loc) {
         window.location.hash = '#mapid';
         mymap.flyTo(Loc, 16);
@@ -17,30 +34,6 @@ function flyTo(Loc) {
 
 
 
-function onLocationFound(e) {
-        var radius = e.accuracy / 2;
-        var curr_latitude = e.latitude;
-        var curr_longitude = e.longitude;
-        L.circle(e.latlng,{color:'red', radius: '10'}).addTo(mymap).bindPopup("Te encuantras cerca de aquí").openPopup();
-        L.circle(e.latlng, radius).addTo(mymap);
-}
-
-function onLocationError(e) {
-        alert(e.message);
-}
-
-mymap.on('locationfound', onLocationFound);
-mymap.on('locationerror', onLocationError);
-mymap.locate({setView: false, maxZoom: 16});
-
-var popup = L.popup();
-
-function onMapClick(e) {
-  popup
-  .setLatLng(e.latlng)
-  .setContent("You clicked the map at " + e.latlng.toString())
-  .openOn(mymap);
-}
 
 var stateFilters = L.layerGroup().addTo(mymap);
 var alldatageojson = $.getJSON("../../static/mezzanine_gasStation_map/js/tmp.json");
@@ -103,28 +96,29 @@ function stateSelect(){
   });
 }
 
-$.getJSON("../../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
-    var mexstates = L.geoJson(data, {
-      onEachFeature: function (feature, layer) {
-        var label = feature.properties.gns_name;
-        layer.bindPopup(label);
-      },
-      style: function(){
-        return {
-          color: 'white',
-          fillOpacity: 0.1,
-          weight: 0.1
-        };
-      }
-    });
-    mexstates.addTo(mymap);
-});
 
 function tsearch(name){
   window.location.hash = '#table_all';
   table.search( name ).draw();
 }
 
+function onLocationFound(e) {
+        var radius = e.accuracy / 2;
+        var curr_latitude = e.latitude;
+        var curr_longitude = e.longitude;
+        L.circle(e.latlng,{color:'red', radius: '10'}).addTo(mymap).bindPopup("Te encuantras cerca de aquí").openPopup();
+        L.circle(e.latlng, radius).addTo(mymap);
+}
+
+function onLocationError(e) {
+        alert(e.message);
+}
+
+mymap.on('locationfound', onLocationFound);
+mymap.on('locationerror', onLocationError);
+mymap.locate({setView: false, maxZoom: 16});
+
+var popup = L.popup();
 
 $(document).ready( function () {
 
@@ -274,7 +268,7 @@ $(document).ready( function () {
         var realr = 0;
       }
       else {
-        var litrosr = (d.properties.litrosr).toFixed(3);
+        var litrosr = (parseFloat(d.properties.litrosr)).toFixed(3);
         var realr = d.properties.realGasr;
       }
       if(d.properties.premium == undefined ){
@@ -282,7 +276,7 @@ $(document).ready( function () {
         var realp = 0;
       }
       else {
-        var litrosp = (d.properties.litrosp).toFixed(3);
+        var litrosp = (parseFloat(d.properties.litrosp)).toFixed(3);
         var realp = d.properties.realGasp;
       }
       if(d.properties.diesel == undefined ){
@@ -291,7 +285,7 @@ $(document).ready( function () {
 
       }
       else {
-        var litrosd = (d.properties.litrosd).toFixed(3);
+        var litrosd = (parseFloat(d.properties.litrosd)).toFixed(3);
         var reald = d.properties.realGasd;
       }
 

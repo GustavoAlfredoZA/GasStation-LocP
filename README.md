@@ -22,7 +22,7 @@ This proyect use Python v. 3.7, MySQLServer version: 8.0.21 MySQL Community Serv
 5. Scrapy
      - ```pip install scrapy==2.0.0```
 6. Urllib3
-     - ```pip install urllib3==1.24.1```
+     - ```pip install urllib3==1.24.2```
 7. Openrouteservice
      - ```pip install openrouteservice==2.3.0```
 8. Shapely
