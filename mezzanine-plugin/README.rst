@@ -9,7 +9,7 @@ Quick start
 
 1.-Install libreries ::
 
-  pip install django-leaflet==0.26.0
+  pip install django-leaflet==0.20.0
   pip install matplotlib==3.0.2
   pip install mysql==0.0.2
   pip install mysql-connector==2.2.9
@@ -62,5 +62,5 @@ Quick start
 
 9.- Make migrates and migrate in your your project ::
 
-    $ python3 manage.py makemigrations
+    $ python3 manage.py makemigrations mezzanine_gasStation_map
     $ python3 manage.py migrate
