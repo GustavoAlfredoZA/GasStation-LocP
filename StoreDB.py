@@ -12,6 +12,7 @@ from pprint import pprint
 from shapely.geometry import MultiPolygon, Polygon
 import shapely.geometry as sg
 import shapely.ops as so
+import subprocess
 
 p = open("routes.json")
 routes = json.load(p)
@@ -91,6 +92,7 @@ try:
 
 
     cnx.commit()
+    subprocess.call("mv *.xml backup/", shell=True)
 
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:

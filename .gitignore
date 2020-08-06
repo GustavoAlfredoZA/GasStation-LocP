@@ -1,7 +1,9 @@
 *.csv
 /backup/*
 mezzanine-plugin/mezzanine_gasStation_map/__pycache__
-
+key.json
 mezzanine-plugin/mezzanine_gasStation_map/static/js/osm-2017-07-03-v3.6.1-north-america_mexico.mbtiles?usage=education
 mezzanine-plugin/mezzanine_gasStation_map/static/mexico-latest.osm.pbf
 db.json
+*/__pycache/*
+routes.json

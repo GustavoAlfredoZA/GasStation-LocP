@@ -18,6 +18,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import openrouteservice
 import requests
+import pandas as pd
+import googlemaps
+from itertools import tee
 
 convtime = lambda s: '{:01}:{:02}:{:02}'.format(int(s//3600), int(s%3600//60), int(s%60))
 
@@ -34,7 +37,7 @@ class map(View):
 
 
 class map_View(View):
-    initial={'kay':'value'}
+    initial={'key':'value'}
     #form_class=Paciente_Form
     form_class = Plot_Form
     formP_class = Plot_Form
@@ -92,7 +95,7 @@ class map_View(View):
 
                     cursor.execute(query)
                     for (statec,number, datec, priceregular, pricepremium, pricediesel, nregular, npremium, ndiesel) in cursor:
-                        print(f"{statec}\t{number}\t{datec}\t{priceregular}\t{pricepremium}\t{pricediesel}\t{nregular}\t{npremium}\t{ndiesel}")
+                        #print(f"{statec}\t{number}\t{datec}\t{priceregular}\t{pricepremium}\t{pricediesel}\t{nregular}\t{npremium}\t{ndiesel}")
 
                         if(datec == today):
                             states.append(statec)
@@ -128,8 +131,6 @@ class map_View(View):
                         print(err)
                 else:
                     cnx.close()
-
-
 
                 snames=['']*32
                 slist=[['AG','Aguascalientes'],['BC','Baja California'],['BS','Baja California Sur'],['CM','Campeche'],['CS','Chiapas'],['CH','Chihuahua'],['DF','Ciudad de México'],['CO','Coahuila'],['CL','Colima'],['DG','Durango'],['GJ','Guanajuato'],['GR','Guerrero'],['HG','Hidalgo'],['JA','Jalisco'],['MX','Estado de México'],['MI','Michoacán'],['MO','Morelos'],['NA','Nayarit'],['NL','Nuevo Leon'],['OA','Oaxaca'],['PU','Puebla'],['QT','Querétaro'],['QR','Quintana Roo'],['SL','San Luis Potosí'],['SI','Sinaloa'],['SO','Sonora'],['TB','Tabasco'],['TM','Tamaulipas'],['TL','Tlaxcala'],['VE','Veracruz'],['YU','Yucatan'],['ZA','Zacatecas']]
@@ -199,8 +200,9 @@ class map_View(View):
                     cursor.execute(query,data_query)
                     places = []
                     loclist = []
+                    glist = ""
                     with open('/home/gustavo/GIT/GasStation-LocP/key.json') as json_file:
-                        ORS = json.load(json_file)
+                        keys = json.load(json_file)
 
                     for a in cursor:
                         place = { 'type' : 'Feature' , 'geometry' : { 'type' : 'Point' , 'coordinates' : [ a[3] , a[4] ] }}
@@ -216,6 +218,7 @@ class map_View(View):
                         place['properties']=properties
                         places.append(place)
                         loclist.append([ a[3] , a[4] ])
+                        glist+=str(a[3])+","+str(a[4])+"|"
                 except mysql.connector.Error as err:
                     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
                         print("Something is wrong with your user name or password")
@@ -225,18 +228,19 @@ class map_View(View):
                         print(err)
                 else:
                     cnx.close()
-
                 body = {"locations":[[calForm.startY,calForm.startX]]+loclist,"destinations":[0],"metrics":["distance","duration"],"units":"km"}
                 headers = {
                 'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
-                'Authorization': ORS['ORSkey'],
+                'Authorization': keys['ORSkey'],
                 'Content-Type': 'application/json; charset=utf-8'
                 }
                 call = requests.post('https://api.openrouteservice.org/v2/matrix/driving-car', json=body, headers=headers)
-                reqORS=call.json()
-
+                reqORS = call.json()
+                #googlemaps-4.4.2
+                #callG = requests.post("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+str(calForm.startY)+","+str(calForm.startX)+"&destinations="+glist[:-1]+"&departure_time=now&key="+keys['cloudKey'])
+                #reqG = callG.json()
+                #print(reqG)
                 for i in range(len(places)):
-
                     try:
                         places[i]['properties']['realdistance'] = '%.3f'%(float(reqORS['distances'][i+1][0]))
                     except Exception as e:
@@ -247,20 +251,24 @@ class map_View(View):
                     except Exception as e:
                         places[i]['properties']['duration'] = "00:00:00"
 
+                    places[i]['properties']['spend'] = '%.3f'%((float(places[i]['properties']['realdistance'])/float(calForm.economy)))
                     if('regular' in places[i]['properties']):
-                        places[i]['properties']['spendr'] = '%.3f'%((float(places[i]['properties']['realdistance'])/float(calForm.economy))*float(places[i]['properties']['regular']))
-                        places[i]['properties']['realmoneyr'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendr']))
+                        spendr = '%.3f'%(float(places[i]['properties']['spend'])*float(places[i]['properties']['regular']))
+                        places[i]['properties']['realmoneyr'] = '%.3f'%(float(calForm.money) - float(spendr))
                         places[i]['properties']['realGasr'] = '%.3f'%(float(places[i]['properties']['realmoneyr']) / float(places[i]['properties']['regular']))
+                        places[i]['properties']['litrosr'] = '%.3f'%(float(calForm.money) / float(places[i]['properties']['regular']))
                     if('premium' in places[i]['properties']):
-                        places[i]['properties']['spendp'] = '%.3f'%((float(places[i]['properties']['realdistance'])/float(calForm.economy))*places[i]['properties']['premium'])
-                        places[i]['properties']['realmoneyp'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendp']))
+                        spendp = '%.3f'%(float(places[i]['properties']['spend'])*float(places[i]['properties']['premium']))
+                        places[i]['properties']['realmoneyp'] = '%.3f'%(float(calForm.money) - float(spendp))
                         places[i]['properties']['realGasp'] = '%.3f'%(float(places[i]['properties']['realmoneyp']) / float(places[i]['properties']['premium']))
+                        places[i]['properties']['litrosp'] = '%.3f'%(float(calForm.money) / float(places[i]['properties']['premium']))
                     if('diesel' in places[i]['properties']):
-                        places[i]['properties']['spendd'] = '%.3f'%((float(places[i]['properties']['realdistance'])/float(calForm.economy))*places[i]['properties']['diesel'])
-                        places[i]['properties']['realmoneyd'] = '%.3f'%(float(calForm.money) - float(places[i]['properties']['spendd']))
+                        spendd = '%.3f'%(float(places[i]['properties']['spend'])*float(places[i]['properties']['diesel']))
+                        places[i]['properties']['realmoneyd'] = '%.3f'%(float(calForm.money) - float(spendd))
                         places[i]['properties']['realGasd'] = '%.3f'%(float(places[i]['properties']['realmoneyd']) / float(places[i]['properties']['diesel']))
+                        places[i]['properties']['litrosd'] = '%.3f'%(float(calForm.money) / float(places[i]['properties']['diesel']))
 
-                print(places)
+                #print(places)
                 doc={ 'type' : 'FeatureCollection' , 'features' : places }
                 print(doc)
                 with open(PATH_FILE+'/js/tmp.json', 'w') as outfile:
@@ -273,10 +281,7 @@ class map_View(View):
                     'formCal' : formCal
                 })
 
-
-
         return HttpResponseRedirect('/')
-
 
 
 #@method_decorator(login_required)
