@@ -9,7 +9,7 @@ In this project, most of the code is in Python with libraries like Pandas, Scrap
 This proyect use Python v. 3.7, MySQLServer version: 8.0.21 MySQL Community Server - GPL, Django v. 1.11.29, Mezzanine v. 4.3.1. And libraries, an api, whatever it takes for to plot maps and routes.
 ###### Dependencies
 1. Django Leaflet
-     - ```pip install django-leaflet==0.26.0```
+     - ```pip install django-leaflet==0.20.0```
 2. Matplotlib
      - ```pip install matplotlib==3.0.2```
 3. MySQL
@@ -36,17 +36,24 @@ https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-
 ## Data collection
 The process to obtain the data is through GasStation.by, which first extracts the download URL from the xml files using Scrapy, then sets the names to 0 for places and 1 for prices, plus the download datatime with extention xml , finally, they are added to a record csv with names date and type.
 ## Setup
-- Install DB
-```bash
-$ mysql -u root -p #login in mysql to create the database
-mysql> CREATE DATABASE GasStationDB;
-mysql> exit;
-$ mysql -u root -p GasStationDB < GasStationDB.sql
-```
-- [install mezzanine-plugin](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/mezzanine-plugin/README.rst)
-- #### Scripts
-Change db.json with your mysql login credentials get your key in https://openrouteservice.org/ and write in key.json { "ORSkey" : "YOUR_API_KEY" } , paths.json lines 2 and 3, mezzanine-plugin / mezzanine_gasStation_map / views.py lines 68, 74, 192 and 204 based on [your directory tree](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/tree.jpg).
-Run DataCollector.py, StoreDB.py and Process.py, ideally run in this order with a difference of 10 minutes between each, each day.
+
+ 1. Install DB
+  ```bash
+   $ mysql -u root -p #login in mysql to create the database
+   mysql> CREATE DATABASE GasStationDB;
+   mysql> GRANT ALL PRIVILEGES ON GasStationDB.* TO '< user >'@'localhost'; 
+   mysql> exit;
+   $ mysql -u root -p GasStationDB < GasStationDB.sql
+  ```
+ 
+ 2. Scripts
+    - Change db.json with your mysql login credentials.
+    - Get your key in https://openrouteservice.org/ and write in key.json { "ORSkey" : "< YOUR_API_KEY >" }
+    - Set the file routes.json lines 2 and 3 and file mezzanine-plugin/mezzanine_gasStation_map/views.py lines 68, 74, 192 and 204 based on [your directory tree](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/tree.jpg).
+    - Run DataCollector.py, StoreDB.py and Process.py, ideally run in this order with a difference of 10 minutes between each, each day.
+  
+  3. [install mezzanine-plugin](https://github.com/GustavoAlfredoZA/GasStation-LocP/blob/master/mezzanine-plugin/README.rst)
+  
 ## Tree
 ![Directory tree](tree.jpg)
 ## Results
