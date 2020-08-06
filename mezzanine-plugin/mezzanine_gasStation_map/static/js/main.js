@@ -78,15 +78,15 @@ function stateSelect(){
         return true;
       },
       onEachFeature: function (feature, layer) {
-        var label = "<b>" + feature.properties.name + "</b><br/>"
+        var label = "<b>" + feature.properties.name + "</b><br/>";
         if(feature.properties.regular!=null){
-          label = label + "Precio de gasolina regular:   $" + feature.properties.regular + "<br/>"
+          label = label + "Precio de gasolina regular:   $" + feature.properties.regular + "<br/>";
         }
         if(feature.properties.premium!=null){
-          label = label + "Precio de gasolina premium: $" + feature.properties.premium + "<br/>"
+          label = label + "Precio de gasolina premium: $" + feature.properties.premium + "<br/>";
         }
         if(feature.properties.diesel!=null){
-          label = label + "Precio de diesel: $" + feature.properties.diesel
+          label = label + "Precio de diesel: $" + feature.properties.diesel;
         }
         layer.bindPopup(label);
       }
@@ -99,7 +99,7 @@ function stateSelect(){
 $.getJSON("../../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
     var mexstates = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
-        var label = feature.properties.gns_name
+        var label = feature.properties.gns_name;
         layer.bindPopup(label);
       },
       style: function(){
@@ -107,7 +107,7 @@ $.getJSON("../../static/mezzanine_gasStation_map/js/mexicostatesprod.json", func
           color: 'white',
           fillOpacity: 0.1,
           weight: 0.1
-        }
+        };
       }
     });
     mexstates.addTo(mymap);
@@ -200,7 +200,7 @@ $(document).ready( function () {
       scrollCollapse: true,
       scroller:       true,
       info:           true,
-      data: data['features'],
+      data: data.features,
       orderCellsTop: true,
       columns:[
         {data:'properties.name'},

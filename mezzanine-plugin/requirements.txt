@@ -10,7 +10,7 @@ mysql-connector-python==8.0.21
 mysqlclient==1.4.6
 numpy==1.61.2
 scrapy==2.0.0
-urllib3==1.24.1
+urllib3==1.24.2
 openrouteservice==2.3.0
 shapely==1.7.0
 setuptools=40.8.0

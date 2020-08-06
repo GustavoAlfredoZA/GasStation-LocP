@@ -208,7 +208,7 @@ $(document).ready( function () {
       scrollCollapse: true,
       scroller:       true,
       info:           true,
-      data: data['features'],
+      data: data.features,
       orderCellsTop: true,
       columns:[
         {
@@ -274,7 +274,7 @@ $(document).ready( function () {
         var realr = 0;
       }
       else {
-        var litrosr = (d.properties.money/d.properties.regular).toFixed(3);
+        var litrosr = (d.properties.litrosr).toFixed(3);
         var realr = d.properties.realGasr;
       }
       if(d.properties.premium == undefined ){
@@ -282,7 +282,7 @@ $(document).ready( function () {
         var realp = 0;
       }
       else {
-        var litrosp = (d.properties.money/d.properties.premium).toFixed(3);
+        var litrosp = (d.properties.litrosp).toFixed(3);
         var realp = d.properties.realGasp;
       }
       if(d.properties.diesel == undefined ){
@@ -291,11 +291,11 @@ $(document).ready( function () {
 
       }
       else {
-        var litrosd = (d.properties.money/d.properties.diesel).toFixed(3);
+        var litrosd = (d.properties.litrosd).toFixed(3);
         var reald = d.properties.realGasd;
       }
 
-      var spend = (d.properties.realdistance/d.properties.economy);
+      var spend = (d.properties.spend);
 
       // `d` is the original data object for the row
       return '<p>Calculos apartir de comprar $'+d.properties.money+' (MXN) de combustible iniciando un recorrido desde la ubicacion ('+d.properties.startX+','+d.properties.startY+') hasta la ubicación de la gasolinera en ('+d.geometry.coordinates[1]+','+d.geometry.coordinates[0]+')</p><table>'+

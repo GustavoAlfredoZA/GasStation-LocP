@@ -65,13 +65,13 @@ class map_View(View):
     #    return render(request, self.template_name,{'form':form})
 
     def post(self, request,*args, **kwargs):
-        PATH_FILE = '/home/gustavo/GIT/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/'
+        PATH_FILE = '/home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static/'
         PATH_URL = '/static/mezzanine_gasStation_map/'
         if 'execute_form_plot' in request.POST:
             form = self.form_class(request.POST)
             if form.is_valid():
                 plotForm = form.save()
-                with open('/home/gustavo/GIT/GasStation-LocP/db.json') as json_file:
+                with open('/home/user/git/GasStation-LocP/db.json') as json_file:
                     config = json.load(json_file)
 
                 states = []
@@ -189,7 +189,7 @@ class map_View(View):
                         'formCal' : formCal
                     })
 
-                with open('/home/gustavo/GIT/GasStation-LocP/db.json') as json_file:
+                with open('/home/user/git/GasStation-LocP/db.json') as json_file:
                     config = json.load(json_file)
                 try:
                     cnx = mysql.connector.connect(**config)
@@ -201,7 +201,7 @@ class map_View(View):
                     places = []
                     loclist = []
                     glist = ""
-                    with open('/home/gustavo/GIT/GasStation-LocP/key.json') as json_file:
+                    with open('/home/user/git/GasStation-LocP/key.json') as json_file:
                         keys = json.load(json_file)
 
                     for a in cursor:

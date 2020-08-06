@@ -3,32 +3,33 @@
         {
             "geometry": {
                 "coordinates": [
-                    -102.718,
-                    20.0007
+                    -102.042,
+                    20.3516
                 ],
                 "type": "Point"
             },
             "properties": {
-                "diesel": 20.45,
-                "distance": 0.696830923684652,
-                "duration": "0:01:43",
+                "diesel": 19.4,
+                "distance": 0.43876690092808657,
+                "duration": "0:02:22",
                 "economy": 20.0,
-                "money": 100.0,
-                "name": "SUPER SERVICIO JIQUILPAN SA DE CV",
-                "premium": 19.96,
-                "realGasd": "4.827",
-                "realGasp": "4.947",
-                "realGasr": "5.078",
-                "realdistance": "1.260",
-                "realmoneyd": "98.712",
-                "realmoneyp": "98.743",
-                "realmoneyr": "98.775",
-                "regular": 19.45,
-                "spendd": "1.288",
-                "spendp": "1.257",
-                "spendr": "1.225",
-                "startX": 19.9948,
-                "startY": -102.7197,
+                "litrosd": "10.309",
+                "litrosp": "10.644",
+                "litrosr": "10.793",
+                "money": 200.0,
+                "name": "SERVICIO ERLO 24 HORAS S.A. C.V.",
+                "premium": 18.79,
+                "realGasd": "10.275",
+                "realGasp": "10.610",
+                "realGasr": "10.759",
+                "realdistance": "0.680",
+                "realmoneyd": "199.340",
+                "realmoneyp": "199.361",
+                "realmoneyr": "199.370",
+                "regular": 18.53,
+                "spend": "0.034",
+                "startX": 20.347762,
+                "startY": -102.043402,
                 "state": "MI"
             },
             "type": "Feature"
@@ -36,32 +37,33 @@
         {
             "geometry": {
                 "coordinates": [
-                    -102.717,
-                    20.0027
+                    -102.037,
+                    20.3488
                 ],
                 "type": "Point"
             },
             "properties": {
-                "diesel": 20.44,
-                "distance": 0.934238796984902,
-                "duration": "0:03:41",
+                "diesel": 18.79,
+                "distance": 0.7199850615090341,
+                "duration": "0:02:35",
                 "economy": 20.0,
-                "money": 100.0,
-                "name": "SILVIA SALAS TREJO",
-                "premium": 19.95,
-                "realGasd": "4.734",
-                "realGasp": "4.855",
-                "realGasr": "4.986",
-                "realdistance": "3.160",
-                "realmoneyd": "96.770",
-                "realmoneyp": "96.848",
-                "realmoneyr": "96.928",
-                "regular": 19.44,
-                "spendd": "3.230",
-                "spendp": "3.152",
-                "spendr": "3.072",
-                "startX": 19.9948,
-                "startY": -102.7197,
+                "litrosd": "10.644",
+                "litrosp": "10.678",
+                "litrosr": "11.130",
+                "money": 200.0,
+                "name": "ESTACION DE SERVICIO LA PIEDAD SA DE CV",
+                "premium": 18.73,
+                "realGasd": "10.602",
+                "realGasp": "10.636",
+                "realGasr": "11.088",
+                "realdistance": "0.840",
+                "realmoneyd": "199.211",
+                "realmoneyp": "199.213",
+                "realmoneyr": "199.245",
+                "regular": 17.97,
+                "spend": "0.042",
+                "startX": 20.347762,
+                "startY": -102.043402,
                 "state": "MI"
             },
             "type": "Feature"
@@ -69,32 +71,131 @@
         {
             "geometry": {
                 "coordinates": [
-                    -102.698,
-                    19.9851
+                    -102.051,
+                    20.3541
                 ],
                 "type": "Point"
             },
             "properties": {
-                "diesel": 20.41,
-                "distance": 2.55992504187113,
-                "duration": "0:04:43",
+                "diesel": 19.19,
+                "distance": 1.0757282850938077,
+                "duration": "0:03:05",
                 "economy": 20.0,
-                "money": 100.0,
-                "name": "INMOBILIARIA SAMICH, S.A. DE C.V.",
+                "litrosd": "10.422",
+                "litrosp": "10.644",
+                "litrosr": "10.799",
+                "money": 200.0,
+                "name": "INSIGNIA COMBUSTIBLES SA DE CV",
+                "premium": 18.79,
+                "realGasd": "10.333",
+                "realGasp": "10.555",
+                "realGasr": "10.710",
+                "realdistance": "1.790",
+                "realmoneyd": "198.292",
+                "realmoneyp": "198.328",
+                "realmoneyr": "198.352",
+                "regular": 18.52,
+                "spend": "0.089",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.034,
+                    20.3525
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 18.02,
+                "distance": 1.149972853490016,
+                "duration": "0:03:23",
+                "economy": 20.0,
+                "litrosd": "11.099",
+                "litrosp": "10.610",
+                "litrosr": "10.959",
+                "money": 200.0,
+                "name": "SUPER SERVICIO GARBRI, S.A. DE C.V.",
+                "premium": 18.85,
+                "realGasd": "11.017",
+                "realGasp": "10.528",
+                "realGasr": "10.877",
+                "realdistance": "1.650",
+                "realmoneyd": "198.522",
+                "realmoneyp": "198.454",
+                "realmoneyr": "198.503",
+                "regular": 18.25,
+                "spend": "0.082",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.029,
+                    20.3475
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "distance": 1.461404498266904,
+                "duration": "0:03:49",
+                "economy": 20.0,
+                "litrosp": "10.644",
+                "litrosr": "10.793",
+                "money": 200.0,
+                "name": "TECNISERVICIO AUTOMOTRIZ DEL CENTRO S.A. DE C.V.",
+                "premium": 18.79,
+                "realGasp": "10.532",
+                "realGasr": "10.681",
+                "realdistance": "2.230",
+                "realmoneyp": "197.896",
+                "realmoneyr": "197.925",
+                "regular": 18.53,
+                "spend": "0.112",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.027,
+                    20.351
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 18.74,
+                "distance": 1.71876167620676,
+                "duration": "0:04:44",
+                "economy": 20.0,
+                "litrosd": "10.672",
+                "litrosp": "10.005",
+                "litrosr": "10.911",
+                "money": 200.0,
+                "name": "ESTACION DE SERVICIO HACIENDA DEL POTRERO DE LA PI",
                 "premium": 19.99,
-                "realGasd": "4.746",
-                "realGasp": "4.849",
-                "realGasr": "4.993",
-                "realdistance": "3.070",
-                "realmoneyd": "96.867",
-                "realmoneyp": "96.932",
-                "realmoneyr": "97.017",
-                "regular": 19.43,
-                "spendd": "3.133",
-                "spendp": "3.068",
-                "spendr": "2.983",
-                "startX": 19.9948,
-                "startY": -102.7197,
+                "realGasd": "10.535",
+                "realGasp": "9.868",
+                "realGasr": "10.774",
+                "realdistance": "2.740",
+                "realmoneyd": "197.433",
+                "realmoneyp": "197.261",
+                "realmoneyr": "197.489",
+                "regular": 18.33,
+                "spend": "0.137",
+                "startX": 20.347762,
+                "startY": -102.043402,
                 "state": "MI"
             },
             "type": "Feature"
@@ -102,1258 +203,33 @@
         {
             "geometry": {
                 "coordinates": [
-                    -102.717,
-                    20.0254
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.45,
-                "distance": 3.4126983800296338,
-                "duration": "0:04:14",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GRUPO ESPECIALIZADO CASTELLANOS SA DE CV",
-                "premium": 19.91,
-                "realGasd": "4.698",
-                "realGasp": "4.831",
-                "realGasr": "4.971",
-                "realdistance": "3.840",
-                "realmoneyd": "96.074",
-                "realmoneyp": "96.177",
-                "realmoneyr": "96.281",
-                "regular": 19.37,
-                "spendd": "3.926",
-                "spendp": "3.823",
-                "spendr": "3.719",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.716,
-                    20.0368
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.45,
-                "distance": 4.690200624122499,
-                "duration": "0:08:12",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO LA YERBABUENA SA DE CV",
-                "premium": 19.95,
-                "realGasd": "4.505",
-                "realGasp": "4.628",
-                "realGasr": "4.756",
-                "realdistance": "7.700",
-                "realmoneyd": "92.127",
-                "realmoneyp": "92.319",
-                "realmoneyr": "92.512",
-                "regular": 19.45,
-                "spendd": "7.873",
-                "spendp": "7.681",
-                "spendr": "7.488",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.717,
-                    20.0423
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "distance": 5.2945037171211276,
-                "duration": "0:06:07",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO SAHUAYO, SA DE CV.",
-                "premium": 19.98,
-                "realGasp": "4.718",
-                "realGasr": "4.849",
-                "realdistance": "5.740",
-                "realmoneyp": "94.266",
-                "realmoneyr": "94.412",
-                "regular": 19.47,
-                "spendp": "5.734",
-                "spendr": "5.588",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.717,
-                    20.0446
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.45,
-                "distance": 5.556761992855278,
-                "duration": "0:07:04",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GASOLINERA DEL CARMEN DE SAHUAYO S.A DE C.V.",
-                "premium": 19.95,
-                "realGasd": "4.590",
-                "realGasp": "4.713",
-                "realGasr": "4.842",
-                "realdistance": "5.990",
-                "realmoneyd": "93.875",
-                "realmoneyp": "94.025",
-                "realmoneyr": "94.175",
-                "regular": 19.45,
-                "spendd": "6.125",
-                "spendp": "5.975",
-                "spendr": "5.825",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.717,
-                    20.0448
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "distance": 5.5685973860634235,
-                "duration": "0:07:03",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GRUPO SANCHEZ DE SAHUAYO, S.A. DE C.V.",
-                "premium": 19.93,
-                "realGasp": "4.704",
-                "realGasr": "4.836",
-                "realdistance": "6.270",
-                "realmoneyp": "93.752",
-                "realmoneyr": "93.912",
-                "regular": 19.42,
-                "spendp": "6.248",
-                "spendr": "6.088",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.717,
-                    20.0556
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "distance": 6.772579730676864,
-                "duration": "0:07:44",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "LUIS MARIANO AMEZCUA SANCHEZ",
-                "premium": 20.05,
-                "realGasp": "4.627",
-                "realGasr": "4.780",
-                "realdistance": "7.220",
-                "realmoneyp": "92.762",
-                "realmoneyr": "92.979",
-                "regular": 19.45,
-                "spendp": "7.238",
-                "spendr": "7.021",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.716,
-                    20.0615
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.46,
-                "distance": 7.429984838748474,
-                "duration": "0:08:20",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SUPER SERVICIO DEL CENTRO DE SAHUAYO SA DE CV",
-                "premium": 19.96,
-                "realGasd": "4.489",
-                "realGasp": "4.611",
-                "realGasr": "4.740",
-                "realdistance": "7.980",
-                "realmoneyd": "91.836",
-                "realmoneyp": "92.036",
-                "realmoneyr": "92.235",
-                "regular": 19.46,
-                "spendd": "8.164",
-                "spendp": "7.964",
-                "spendr": "7.765",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.716,
-                    20.0644
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.47,
-                "distance": 7.751765110843334,
-                "duration": "0:08:37",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO SAHUAYO, SA DE CV.",
-                "premium": 19.98,
-                "realGasd": "4.471",
-                "realGasp": "4.591",
-                "realGasr": "4.722",
-                "realdistance": "8.280",
-                "realmoneyd": "91.525",
-                "realmoneyp": "91.728",
-                "realmoneyr": "91.939",
-                "regular": 19.47,
-                "spendd": "8.475",
-                "spendp": "8.272",
-                "spendr": "8.061",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.716,
-                    20.0674
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.45,
-                "distance": 8.08640703713822,
-                "duration": "0:08:55",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GRUPO GASOLINERO DE SAHUAYO SA DE CV ",
-                "premium": 19.95,
-                "realGasd": "4.459",
-                "realGasp": "4.582",
-                "realGasr": "4.714",
-                "realdistance": "8.610",
-                "realmoneyd": "91.196",
-                "realmoneyp": "91.412",
-                "realmoneyr": "91.631",
-                "regular": 19.44,
-                "spendd": "8.804",
-                "spendp": "8.588",
-                "spendr": "8.369",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.803,
-                    19.9949
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.5,
-                "distance": 8.693187916165586,
-                "duration": "0:09:36",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "VICTOR MANUEL CORONA OCHOA",
-                "realGasd": "4.364",
-                "realGasr": "4.627",
-                "realdistance": "10.280",
-                "realmoneyd": "89.463",
-                "realmoneyr": "90.003",
-                "regular": 19.45,
-                "spendd": "10.537",
-                "spendr": "9.997",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.613,
-                    19.9818
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.55,
-                "distance": 11.296035088184984,
-                "duration": "0:11:14",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO CRUCERO JARIPO SA DE CV",
-                "premium": 20.05,
-                "realGasd": "4.218",
-                "realGasp": "4.340",
-                "realGasr": "4.475",
-                "realdistance": "12.960",
-                "realmoneyd": "86.684",
-                "realmoneyp": "87.008",
-                "realmoneyr": "87.351",
-                "regular": 19.52,
-                "spendd": "13.316",
-                "spendp": "12.992",
-                "spendr": "12.649",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.594,
-                    20.018
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.55,
-                "distance": 13.357431279013824,
-                "duration": "0:15:23",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "EZEQUIEL BUENROSTRO PADILLA",
-                "realGasd": "3.961",
-                "realGasr": "4.218",
-                "realdistance": "18.100",
-                "realmoneyd": "81.402",
-                "realmoneyr": "82.334",
-                "regular": 19.52,
-                "spendd": "18.598",
-                "spendr": "17.666",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.67,
-                    20.1062
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.15,
-                "distance": 13.465880600841887,
-                "duration": "0:16:09",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "AUTOSERVICIO NAROCA SA DE CV",
-                "premium": 19.65,
-                "realGasd": "4.182",
-                "realGasp": "4.309",
-                "realGasr": "4.441",
-                "realdistance": "15.610",
-                "realmoneyd": "84.273",
-                "realmoneyp": "84.663",
-                "realmoneyr": "85.053",
-                "regular": 19.15,
-                "spendd": "15.727",
-                "spendp": "15.337",
-                "spendr": "14.947",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.661,
-                    20.1102
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.15,
-                "distance": 14.232648874428627,
-                "duration": "0:17:10",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "Servicio Novoa Blancarte S.A de C.V.",
-                "premium": 19.65,
-                "realGasd": "4.128",
-                "realGasp": "4.255",
-                "realGasr": "4.387",
-                "realdistance": "16.690",
-                "realmoneyd": "83.185",
-                "realmoneyp": "83.602",
-                "realmoneyr": "84.019",
-                "regular": 19.15,
-                "spendd": "16.815",
-                "spendp": "16.398",
-                "spendr": "15.981",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.831,
-                    20.1084
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.3,
-                "distance": 17.20905128892552,
-                "duration": "0:23:06",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO CHUMATO, S.A. DE C.V.",
-                "premium": 19.6,
-                "realGasd": "3.745",
-                "realGasp": "3.921",
-                "realGasr": "3.987",
-                "realdistance": "23.620",
-                "realmoneyd": "76.026",
-                "realmoneyp": "76.852",
-                "realmoneyr": "77.148",
-                "regular": 19.35,
-                "spendd": "23.974",
-                "spendp": "23.148",
-                "spendr": "22.852",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.575,
-                    20.1188
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.6,
-                "distance": 20.503422429979775,
-                "duration": "0:28:35",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO VALLE DE LA LUZ SA DE CV",
-                "premium": 19.99,
-                "realGasd": "3.535",
-                "realGasp": "3.683",
-                "realGasr": "3.680",
-                "realdistance": "26.390",
-                "realmoneyd": "72.818",
-                "realmoneyp": "73.623",
-                "realmoneyr": "73.610",
-                "regular": 20.0,
-                "spendd": "27.182",
-                "spendp": "26.377",
-                "spendr": "26.390",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.617,
-                    20.159
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.69,
-                "distance": 21.18861856772263,
-                "duration": "0:24:04",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "ESTACION TRIGON SA DE CV",
-                "premium": 19.59,
-                "realGasd": "3.641",
-                "realGasp": "3.913",
-                "realGasr": "3.887",
-                "realdistance": "23.840",
-                "realmoneyd": "75.338",
-                "realmoneyp": "76.649",
-                "realmoneyr": "76.530",
-                "regular": 19.69,
-                "spendd": "24.662",
-                "spendp": "23.351",
-                "spendr": "23.470",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.688,
-                    19.8056
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.85,
-                "distance": 21.3230959877038,
-                "duration": "0:44:04",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GASOLINERA COTIJA SA DE CV",
-                "premium": 20.2,
-                "realGasd": "2.610",
-                "realGasp": "2.764",
-                "realGasr": "2.877",
-                "realdistance": "43.730",
-                "realmoneyd": "54.411",
-                "realmoneyp": "55.833",
-                "realmoneyr": "56.817",
-                "regular": 19.75,
-                "spendd": "45.589",
-                "spendp": "44.167",
-                "spendr": "43.183",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.954,
-                    19.935
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.8,
-                "distance": 25.4107024768454,
-                "duration": "0:34:52",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "LUIS BAUTISTA ZEPEDA",
-                "realGasd": "2.924",
-                "realGasr": "3.211",
-                "realdistance": "37.670",
-                "realmoneyd": "60.823",
-                "realmoneyr": "63.027",
-                "regular": 19.63,
-                "spendd": "39.177",
-                "spendr": "36.973",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.801,
-                    20.2134
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.15,
-                "distance": 25.78708506136134,
-                "duration": "00:00:00",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIOS GASOLINEROS DE MEXICO, S.A. DE C.V.",
-                "premium": 20.05,
-                "realGasd": "3.673",
-                "realGasp": "3.698",
-                "realGasr": "3.723",
-                "realdistance": "25.787",
-                "realmoneyd": "74.020",
-                "realmoneyp": "74.149",
-                "realmoneyr": "74.277",
-                "regular": 19.95,
-                "spendd": "25.980",
-                "spendp": "25.851",
-                "spendr": "25.723",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.967,
-                    19.9427
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 21.0,
-                "distance": 26.51669876717353,
-                "duration": "0:35:18",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "ESTACION DE SERVICIO SIERRA DEL TIGRE S.A. DE C.V.",
-                "premium": 20.15,
-                "realGasd": "2.843",
-                "realGasp": "3.044",
-                "realGasr": "3.132",
-                "realdistance": "38.370",
-                "realmoneyd": "59.712",
-                "realmoneyp": "61.342",
-                "realmoneyr": "62.014",
-                "regular": 19.8,
-                "spendd": "40.288",
-                "spendp": "38.658",
-                "spendr": "37.986",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.465,
-                    19.9896
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.55,
-                "distance": 26.68161068972829,
-                "duration": "0:30:00",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SALVADOR PEREZ HERNANDEZ",
-                "premium": 19.95,
-                "realGasd": "3.077",
-                "realGasp": "3.223",
-                "realGasr": "3.248",
-                "realdistance": "35.790",
-                "realmoneyd": "63.226",
-                "realmoneyp": "64.299",
-                "realmoneyr": "64.478",
-                "regular": 19.85,
-                "spendd": "36.774",
-                "spendp": "35.701",
-                "spendr": "35.522",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.456,
-                    20.0173
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.77,
-                "distance": 27.65468607161367,
-                "duration": "0:32:44",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "MANUEL CRUZ ZAMBRANO",
-                "premium": 19.97,
-                "realGasd": "3.078",
-                "realGasp": "3.271",
-                "realGasr": "3.271",
-                "realdistance": "34.730",
-                "realmoneyd": "63.933",
-                "realmoneyp": "65.322",
-                "realmoneyr": "65.322",
-                "regular": 19.97,
-                "spendd": "36.067",
-                "spendp": "34.678",
-                "spendr": "34.678",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -103.0,
-                    20.0
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.66,
-                "distance": 29.326655175205698,
-                "duration": "0:32:11",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "COMBUSTIBLES CARRETEROS CARCO, S.A. DE C.V.",
-                "premium": 19.9,
-                "realGasd": "3.082",
-                "realGasp": "3.267",
-                "realGasr": "3.282",
-                "realdistance": "35.160",
-                "realmoneyd": "63.680",
-                "realmoneyp": "65.016",
-                "realmoneyr": "65.121",
-                "regular": 19.84,
-                "spendd": "36.320",
-                "spendp": "34.984",
-                "spendr": "34.879",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.439,
-                    19.9621
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.79,
-                "distance": 29.61254027866363,
-                "duration": "0:31:26",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "ROSA MARIA CONTRERAS MURATALLA",
-                "premium": 19.7,
-                "realGasd": "2.867",
-                "realGasp": "3.133",
-                "realGasr": "3.136",
-                "realdistance": "38.860",
-                "realmoneyd": "59.605",
-                "realmoneyp": "61.723",
-                "realmoneyr": "61.742",
-                "regular": 19.69,
-                "spendd": "40.395",
-                "spendp": "38.277",
-                "spendr": "38.258",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.462,
-                    19.8453
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.89,
-                "distance": 31.663130045314418,
-                "duration": "0:43:38",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIOS GASOLINEROS DE MEXICO, S.A. DE C.V.",
-                "premium": 19.88,
-                "realGasd": "2.838",
-                "realGasp": "2.841",
-                "realGasr": "2.889",
-                "realdistance": "43.790",
-                "realmoneyd": "56.451",
-                "realmoneyp": "56.473",
-                "realmoneyr": "56.889",
-                "regular": 19.69,
-                "spendd": "43.549",
-                "spendp": "43.527",
-                "spendr": "43.111",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -103.019,
-                    19.92
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.95,
-                "distance": 32.40529649144361,
-                "duration": "0:43:03",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "DISTRIBUIDORA DE COMBUSTIBLES MAZATL S.A. DE C.V.",
-                "premium": 20.3,
-                "realGasd": "2.401",
-                "realGasp": "2.554",
-                "realGasr": "2.578",
-                "realdistance": "47.450",
-                "realmoneyd": "50.296",
-                "realmoneyp": "51.838",
-                "realmoneyr": "52.075",
-                "regular": 20.2,
-                "spendd": "49.704",
-                "spendp": "48.162",
-                "spendr": "47.925",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.702,
-                    20.2918
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.16,
-                "distance": 33.11175596746944,
-                "duration": "0:50:25",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "PETRO SERVICENTRO, S.A. DE C.V.",
-                "premium": 20.08,
-                "realGasd": "2.740",
-                "realGasp": "2.760",
-                "realGasr": "2.784",
-                "realdistance": "44.410",
-                "realmoneyd": "55.235",
-                "realmoneyp": "55.412",
-                "realmoneyr": "55.634",
-                "regular": 19.98,
-                "spendd": "44.765",
-                "spendp": "44.588",
-                "spendr": "44.366",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.719,
-                    20.2924
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.16,
-                "distance": 33.123609387290344,
-                "duration": "0:53:20",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "PETRO SERVICENTRO, S.A. DE C.V.",
-                "premium": 20.08,
-                "realGasd": "2.637",
-                "realGasp": "2.657",
-                "realGasr": "2.682",
-                "realdistance": "46.460",
-                "realmoneyd": "53.168",
-                "realmoneyp": "53.354",
-                "realmoneyr": "53.586",
-                "regular": 19.98,
-                "spendd": "46.832",
-                "spendp": "46.646",
-                "spendr": "46.414",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.703,
-                    20.295
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.14,
-                "distance": 33.46185310018906,
-                "duration": "0:51:14",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GASOLINERA CASILLAS, S. DE R.L. DE C.V.",
-                "premium": 20.08,
-                "realGasd": "2.724",
-                "realGasp": "2.739",
-                "realGasr": "2.766",
-                "realdistance": "44.830",
-                "realmoneyd": "54.856",
-                "realmoneyp": "54.991",
-                "realmoneyr": "55.237",
-                "regular": 19.97,
-                "spendd": "45.144",
-                "spendp": "45.009",
-                "spendr": "44.763",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.673,
-                    20.2939
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.12,
-                "distance": 33.650608170799856,
-                "duration": "0:53:27",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "CEFEVIG S.A. DE C.V.",
-                "realGasd": "2.593",
-                "realGasr": "2.633",
-                "realdistance": "47.550",
-                "realmoneyd": "52.165",
-                "realmoneyr": "52.545",
-                "regular": 19.96,
-                "spendd": "47.835",
-                "spendr": "47.455",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -103.039,
-                    19.9336
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.95,
-                "distance": 34.06376578684343,
-                "duration": "0:44:20",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "CHAVEZ AZPEITIA S.A DE C.V",
-                "premium": 20.3,
-                "realGasd": "2.346",
-                "realGasp": "2.499",
-                "realGasr": "2.523",
-                "realdistance": "48.550",
-                "realmoneyd": "49.144",
-                "realmoneyp": "50.722",
-                "realmoneyr": "50.965",
-                "regular": 20.2,
-                "spendd": "50.856",
-                "spendp": "49.278",
-                "spendr": "49.035",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.552,
-                    20.2597
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.95,
-                "distance": 34.28548635466241,
-                "duration": "0:41:55",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIOS GASOLINEROS DE MEXICO, S.A. DE C.V.",
-                "premium": 19.39,
-                "realGasd": "2.934",
-                "realGasp": "3.079",
-                "realGasr": "3.106",
-                "realdistance": "41.570",
-                "realmoneyd": "58.534",
-                "realmoneyp": "59.698",
-                "realmoneyr": "59.906",
-                "regular": 19.29,
-                "spendd": "41.466",
-                "spendp": "40.302",
-                "spendr": "40.094",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.605,
-                    20.2924
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.24,
-                "distance": 35.217665430814264,
-                "duration": "0:47:24",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "COMBU-EXPRESS, S.A. DE C.V.",
-                "premium": 19.44,
-                "realGasd": "2.826",
-                "realGasp": "2.773",
-                "realGasr": "2.853",
-                "realdistance": "47.430",
-                "realmoneyd": "54.372",
-                "realmoneyp": "53.898",
-                "realmoneyr": "54.609",
-                "regular": 19.14,
-                "spendd": "45.628",
-                "spendp": "46.102",
-                "spendr": "45.391",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.557,
-                    20.2773
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.75,
-                "distance": 35.74511867786227,
-                "duration": "0:40:26",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO LA BARCA, S.A. DE C.V.",
-                "premium": 19.16,
-                "realGasd": "3.066",
-                "realGasp": "3.222",
-                "realGasr": "3.220",
-                "realdistance": "39.940",
-                "realmoneyd": "60.559",
-                "realmoneyp": "61.737",
-                "realmoneyr": "61.718",
-                "regular": 19.17,
-                "spendd": "39.441",
-                "spendp": "38.263",
-                "spendr": "38.282",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.556,
-                    20.2801
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.82,
-                "distance": 36.0738184228082,
-                "duration": "0:40:45",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "INMOBILIARIA SAMICH, S.A. DE C.V.",
-                "premium": 19.22,
-                "realGasd": "3.032",
-                "realGasp": "3.190",
-                "realGasr": "3.187",
-                "realdistance": "40.260",
-                "realmoneyd": "60.102",
-                "realmoneyp": "61.310",
-                "realmoneyr": "61.290",
-                "regular": 19.23,
-                "spendd": "39.898",
-                "spendp": "38.690",
-                "spendr": "38.710",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.775,
-                    20.3186
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.17,
-                "distance": 36.502042561133266,
-                "duration": "1:01:14",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "INMOBILIARIA SAMICH, S.A. DE C.V.",
-                "premium": 18.86,
-                "realGasd": "2.528",
-                "realGasp": "2.614",
-                "realGasr": "2.611",
-                "realdistance": "53.760",
-                "realmoneyd": "48.471",
-                "realmoneyp": "49.304",
-                "realmoneyr": "49.277",
-                "regular": 18.87,
-                "spendd": "51.529",
-                "spendp": "50.696",
-                "spendr": "50.723",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.557,
-                    20.292
+                    -102.02,
+                    20.3446
                 ],
                 "type": "Point"
             },
             "properties": {
                 "diesel": 19.69,
-                "distance": 37.18586250516748,
-                "duration": "0:43:02",
+                "distance": 2.478658458792652,
+                "duration": "0:05:33",
                 "economy": 20.0,
-                "money": 100.0,
-                "name": "INMOBILIARIA SAMICH, S.A. DE C.V.",
-                "premium": 19.13,
-                "realGasd": "2.958",
-                "realGasp": "3.106",
-                "realGasr": "3.106",
-                "realdistance": "42.420",
-                "realmoneyd": "58.238",
-                "realmoneyp": "59.425",
-                "realmoneyr": "59.425",
-                "regular": 19.13,
-                "spendd": "41.762",
-                "spendp": "40.575",
-                "spendr": "40.575",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.454,
-                    20.2244
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.19,
-                "distance": 37.74689847605386,
-                "duration": "0:54:44",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GASGROUP SA DE CV",
-                "premium": 19.85,
-                "realGasd": "2.558",
-                "realGasp": "2.643",
-                "realGasr": "2.721",
-                "realdistance": "47.890",
-                "realmoneyd": "51.655",
-                "realmoneyp": "52.469",
-                "realmoneyr": "53.188",
-                "regular": 19.55,
-                "spendd": "48.345",
-                "spendp": "47.531",
-                "spendr": "46.812",
-                "startX": 19.9948,
-                "startY": -102.7197,
+                "litrosd": "10.157",
+                "litrosp": "10.588",
+                "litrosr": "10.875",
+                "money": 200.0,
+                "name": "ESTACION DE COMBUSTIBLE SANTA ANA SA DE CV ",
+                "premium": 18.89,
+                "realGasd": "9.980",
+                "realGasp": "10.411",
+                "realGasr": "10.698",
+                "realdistance": "3.540",
+                "realmoneyd": "196.515",
+                "realmoneyp": "196.656",
+                "realmoneyr": "196.745",
+                "regular": 18.39,
+                "spend": "0.177",
+                "startX": 20.347762,
+                "startY": -102.043402,
                 "state": "MI"
             },
             "type": "Feature"
@@ -1361,218 +237,373 @@
         {
             "geometry": {
                 "coordinates": [
-                    -102.484,
-                    19.7381
+                    -102.026,
+                    20.3635
                 ],
                 "type": "Point"
             },
             "properties": {
-                "diesel": 17.48,
-                "distance": 37.7566678650134,
-                "duration": "0:54:12",
+                "diesel": 19.78,
+                "distance": 2.500245300237099,
+                "duration": "0:05:14",
                 "economy": 20.0,
-                "money": 100.0,
-                "name": "MARIA DOLORES MILANES SERRANO",
-                "premium": 18.2,
-                "realGasd": "3.066",
-                "realGasp": "2.840",
-                "realGasr": "3.388",
-                "realdistance": "53.090",
-                "realmoneyd": "53.599",
-                "realmoneyp": "51.688",
-                "realmoneyr": "56.068",
-                "regular": 16.55,
-                "spendd": "46.401",
-                "spendp": "48.312",
-                "spendr": "43.932",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.484,
-                    19.7378
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 20.2,
-                "distance": 37.76755481782227,
-                "duration": "0:54:15",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO EXPRES TINGUINDIN SA DE CV",
-                "premium": 19.7,
-                "realGasd": "2.295",
-                "realGasp": "2.420",
-                "realGasr": "2.472",
-                "realdistance": "53.120",
-                "realmoneyd": "46.349",
-                "realmoneyp": "47.677",
-                "realmoneyr": "48.208",
-                "regular": 19.5,
-                "spendd": "53.651",
-                "spendp": "52.323",
-                "spendr": "51.792",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.55,
-                    20.2947
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.75,
-                "distance": 37.808425481831506,
-                "duration": "0:44:06",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GASOLINERA MORENO ROJAS, S.A. DE C.V.",
-                "premium": 19.16,
-                "realGasd": "2.943",
-                "realGasp": "3.099",
-                "realGasr": "3.096",
-                "realdistance": "42.410",
-                "realmoneyd": "58.120",
-                "realmoneyp": "59.371",
-                "realmoneyr": "59.350",
-                "regular": 19.17,
-                "spendd": "41.880",
-                "spendp": "40.629",
-                "spendr": "40.650",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.776,
-                    20.3374
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.3,
-                "distance": 38.57755162436561,
-                "duration": "1:05:25",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "GASOLINERA EL NUEVO FUERTE SA DE CV",
-                "premium": 18.88,
-                "realGasd": "2.380",
-                "realGasp": "2.496",
-                "realGasr": "2.493",
-                "realdistance": "56.020",
-                "realmoneyd": "45.941",
-                "realmoneyp": "47.117",
-                "realmoneyr": "47.089",
-                "regular": 18.89,
-                "spendd": "54.059",
-                "spendp": "52.883",
-                "spendr": "52.911",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.516,
-                    19.7037
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "distance": 38.76841036100504,
-                "duration": "1:02:39",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIO DEL CENTRO TOCUMBO SA DE CV",
-                "realGasr": "2.044",
-                "realdistance": "61.160",
-                "realmoneyr": "40.063",
-                "regular": 19.6,
-                "spendr": "59.937",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "MI"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.541,
-                    20.3022
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "diesel": 19.95,
-                "distance": 38.971191564256415,
-                "duration": "0:44:13",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "SERVICIOS GASOLINEROS DE MEXICO, S.A. DE C.V.",
-                "premium": 19.39,
-                "realGasd": "2.833",
-                "realGasp": "2.978",
-                "realGasr": "3.005",
-                "realdistance": "43.590",
-                "realmoneyd": "56.519",
-                "realmoneyp": "57.739",
-                "realmoneyr": "57.957",
-                "regular": 19.29,
-                "spendd": "43.481",
-                "spendp": "42.261",
-                "spendr": "42.043",
-                "startX": 19.9948,
-                "startY": -102.7197,
-                "state": "JA"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -102.538,
-                    20.3006
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "distance": 38.97357391566614,
-                "duration": "0:44:50",
-                "economy": 20.0,
-                "money": 100.0,
-                "name": "DISTRIBUIDORA ABREVADERO S.A. DE C.V.",
+                "litrosd": "10.111",
+                "litrosp": "10.406",
+                "litrosr": "10.633",
+                "money": 200.0,
+                "name": "SERVICIO CIUDAD DEL SOL, S.A. DE C.V.",
                 "premium": 19.22,
-                "realGasp": "3.001",
-                "realGasr": "2.999",
-                "realdistance": "44.030",
-                "realmoneyp": "57.687",
-                "realmoneyr": "57.665",
-                "regular": 19.23,
-                "spendp": "42.313",
-                "spendr": "42.335",
-                "startX": 19.9948,
-                "startY": -102.7197,
+                "realGasd": "9.935",
+                "realGasp": "10.230",
+                "realGasr": "10.457",
+                "realdistance": "3.530",
+                "realmoneyd": "196.519",
+                "realmoneyp": "196.617",
+                "realmoneyr": "196.689",
+                "regular": 18.81,
+                "spend": "0.176",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.019,
+                    20.352
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 18.58,
+                "distance": 2.5493686224253813,
+                "duration": "0:05:29",
+                "economy": 20.0,
+                "litrosd": "10.764",
+                "litrosp": "10.610",
+                "litrosr": "11.080",
+                "money": 200.0,
+                "name": "SUPER SERVICIO GARBRI, S.A. DE C.V.",
+                "premium": 18.85,
+                "realGasd": "10.600",
+                "realGasp": "10.446",
+                "realGasr": "10.916",
+                "realdistance": "3.270",
+                "realmoneyd": "196.953",
+                "realmoneyp": "196.909",
+                "realmoneyr": "197.040",
+                "regular": 18.05,
+                "spend": "0.164",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.066,
+                    20.3592
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 17.89,
+                "distance": 2.680373315840689,
+                "duration": "0:04:22",
+                "economy": 20.0,
+                "litrosd": "11.179",
+                "litrosp": "10.616",
+                "litrosr": "11.056",
+                "money": 200.0,
+                "name": "Autoservicio El Fuerte SA de CV",
+                "premium": 18.84,
+                "realGasd": "11.017",
+                "realGasp": "10.454",
+                "realGasr": "10.894",
+                "realdistance": "3.230",
+                "realmoneyd": "197.102",
+                "realmoneyp": "196.948",
+                "realmoneyr": "197.069",
+                "regular": 18.09,
+                "spend": "0.162",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.016,
+                    20.3518
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.69,
+                "distance": 2.9253387250790386,
+                "duration": "0:06:10",
+                "economy": 20.0,
+                "litrosd": "10.157",
+                "litrosp": "10.588",
+                "litrosr": "10.875",
+                "money": 200.0,
+                "name": "COMBUSTIBLES ECOLOGICOS DEL LERMA, S.A. DE C.V.",
+                "premium": 18.89,
+                "realGasd": "9.970",
+                "realGasp": "10.401",
+                "realGasr": "10.688",
+                "realdistance": "3.740",
+                "realmoneyd": "196.318",
+                "realmoneyp": "196.468",
+                "realmoneyr": "196.561",
+                "regular": 18.39,
+                "spend": "0.187",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.017,
+                    20.329
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.22,
+                "distance": 3.457244747007656,
+                "duration": "0:06:42",
+                "economy": 20.0,
+                "litrosd": "10.406",
+                "litrosp": "10.776",
+                "litrosr": "10.793",
+                "money": 200.0,
+                "name": "SERVICIO BOULEVARD LA PIEDAD SA DE CV",
+                "premium": 18.56,
+                "realGasd": "10.190",
+                "realGasp": "10.560",
+                "realGasr": "10.577",
+                "realdistance": "4.320",
+                "realmoneyd": "195.848",
+                "realmoneyp": "195.991",
+                "realmoneyr": "195.998",
+                "regular": 18.53,
+                "spend": "0.216",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.018,
+                    20.3232
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.77,
+                "distance": 3.8055687043317654,
+                "duration": "0:06:55",
+                "economy": 20.0,
+                "litrosd": "10.116",
+                "litrosp": "10.422",
+                "litrosr": "10.638",
+                "money": 200.0,
+                "name": "COMBUSTIBLES ECOLOGICOS DEL LERMA, S.A. DE C.V.",
+                "premium": 19.19,
+                "realGasd": "9.873",
+                "realGasp": "10.179",
+                "realGasr": "10.395",
+                "realdistance": "4.870",
+                "realmoneyd": "195.196",
+                "realmoneyp": "195.337",
+                "realmoneyr": "195.432",
+                "regular": 18.8,
+                "spend": "0.243",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.002,
+                    20.3587
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 18.95,
+                "distance": 4.469750057305362,
+                "duration": "0:08:27",
+                "economy": 20.0,
+                "litrosd": "10.554",
+                "litrosp": "10.959",
+                "litrosr": "11.179",
+                "money": 200.0,
+                "name": "SANTA ANA ESTACION DE SERVICIOS SA DE CV",
+                "premium": 18.25,
+                "realGasd": "10.298",
+                "realGasp": "10.703",
+                "realGasr": "10.923",
+                "realdistance": "5.120",
+                "realmoneyd": "195.149",
+                "realmoneyp": "195.328",
+                "realmoneyr": "195.420",
+                "regular": 17.89,
+                "spend": "0.256",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.993,
+                    20.3044
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.77,
+                "distance": 7.146404962233392,
+                "duration": "0:10:19",
+                "economy": 20.0,
+                "litrosd": "10.116",
+                "litrosp": "10.422",
+                "litrosr": "10.650",
+                "money": 200.0,
+                "name": "SERVICIO LA LOMA LOS CEDROS, S.A. DE C.V",
+                "premium": 19.19,
+                "realGasd": "9.691",
+                "realGasp": "9.997",
+                "realGasr": "10.225",
+                "realdistance": "8.500",
+                "realmoneyd": "191.598",
+                "realmoneyp": "191.844",
+                "realmoneyr": "192.018",
+                "regular": 18.78,
+                "spend": "0.425",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.119,
+                    20.3712
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.98,
+                "distance": 8.339670785513999,
+                "duration": "0:10:16",
+                "economy": 20.0,
+                "litrosd": "10.010",
+                "litrosp": "10.384",
+                "litrosr": "10.411",
+                "money": 200.0,
+                "name": "SERGUIO ATILANO",
+                "premium": 19.26,
+                "realGasd": "9.543",
+                "realGasp": "9.917",
+                "realGasr": "9.944",
+                "realdistance": "9.330",
+                "realmoneyd": "190.669",
+                "realmoneyp": "191.006",
+                "realmoneyr": "191.029",
+                "regular": 19.21,
+                "spend": "0.467",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.935,
+                    20.3895
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 18.95,
+                "distance": 12.2475138087497,
+                "duration": "0:16:06",
+                "economy": 20.0,
+                "litrosd": "10.554",
+                "litrosp": "10.499",
+                "litrosr": "10.644",
+                "money": 200.0,
+                "name": "SUPER SERVICIO GARBRI, S.A. DE C.V.",
+                "premium": 19.05,
+                "realGasd": "9.888",
+                "realGasp": "9.833",
+                "realGasr": "9.978",
+                "realdistance": "13.330",
+                "realmoneyd": "187.379",
+                "realmoneyp": "187.313",
+                "realmoneyr": "187.486",
+                "regular": 18.79,
+                "spend": "0.666",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.129,
+                    20.4344
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.5,
+                "distance": 13.142082652989735,
+                "duration": "0:16:34",
+                "economy": 20.0,
+                "litrosd": "10.256",
+                "litrosp": "10.471",
+                "litrosr": "10.532",
+                "money": 200.0,
+                "name": "SERVICIO LOS ENCINOS S.A. DE C.V.",
+                "premium": 19.1,
+                "realGasd": "9.457",
+                "realGasp": "9.672",
+                "realGasr": "9.733",
+                "realdistance": "15.980",
+                "realmoneyd": "184.419",
+                "realmoneyp": "184.739",
+                "realmoneyr": "184.827",
+                "regular": 18.99,
+                "spend": "0.799",
+                "startX": 20.347762,
+                "startY": -102.043402,
                 "state": "JA"
             },
             "type": "Feature"
@@ -1580,33 +611,1072 @@
         {
             "geometry": {
                 "coordinates": [
-                    -103.05,
-                    20.1625
+                    -101.982,
+                    20.4576
                 ],
                 "type": "Point"
             },
             "properties": {
-                "diesel": 20.89,
-                "distance": 39.24007281726875,
-                "duration": "0:50:04",
+                "diesel": 18.9,
+                "distance": 13.809390070309876,
+                "duration": "0:18:35",
                 "economy": 20.0,
-                "money": 100.0,
-                "name": "NOGALES ENERGETICOS S.A. DE C.V.",
-                "premium": 20.49,
-                "realGasd": "2.230",
-                "realGasp": "2.323",
-                "realGasr": "2.396",
-                "realdistance": "51.140",
-                "realmoneyd": "46.584",
-                "realmoneyp": "47.607",
-                "realmoneyr": "48.374",
-                "regular": 20.19,
-                "spendd": "53.416",
-                "spendp": "52.393",
-                "spendr": "51.626",
-                "startX": 19.9948,
-                "startY": -102.7197,
+                "litrosd": "10.582",
+                "litrosp": "10.554",
+                "litrosr": "10.724",
+                "money": 200.0,
+                "name": "AUTOSERVICIO GASOLINERO MU\u00d1OZ, S.A. DE C.V.",
+                "premium": 18.95,
+                "realGasd": "9.766",
+                "realGasp": "9.738",
+                "realGasr": "9.908",
+                "realdistance": "16.330",
+                "realmoneyd": "184.578",
+                "realmoneyp": "184.537",
+                "realmoneyr": "184.782",
+                "regular": 18.65,
+                "spend": "0.816",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.949,
+                    20.2446
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.88,
+                "distance": 15.149551446095774,
+                "duration": "0:18:01",
+                "economy": 20.0,
+                "litrosd": "10.060",
+                "litrosp": "10.477",
+                "litrosr": "10.695",
+                "money": 200.0,
+                "name": "MARTIN LOPEZ LOPEZ",
+                "premium": 19.09,
+                "realGasd": "9.212",
+                "realGasp": "9.629",
+                "realGasr": "9.847",
+                "realdistance": "16.960",
+                "realmoneyd": "183.142",
+                "realmoneyp": "183.812",
+                "realmoneyr": "184.142",
+                "regular": 18.7,
+                "spend": "0.848",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.146,
+                    20.449
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.49,
+                "distance": 15.511225354714853,
+                "duration": "0:20:06",
+                "economy": 20.0,
+                "litrosd": "10.262",
+                "litrosp": "10.499",
+                "litrosr": "10.532",
+                "money": 200.0,
+                "name": "ESTACION DE SERVICIO ROJEMAR S.A. DE C.V.",
+                "premium": 19.05,
+                "realGasd": "9.309",
+                "realGasp": "9.546",
+                "realGasr": "9.579",
+                "realdistance": "19.060",
+                "realmoneyd": "181.426",
+                "realmoneyp": "181.845",
+                "realmoneyr": "181.903",
+                "regular": 18.99,
+                "spend": "0.953",
+                "startX": 20.347762,
+                "startY": -102.043402,
                 "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.869,
+                    20.3807
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.3,
+                "distance": 18.55547846225194,
+                "duration": "0:23:05",
+                "economy": 20.0,
+                "litrosd": "9.852",
+                "litrosp": "10.178",
+                "litrosr": "10.283",
+                "money": 200.0,
+                "name": "KOPLA, S.A. DE C.V",
+                "premium": 19.65,
+                "realGasd": "8.736",
+                "realGasp": "9.062",
+                "realGasr": "9.167",
+                "realdistance": "22.320",
+                "realmoneyd": "177.345",
+                "realmoneyp": "178.071",
+                "realmoneyr": "178.294",
+                "regular": 19.45,
+                "spend": "1.116",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.231,
+                    20.3333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.99,
+                "distance": 19.637003795529758,
+                "duration": "0:22:27",
+                "economy": 20.0,
+                "litrosd": "10.005",
+                "litrosp": "10.309",
+                "litrosr": "10.309",
+                "money": 200.0,
+                "name": "COMERCIALIZADORA OPTIMOS SA DE CV",
+                "premium": 19.4,
+                "realGasd": "8.880",
+                "realGasp": "9.184",
+                "realGasr": "9.184",
+                "realdistance": "22.500",
+                "realmoneyd": "177.511",
+                "realmoneyp": "178.175",
+                "realmoneyr": "178.175",
+                "regular": 19.4,
+                "spend": "1.125",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.847,
+                    20.285
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 21.75,
+                "distance": 21.689520837549434,
+                "duration": "0:35:26",
+                "economy": 20.0,
+                "litrosd": "9.195",
+                "litrosr": "9.838",
+                "money": 200.0,
+                "name": "JOSE DE JESUS ARIAS NEGRETE",
+                "realGasd": "7.675",
+                "realGasr": "8.318",
+                "realdistance": "30.410",
+                "realmoneyd": "166.940",
+                "realmoneyr": "169.098",
+                "regular": 20.33,
+                "spend": "1.520",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.045,
+                    20.5524
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.8,
+                "distance": 22.778301981570724,
+                "duration": "0:38:06",
+                "economy": 20.0,
+                "litrosd": "9.615",
+                "litrosp": "9.950",
+                "litrosr": "9.990",
+                "money": 200.0,
+                "name": "SERVICIOS Y COMBUSTIBLES LEON S.A. DE C.V.",
+                "premium": 20.1,
+                "realGasd": "7.994",
+                "realGasp": "8.329",
+                "realGasr": "8.369",
+                "realdistance": "32.430",
+                "realmoneyd": "166.283",
+                "realmoneyp": "167.418",
+                "realmoneyr": "167.548",
+                "regular": 20.02,
+                "spend": "1.621",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.263,
+                    20.3286
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.05,
+                "distance": 23.020336395195176,
+                "duration": "0:25:50",
+                "economy": 20.0,
+                "litrosd": "9.975",
+                "litrosp": "10.309",
+                "litrosr": "10.309",
+                "money": 200.0,
+                "name": "GASOLINERA SERVICIO YURECUARO SA DE CV",
+                "premium": 19.4,
+                "realGasd": "8.673",
+                "realGasp": "9.007",
+                "realGasr": "9.007",
+                "realdistance": "26.050",
+                "realmoneyd": "173.895",
+                "realmoneyp": "174.741",
+                "realmoneyr": "174.741",
+                "regular": 19.4,
+                "spend": "1.302",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.068,
+                    20.1417
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.99,
+                "distance": 23.074960676339327,
+                "duration": "0:35:18",
+                "economy": 20.0,
+                "litrosd": "9.528",
+                "litrosp": "9.761",
+                "litrosr": "9.926",
+                "money": 200.0,
+                "name": "DAVID ARROYO ARROYO",
+                "premium": 20.49,
+                "realGasd": "7.678",
+                "realGasp": "7.911",
+                "realGasr": "8.076",
+                "realdistance": "36.990",
+                "realmoneyd": "161.169",
+                "realmoneyp": "162.093",
+                "realmoneyr": "162.723",
+                "regular": 20.15,
+                "spend": "1.850",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.292,
+                    20.3286
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.05,
+                "distance": 26.035778924846063,
+                "duration": "0:30:30",
+                "economy": 20.0,
+                "litrosd": "9.975",
+                "litrosp": "10.309",
+                "litrosr": "10.309",
+                "money": 200.0,
+                "name": "GASOLINERA SERVICIO BRAVO SA DE CV",
+                "premium": 19.4,
+                "realGasd": "8.500",
+                "realGasp": "8.834",
+                "realGasr": "8.834",
+                "realdistance": "29.500",
+                "realmoneyd": "170.426",
+                "realmoneyp": "171.385",
+                "realmoneyr": "171.385",
+                "regular": 19.4,
+                "spend": "1.475",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.209,
+                    20.1616
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.59,
+                "distance": 26.994384542831177,
+                "duration": "0:35:49",
+                "economy": 20.0,
+                "litrosd": "9.713",
+                "litrosp": "10.106",
+                "litrosr": "10.209",
+                "money": 200.0,
+                "name": "ARCELIA HERNANDEZ SILVA",
+                "premium": 19.79,
+                "realGasd": "8.145",
+                "realGasp": "8.538",
+                "realGasr": "8.641",
+                "realdistance": "31.350",
+                "realmoneyd": "167.715",
+                "realmoneyp": "168.969",
+                "realmoneyr": "169.283",
+                "regular": 19.59,
+                "spend": "1.568",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.321,
+                    20.3023
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.99,
+                "distance": 29.38490428788999,
+                "duration": "0:32:39",
+                "economy": 20.0,
+                "litrosd": "10.005",
+                "litrosp": "10.283",
+                "litrosr": "10.417",
+                "money": 200.0,
+                "name": "CARMEN IVETTE MARTIN DEL CAMPO ABARCA",
+                "premium": 19.45,
+                "realGasd": "8.352",
+                "realGasp": "8.630",
+                "realGasr": "8.764",
+                "realdistance": "33.070",
+                "realmoneyd": "166.957",
+                "realmoneyp": "167.849",
+                "realmoneyr": "168.262",
+                "regular": 19.2,
+                "spend": "1.653",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.734,
+                    20.4122
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.39,
+                "distance": 33.04189636774531,
+                "duration": "0:34:06",
+                "economy": 20.0,
+                "litrosd": "10.315",
+                "litrosp": "9.761",
+                "litrosr": "10.875",
+                "money": 200.0,
+                "name": "MEGA GASOLINERAS S.A DE C.V",
+                "premium": 20.49,
+                "realGasd": "8.398",
+                "realGasp": "7.844",
+                "realGasr": "8.958",
+                "realdistance": "38.340",
+                "realmoneyd": "162.829",
+                "realmoneyp": "160.721",
+                "realmoneyr": "164.746",
+                "regular": 18.39,
+                "spend": "1.917",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.22,
+                    20.6041
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.9,
+                "distance": 33.97014691720248,
+                "duration": "1:01:41",
+                "economy": 20.0,
+                "litrosd": "10.050",
+                "litrosr": "10.417",
+                "money": 200.0,
+                "name": "IGNACIO AYALA SALAZAR",
+                "realGasd": "6.927",
+                "realGasr": "7.294",
+                "realdistance": "62.470",
+                "realmoneyd": "137.852",
+                "realmoneyr": "140.038",
+                "regular": 19.2,
+                "spend": "3.123",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.723,
+                    20.4264
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.39,
+                "distance": 34.527992847227424,
+                "duration": "0:33:18",
+                "economy": 20.0,
+                "litrosd": "10.315",
+                "litrosr": "10.875",
+                "money": 200.0,
+                "name": "GASOLINERA REYES, S.A. DE C.V.",
+                "realGasd": "8.445",
+                "realGasr": "9.005",
+                "realdistance": "37.400",
+                "realmoneyd": "163.741",
+                "realmoneyr": "165.611",
+                "regular": 18.39,
+                "spend": "1.870",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.217,
+                    20.6129
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.8,
+                "distance": 34.60562249611699,
+                "duration": "1:02:37",
+                "economy": 20.0,
+                "litrosd": "10.101",
+                "litrosp": "10.422",
+                "litrosr": "10.466",
+                "money": 200.0,
+                "name": "SERVICIOS ENERGETICOS ESLI, S.A. DE C.V.",
+                "premium": 19.19,
+                "realGasd": "6.926",
+                "realGasp": "7.247",
+                "realGasr": "7.291",
+                "realdistance": "63.510",
+                "realmoneyd": "137.135",
+                "realmoneyp": "139.072",
+                "realmoneyr": "139.326",
+                "regular": 19.11,
+                "spend": "3.175",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.719,
+                    20.4233
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.39,
+                "distance": 34.90849357288548,
+                "duration": "0:33:48",
+                "economy": 20.0,
+                "litrosd": "10.315",
+                "litrosp": "9.761",
+                "litrosr": "10.875",
+                "money": 200.0,
+                "name": "MEGA GASOLINERAS S.A DE C.V",
+                "premium": 20.49,
+                "realGasd": "8.418",
+                "realGasp": "7.864",
+                "realGasr": "8.978",
+                "realdistance": "37.940",
+                "realmoneyd": "163.217",
+                "realmoneyp": "161.130",
+                "realmoneyr": "165.114",
+                "regular": 18.39,
+                "spend": "1.897",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.327,
+                    20.5174
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.15,
+                "distance": 35.07219029819367,
+                "duration": "0:41:38",
+                "economy": 20.0,
+                "litrosd": "9.926",
+                "litrosp": "10.168",
+                "litrosr": "10.363",
+                "money": 200.0,
+                "name": "SERVICIO SAN JOSE DEL CARACOL S.A DE C.V.",
+                "premium": 19.67,
+                "realGasd": "7.773",
+                "realGasp": "8.015",
+                "realGasr": "8.210",
+                "realdistance": "43.060",
+                "realmoneyd": "156.617",
+                "realmoneyp": "157.650",
+                "realmoneyr": "158.447",
+                "regular": 19.3,
+                "spend": "2.153",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.712,
+                    20.4152
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.99,
+                "distance": 35.43761562121421,
+                "duration": "0:36:41",
+                "economy": 20.0,
+                "litrosd": "10.005",
+                "litrosp": "9.438",
+                "litrosr": "10.477",
+                "money": 200.0,
+                "name": "MEGA GASOLINERAS S.A DE C.V",
+                "premium": 21.19,
+                "realGasd": "8.001",
+                "realGasp": "7.434",
+                "realGasr": "8.473",
+                "realdistance": "40.080",
+                "realmoneyd": "159.940",
+                "realmoneyp": "157.535",
+                "realmoneyr": "161.744",
+                "regular": 19.09,
+                "spend": "2.004",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.376,
+                    20.2786
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.1,
+                "distance": 35.56430256690974,
+                "duration": "0:39:11",
+                "economy": 20.0,
+                "litrosd": "9.950",
+                "litrosp": "10.283",
+                "litrosr": "10.417",
+                "money": 200.0,
+                "name": "GASOLINERAS DEL LERMA, S.A. DE C.V.",
+                "premium": 19.45,
+                "realGasd": "7.962",
+                "realGasp": "8.295",
+                "realGasr": "8.429",
+                "realdistance": "39.750",
+                "realmoneyd": "160.041",
+                "realmoneyp": "161.333",
+                "realmoneyr": "161.830",
+                "regular": 19.2,
+                "spend": "1.988",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.706,
+                    20.4086
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.99,
+                "distance": 35.863430484756606,
+                "duration": "0:36:13",
+                "economy": 20.0,
+                "litrosd": "10.005",
+                "litrosp": "10.230",
+                "litrosr": "10.493",
+                "money": 200.0,
+                "name": "SERVICIO PIONEROS SA DE CV",
+                "premium": 19.55,
+                "realGasd": "8.024",
+                "realGasp": "8.249",
+                "realGasr": "8.512",
+                "realdistance": "39.620",
+                "realmoneyd": "160.400",
+                "realmoneyp": "161.271",
+                "realmoneyr": "162.242",
+                "regular": 19.06,
+                "spend": "1.981",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.094,
+                    20.6703
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.6,
+                "distance": 36.297807932278026,
+                "duration": "0:52:04",
+                "economy": 20.0,
+                "litrosd": "10.204",
+                "litrosp": "10.471",
+                "litrosr": "10.554",
+                "money": 200.0,
+                "name": "SERVICIO CAMARENA SA DE CV ",
+                "premium": 19.1,
+                "realGasd": "7.455",
+                "realGasp": "7.722",
+                "realGasr": "7.805",
+                "realdistance": "54.980",
+                "realmoneyd": "146.120",
+                "realmoneyp": "147.494",
+                "realmoneyr": "147.906",
+                "regular": 18.95,
+                "spend": "2.749",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.336,
+                    20.5276
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.15,
+                "distance": 36.515877733070994,
+                "duration": "0:44:03",
+                "economy": 20.0,
+                "litrosd": "9.926",
+                "litrosp": "10.168",
+                "litrosr": "10.363",
+                "money": 200.0,
+                "name": "SERVICIO D SOTO, S.A. DE C.V.",
+                "premium": 19.67,
+                "realGasd": "7.669",
+                "realGasp": "7.911",
+                "realGasr": "8.106",
+                "realdistance": "45.140",
+                "realmoneyd": "154.521",
+                "realmoneyp": "155.605",
+                "realmoneyr": "156.440",
+                "regular": 19.3,
+                "spend": "2.257",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.703,
+                    20.431
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.89,
+                "distance": 36.70712771107107,
+                "duration": "0:36:53",
+                "economy": 20.0,
+                "litrosd": "10.055",
+                "litrosp": "9.438",
+                "litrosr": "10.477",
+                "money": 200.0,
+                "name": "MEGA GASOLINERAS S.A DE C.V",
+                "premium": 21.19,
+                "realGasd": "7.981",
+                "realGasp": "7.364",
+                "realGasr": "8.403",
+                "realdistance": "41.470",
+                "realmoneyd": "158.748",
+                "realmoneyp": "156.052",
+                "realmoneyr": "160.407",
+                "regular": 19.09,
+                "spend": "2.074",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.701,
+                    20.4331
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.89,
+                "distance": 36.997763087751856,
+                "duration": "0:36:40",
+                "economy": 20.0,
+                "litrosd": "10.055",
+                "litrosp": "10.230",
+                "litrosr": "10.493",
+                "money": 200.0,
+                "name": "SERVICIO PIONEROS SA DE CV",
+                "premium": 19.55,
+                "realGasd": "7.997",
+                "realGasp": "8.172",
+                "realGasr": "8.435",
+                "realdistance": "41.160",
+                "realmoneyd": "159.066",
+                "realmoneyp": "159.766",
+                "realmoneyr": "160.775",
+                "regular": 19.06,
+                "spend": "2.058",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.272,
+                    20.0655
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.49,
+                "distance": 39.47482126267857,
+                "duration": "0:49:34",
+                "economy": 20.0,
+                "litrosd": "9.761",
+                "litrosp": "10.183",
+                "litrosr": "10.262",
+                "money": 200.0,
+                "name": "GASOLINERA EL SAUZ DE ABAJO SA DE CV",
+                "premium": 19.64,
+                "realGasd": "7.470",
+                "realGasp": "7.892",
+                "realGasr": "7.971",
+                "realdistance": "45.810",
+                "realmoneyd": "153.057",
+                "realmoneyp": "155.005",
+                "realmoneyr": "155.348",
+                "regular": 19.49,
+                "spend": "2.291",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.676,
+                    20.4405
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.03,
+                "distance": 39.66054634227167,
+                "duration": "0:36:25",
+                "economy": 20.0,
+                "litrosd": "9.985",
+                "litrosp": "10.116",
+                "litrosr": "10.168",
+                "money": 200.0,
+                "name": "GASOLINERA PENJAMO, S.A. DE C.V.",
+                "premium": 19.77,
+                "realGasd": "7.867",
+                "realGasp": "7.998",
+                "realGasr": "8.050",
+                "realdistance": "42.350",
+                "realmoneyd": "157.576",
+                "realmoneyp": "158.127",
+                "realmoneyr": "158.339",
+                "regular": 19.67,
+                "spend": "2.118",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "GJ"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.191,
+                    20.6796
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.65,
+                "distance": 40.028459284966715,
+                "duration": "1:00:47",
+                "economy": 20.0,
+                "litrosd": "10.178",
+                "litrosp": "10.363",
+                "litrosr": "10.526",
+                "money": 200.0,
+                "name": "SERVICIO BETULIA S. DE R.L. DE C.V. ",
+                "premium": 19.3,
+                "realGasd": "6.919",
+                "realGasp": "7.104",
+                "realGasr": "7.267",
+                "realdistance": "65.180",
+                "realmoneyd": "135.961",
+                "realmoneyp": "137.101",
+                "realmoneyr": "138.079",
+                "regular": 19.0,
+                "spend": "3.259",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.385,
+                    20.1699
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.99,
+                "distance": 40.789442991859126,
+                "duration": "1:05:49",
+                "economy": 20.0,
+                "litrosd": "10.005",
+                "litrosr": "12.508",
+                "money": 200.0,
+                "name": "RODRIGO TAMAYO VAZQUEZ",
+                "realGasd": "6.658",
+                "realGasr": "9.161",
+                "realdistance": "66.930",
+                "realmoneyd": "133.093",
+                "realmoneyr": "146.481",
+                "regular": 15.99,
+                "spend": "3.347",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.429,
+                    20.4117
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 19.99,
+                "distance": 40.87097812770918,
+                "duration": "0:54:41",
+                "economy": 20.0,
+                "litrosd": "10.005",
+                "litrosp": "10.532",
+                "litrosr": "10.532",
+                "money": 200.0,
+                "name": "MA DEL CONSUELO VILLANUEVA SALAS",
+                "premium": 18.99,
+                "realGasd": "7.317",
+                "realGasp": "7.844",
+                "realGasr": "7.844",
+                "realdistance": "53.760",
+                "realmoneyd": "146.267",
+                "realmoneyp": "148.955",
+                "realmoneyr": "148.955",
+                "regular": 18.99,
+                "spend": "2.688",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "JA"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -101.714,
+                    20.1473
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 21.1,
+                "distance": 40.97855935069883,
+                "duration": "0:57:48",
+                "economy": 20.0,
+                "litrosd": "9.479",
+                "litrosp": "10.116",
+                "litrosr": "10.116",
+                "money": 200.0,
+                "name": "LUCIA CARDONA AGUILERA",
+                "premium": 19.77,
+                "realGasd": "6.895",
+                "realGasp": "7.532",
+                "realGasr": "7.532",
+                "realdistance": "51.680",
+                "realmoneyd": "145.478",
+                "realmoneyp": "148.914",
+                "realmoneyr": "148.914",
+                "regular": 19.77,
+                "spend": "2.584",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -102.283,
+                    20.0405
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "diesel": 20.25,
+                "distance": 42.40694766107263,
+                "duration": "0:52:46",
+                "economy": 20.0,
+                "litrosd": "9.877",
+                "litrosp": "10.336",
+                "litrosr": "10.379",
+                "money": 200.0,
+                "name": "SUPER SERVICIO MARAVILLA SA DE CV",
+                "premium": 19.35,
+                "realGasd": "7.427",
+                "realGasp": "7.886",
+                "realGasr": "7.929",
+                "realdistance": "49.000",
+                "realmoneyd": "150.387",
+                "realmoneyp": "152.592",
+                "realmoneyr": "152.788",
+                "regular": 19.27,
+                "spend": "2.450",
+                "startX": 20.347762,
+                "startY": -102.043402,
+                "state": "MI"
             },
             "type": "Feature"
         }

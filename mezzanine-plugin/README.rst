@@ -17,7 +17,7 @@ Quick start
   pip install mysqlclient==1.4.6
   pip install numpy==1.61.2
   pip install scrapy==2.0.0
-  pip install urllib3==1.24.1
+  pip install urllib3==1.24.2
   pip install openrouteservice==2.3.0
   pip install shapely==1.7.0
   pip install setuptools=40.8.0
