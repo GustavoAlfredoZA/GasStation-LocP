@@ -31,7 +31,7 @@ Quick start
     ...
   ]
 
-2.- Check the correct timezone in yourProject/yourProject/settings.py, in # MAIN DJANGO SETTINGS #, example ::
+3.- Check the correct timezone in yourProject/yourProject/settings.py, in # MAIN DJANGO SETTINGS #, example ::
 
   TIME_ZONE = 'America/Mexico_City'
 
@@ -60,11 +60,7 @@ Quick start
   mezzanine-plugin/mezzanine_gasStation_map/views.py: lines 68, 74, 192 and 204
 
 
-9.- To install the package, use pip ::
-
-    python -m pip install --user home/user/GIT/GasStation-LocP/mezzanine-plugin/dist/mezzanine_gasStation_map-0.1.tar.gz
-
-10.- Make migrates and migrate in your your project ::
+9.- Make migrates and migrate in your your project ::
 
     $ python3 manage.py makemigrations
     $ python3 manage.py migrate
