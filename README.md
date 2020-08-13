@@ -9,26 +9,26 @@ In this project, most of the code is in Python with libraries like Pandas, Scrap
 This proyect use Python v. 3.7, MySQLServer version: 8.0.21 MySQL Community Server - GPL, Django v. 1.11.29, Mezzanine v. 4.3.1. And libraries, an api, whatever it takes for to plot maps and routes.
 ###### Dependencies
 1. Django Leaflet
-     - ```pip install django-leaflet==0.20.0```
+     - ```pip3 install django-leaflet==0.20.0```
 2. Matplotlib
-     - ```pip install matplotlib==3.0.2```
+     - ```pip3 install matplotlib==3.0.2```
 3. MySQL
-     - ```pip install mysql==0.0.2```
-     - ```pip install mysql-connector==2.2.9```
-     - ```pip install mysql-connector-python==8.0.21```
-     - ```pip install mysqlclient==1.4.6```
+     - ```pip3 install mysql==0.0.2```
+     - ```pip3 install mysql-connector==2.2.9```
+     - ```pip3 install mysql-connector-python==8.0.21```
+     - ```pip3 install mysqlclient==1.4.6```
 4. Numpy
-     - ```pip install numpy==1.61.2```
+     - ```pip3 install numpy==1.61.2```
 5. Scrapy
-     - ```pip install scrapy==2.0.0```
+     - ```pip3 install scrapy==2.0.0```
 6. Urllib3
-     - ```pip install urllib3==1.24.2```
+     - ```pip3 install urllib3==1.24.2```
 7. Openrouteservice
-     - ```pip install openrouteservice==2.3.0```
+     - ```pip3 install openrouteservice==2.3.0```
 8. Shapely
-     - ```pip install shapely==1.7.0```
+     - ```pip3 install shapely==1.7.0```
 9. Setuptools
-     - ```pip install setuptools=40.8.0```
+     - ```pip3 install setuptools=40.8.0```
 
 ## Data source
 Our data source comes from the Energy Regulatory Commission, which is the Coordinated Energy Regulatory Body promoting the efficient development of the sector and the reliable supply of hydrocarbons and electricity.
