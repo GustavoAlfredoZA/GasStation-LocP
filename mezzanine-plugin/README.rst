@@ -46,9 +46,9 @@ Quick start
 
 6.- Create links in yourProject ::
 
-    ln -s /home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map .
-    ln -s /home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static ./static/mezzanine_gasStation_map
-    ln -s /home/user/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/templates ./templates/mezzanine_gasStation_map
+    ln -s /home/< user >/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map .
+    ln -s /home/< user >/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/static ./static/mezzanine_gasStation_map
+    ln -s /home/< user >/git/GasStation-LocP/mezzanine-plugin/mezzanine_gasStation_map/templates ./templates/mezzanine_gasStation_map
 
 7.- Get your key in https://openrouteservice.org/ and add in key.json ::
 
