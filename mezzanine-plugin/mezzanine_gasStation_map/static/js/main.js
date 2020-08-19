@@ -9,7 +9,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1
 }).addTo(mymap);
 
-$.getJSON("../../static/mezzanine_gasStation_map/js/mexicostatesprod.json", function(data) {
+$.getJSON("http://132.247.186.67/static/cursos/2020-II/quantics/static/js/mexicostatesprod.json", function(data) {
     var mexstates = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         var label = feature.properties.gns_name;
@@ -28,7 +28,7 @@ $.getJSON("../../static/mezzanine_gasStation_map/js/mexicostatesprod.json", func
 
 
 var stateFilters = L.layerGroup().addTo(mymap);
-var alldatageojson = $.getJSON("../../static/mezzanine_gasStation_map/js/data.json");
+var alldatageojson = $.getJSON("http://132.247.186.67/static/cursos/2020-II/quantics/static/js/data.json");
 
 function stateSelect(){
   alldatageojson.then( function(data) {
