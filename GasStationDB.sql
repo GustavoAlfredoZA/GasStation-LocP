@@ -82,6 +82,9 @@ CREATE TABLE `pricesTime` (
   `priceregular` float(8,2) NOT NULL,
   `pricepremium` float(8,2) NOT NULL,
   `pricediesel` float(8,2) NOT NULL,
+  `nregular` int NOT NULL,
+  `npremium` int NOT NULL,
+  `ndiesel` int NOT NULL,
   PRIMARY KEY (`statec`,`datec`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
