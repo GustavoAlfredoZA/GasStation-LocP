@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import mezzanine_gasStation_map.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url('map/', include('mezzanine_gasStation_map.urls')),
 ]
