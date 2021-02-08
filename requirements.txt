@@ -25,3 +25,4 @@ urllib3==1.24.2
 openrouteservice==2.3.0
 shapely==1.7.1
 setuptools==40.8.0
+mezzanine==4.3.1
