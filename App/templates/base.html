@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} class="h-100">
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Gustavo Alfredo Zarate Acosta">
+  <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+  <meta name="description" content="{% block meta_description %}{% endblock %}">
+  <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+  <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+  {% ifinstalled mezzanine.blog %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+  {% endifinstalled %}
+  {% compress css %}
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+{% endif %}
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+{% compress js %}
+{% block extra_js %}{% endblock %}
+{% endcompress %}
+{% block extra_head %}{% endblock %}
+</head>
+<body id="{% block body_id %}body{% endblock %}"  class="d-flex flex-column h-100">
+   <header>
+     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+       {% block navbar_title %}
+       {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+       {% endblock%}
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarCollapse">
+         {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+         
+       </div>
+     </nav>
+   </header>
+   <main role="main"  class="flex-shrink-0">
+     <div class="container">
+       <h1 class="mt-5">{% block title %}{% endblock %}</h1>
+       {% block main %}{% endblock %}
+     </div>
+   </main>
+   <footer class="footer mt-auto py-3">
+     <div class="container">
+       <span class="text-muted">
+         {% trans "Powered by" %}
+          <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
+          <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
+         {% trans "and" %}
+         <a href="http://www.djangoproject.com">Django</a>
+         <span class="separator">|</span>
+         {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
+         <span class="separator">|</span>
+         {% trans "Created by" %} <a target="_blank" href="https://www.linkedin.com/in/gustavo-alfredo-zarate-acosta/">Gustavo Alfredo Zárate Acosta</a>
+       </span>
+     </div>
+   </footer>
+   {% block footer_js %}
+   {% include "includes/footer_scripts.html" %}
+   {% endblock %}
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ </body>
+</html>
