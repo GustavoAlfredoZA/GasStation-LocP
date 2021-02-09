@@ -27,7 +27,7 @@ DATABASES = {
 }
 
 # Allowed development hosts
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "::1", "0.0.0.0"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "::1", "0.0.0.0", "gasolinera-cerca.herokuapp.com"]
 
 ###################
 # DEPLOY SETTINGS #
