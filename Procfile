@@ -1,1 +1,1 @@
-web: sh -c 'cd ./App/ && python manage.py runserver'
+web: sh -c 'cd ./App/ && gunicorn App.wsgi'
