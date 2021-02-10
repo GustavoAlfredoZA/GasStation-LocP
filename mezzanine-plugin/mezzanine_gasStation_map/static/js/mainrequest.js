@@ -9,7 +9,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1
 }).addTo(mymap);
 
-$.getJSON("https://gasolinera-cerca.herokuapp.com/static/mexicostatesprod.json", function(data) {
+$.getJSON("https://gasolinera-cerca.herokuapp.com/static/js/mexicostatesprod.json", function(data) {
     var mexstates = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         var label = feature.properties.gns_name;
