@@ -28,7 +28,7 @@ $.getJSON("https://gasolinera-cerca.herokuapp.com/static/js/mexicostatesprod.jso
 
 
 var stateFilters = L.layerGroup().addTo(mymap);
-var alldatageojson = $.getJSON("http://132.247.186.67/static/cursos/2020-II/quantics/static/js/data.json");
+var alldatageojson = $.getJSON("https://gasolinera-cerca.herokuapp.com/static/js/mexicostatesprod.json");
 
 function stateSelect(){
   alldatageojson.then( function(data) {
