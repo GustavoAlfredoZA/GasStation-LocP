@@ -36,7 +36,7 @@ function flyTo(Loc) {
 
 
 var stateFilters = L.layerGroup().addTo(mymap);
-var alldatageojson = $.getJSON("https://gasolinera-cerca.herokuapp.com/static/js/mexicostatesprod.json");
+var alldatageojson = $.getJSON("https://gasolinera-cerca.herokuapp.com/static/js/data.json");
 
 function stateSelect(){
   alldatageojson.then( function(data) {
