@@ -1,6 +1,7 @@
 import json
+import mysql.connector
+from mysql.connector import errorcode
 import subprocess
-import psycopg2
 
 p = open("routes.json")
 routes = json.load(p)
@@ -12,7 +13,7 @@ with open('db.json') as json_file:
     config = json.load(json_file)
 
 try:
-    cnx = psycopg2.connect(os.getenv('DATABASE_URL', 'Optional default value'))
+    cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     updatestates = "INSERT INTO pricesTime(statec,number,datec,priceregular,pricepremium,pricediesel,nregular,npremium,ndiesel) SELECT tmp.state, tmp.numberplaces ,tmp. today, tmp.pricer, tmp.pricep, tmp.pricep, tmp.numberr, tmp.numberp, tmp.numberd FROM ( SELECT places.state AS state, COUNT(*) AS numberplaces, CURDATE() AS today, SUM(regular) AS pricer, SUM(premium) AS pricep, SUM(diesel) AS priced, COUNT(regular) AS numberr, COUNT(premium) AS numberp, COUNT(diesel) AS numberd FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE state is not null GROUP BY places.state ) AS tmp ON DUPLICATE KEY UPDATE priceregular = tmp.pricer, pricepremium = tmp.pricep, pricediesel = tmp.priced, nregular = tmp.numberr, npremium = tmp.numberp, ndiesel = tmp.numberd"
     query=("SELECT places.place_id,places.name,places.cre_id,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id")
@@ -46,8 +47,12 @@ try:
     #output = subprocess.run(["scp",PublicPATH+"data.json","quantics@132.247.186.67:public_html/static"])
 
     cnx.commit()
-
-except psycopg2.Error as err:
-    print(err)
+except mysql.connector.Error as err:
+    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+        print("Something is wrong with your user name or password")
+    elif err.errno == errorcode.ER_BAD_DB_ERROR:
+        print("Database does not exist")
+    else:
+        print(err)
 else:
     cnx.close()
