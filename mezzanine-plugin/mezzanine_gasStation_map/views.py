@@ -7,9 +7,6 @@ from mezzanine_gasStation_map.forms import Plot_Form, Cal_Form
 from django.conf import settings
 from django.conf.urls.static import static
 from django.utils import timezone
-
-import mysql.connector
-from mysql.connector import errorcode
 import json
 
 import matplotlib
@@ -73,8 +70,8 @@ class map_View(View):
                 plotForm = form.save()
 
                 ############################################################################################
-                with open('/home/vdelaluz/git/GasStation-LocP/db.json') as json_file:
-                    config = json.load(json_file)
+                config = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
+
                 ############################################################################################
 
                 states = []
@@ -88,8 +85,8 @@ class map_View(View):
                 datesq2 = []
 
                 try:
-                    confing = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
-                    cnx = psycopg2.connect(confing)
+                    config = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
+                    cnx = psycopg2.connect(config)
                     cursor = cnx.cursor()
 
                     tnow=timezone.now()
@@ -126,13 +123,8 @@ class map_View(View):
                             'formCal' : formCal
                         })
 
-                except mysql.connector.Error as err:
-                    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-                        print("Something is wrong with your user name or password")
-                    elif err.errno == errorcode.ER_BAD_DB_ERROR:
-                        print("Database does not exist")
-                    else:
-                        print(err)
+                except psycopg2.Error as err:
+                    print(err)
                 else:
                     cnx.close()
 
@@ -193,10 +185,9 @@ class map_View(View):
                         'formCal' : formCal
                     })
 
-                with open('/home/vdelaluz/git/GasStation-LocP/db.json') as json_file:
-                    config = json.load(json_file)
                 try:
-                    cnx = mysql.connector.connect(**config)
+                    config = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
+                    cnx = psycopg2.connect(config)
                     cursor = cnx.cursor()
                     data_query = (calForm.startX, calForm.startX, calForm.startY)
                     #SELECT places.place_id,places.name,(acos(sin(radians(20.135936)) * sin(radians(places.Y)) + cos(radians(20.135936)) * cos(radians(places.Y)) * cos(radians(-102.744064) - radians(places.X))) * 6378) as distance,places.x,places.y,prices.regular,prices.premium,prices.diesel,places.state FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id ORDER BY distance LIMIT 5;
@@ -223,13 +214,8 @@ class map_View(View):
                         places.append(place)
                         loclist.append([ a[3] , a[4] ])
                         glist+=str(a[3])+","+str(a[4])+"|"
-                except mysql.connector.Error as err:
-                    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-                        print("Something is wrong with your user name or password")
-                    elif err.errno == errorcode.ER_BAD_DB_ERROR:
-                        print("Database does not exist")
-                    else:
-                        print(err)
+                except psycopg2.Error as err:
+                    print(err)
                 else:
                     cnx.close()
                 body = {"locations":[[calForm.startY,calForm.startX]]+loclist,"destinations":[0],"metrics":["distance","duration"],"units":"km"}

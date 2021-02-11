@@ -40,7 +40,7 @@ class GasSpider(scrapy.Spider):
             #output = subprocess.run(["scp",filename,"quantics@132.247.186.67:public_html/static"])
             #output = subprocess.run(["mv",filename,"backup/"])
 process = CrawlerProcess({
-    'USER_AGENT': 'Mozilla/5.0 (X11; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0'
+    'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 })
 process.crawl(GasSpider)
 process.start()

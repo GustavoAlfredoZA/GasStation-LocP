@@ -34,8 +34,8 @@ def searchstate(x,y,allStates):
             return(state[1])
 
 try:
-    confing = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
-    cnx = psycopg2.connect(conf)
+    config = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
+    cnx = psycopg2.connect(config)
     cursor = cnx.cursor()
     updatestates = "INSERT INTO pricesTime(statec,number,datec,priceregular,pricepremium,pricediesel,nregular,npremium,ndiesel) SELECT tmp.state, tmp.numberplaces ,tmp. today, tmp.pricer, tmp.pricep, tmp.pricep, tmp.numberr, tmp.numberp, tmp.numberd FROM ( SELECT places.state AS state, COUNT(*) AS numberplaces, TIMEZONE('America/Mexico_City',NOW())::DATE AS today, SUM(regular) AS pricer, SUM(premium) AS pricep, SUM(diesel) AS priced, COUNT(regular) AS numberr, COUNT(premium) AS numberp, COUNT(diesel) AS numberd FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE state is not null GROUP BY places.state ) AS tmp ON CONFLICT (statec,datec) DO UPDATE SET priceregular = EXCLUDED.priceregular, pricepremium = EXCLUDED.pricepremium, pricediesel = EXCLUDED.pricediesel, nregular = EXCLUDED.nregular, npremium = EXCLUDED.npremium, ndiesel = EXCLUDED.ndiesel"
     cursor.execute(updatestates)
