@@ -28,3 +28,4 @@ shapely==1.7.1
 setuptools==40.8.0
 mezzanine==4.3.1
 whitenoise==5.2.0
+celery==5.0.5

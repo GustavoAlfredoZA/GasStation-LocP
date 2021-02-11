@@ -71,8 +71,11 @@ class map_View(View):
             form = self.form_class(request.POST)
             if form.is_valid():
                 plotForm = form.save()
+
+                ############################################################################################
                 with open('/home/vdelaluz/git/GasStation-LocP/db.json') as json_file:
                     config = json.load(json_file)
+                ############################################################################################
 
                 states = []
                 aregular = []
@@ -91,7 +94,7 @@ class map_View(View):
                     tnow=timezone.now()
                     today=timezone.localtime(tnow).date()
 
-                    query = ("SELECT statec, number, datec, priceregular, pricepremium, pricediesel, nregular, npremium, ndiesel FROM pricesTime WHERE datec = CURDATE() ORDER BY datec, statec")
+                    query = ("SELECT statec, number, datec, priceregular, pricepremium, pricediesel, nregular, npremium, ndiesel FROM pricesTime WHERE datec = TIMEZONE('America/Mexico_City',NOW())::DATE ORDER BY datec, statec")
 
                     cursor.execute(query)
                     for (statec,number, datec, priceregular, pricepremium, pricediesel, nregular, npremium, ndiesel) in cursor:

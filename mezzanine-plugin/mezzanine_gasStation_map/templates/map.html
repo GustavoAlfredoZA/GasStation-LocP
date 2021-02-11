@@ -126,7 +126,7 @@
     <hr>
   </div>
   <div class="plot">
-    <form method="post" action="/map/map/" enctype="multipart/form-data">
+    <form method="post" action="/" enctype="multipart/form-data">
       {% csrf_token %}
       <label for="plot"><h2>Servicio de graficación</h2></label>
       {{ formPlot.as_ul }}
@@ -137,7 +137,7 @@
   </div>
   <div class="cal">
     <hr>
-    <form method="post" action="/map/map/" enctype="multipart/form-data">
+    <form method="post" action="/" enctype="multipart/form-data">
       {% csrf_token %}
       <label for="cal"><h2>Cálculo y búsqueda de gasolineras</h2></label>
       {{ formCal.as_ul }}

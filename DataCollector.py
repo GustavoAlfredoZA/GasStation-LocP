@@ -14,12 +14,6 @@ import json
 #url https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-finales-de-gasolina-y-diesel
 #ElementTree https://docs.python.org/3/library/xml.etree.elementtree.html
 
-p = open("routes.json")
-routes = json.load(p)
-ProyectPATH=routes['proyect']
-PublicPATH=routes['public']
-p.close()
-
 class GasItem(Item):
     Name=Field()
     Link=Field()
@@ -45,15 +39,8 @@ class GasSpider(scrapy.Spider):
             filename=item['Name']+".xml"
             #output = subprocess.run(["scp",filename,"quantics@132.247.186.67:public_html/static"])
             #output = subprocess.run(["mv",filename,"backup/"])
-
-#try:
-#    record=pd.DataFrame(pd.read_csv("record.csv"))
-#except Exception as e:
-#    record=pd.DataFrame(columns=['Name','Link','DateTime','Type'])
 process = CrawlerProcess({
     'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
 })
 process.crawl(GasSpider)
 process.start()
-#print(record)
-#record.to_csv("record.csv",index=False)
