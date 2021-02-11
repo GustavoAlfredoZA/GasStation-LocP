@@ -88,7 +88,8 @@ class map_View(View):
                 datesq2 = []
 
                 try:
-                    cnx = mysql.connector.connect(**config)
+                    confing = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
+                    cnx = psycopg2.connect(confing)
                     cursor = cnx.cursor()
 
                     tnow=timezone.now()

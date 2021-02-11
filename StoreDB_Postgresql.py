@@ -34,16 +34,17 @@ def searchstate(x,y,allStates):
             return(state[1])
 
 try:
-    cnx = psycopg2.connect(os.getenv('DATABASE_URL', 'Optional default value'))
+    confing = os.getenv('DATABASE_URL', 'postgresql:///gasstationdb')
+    cnx = psycopg2.connect(conf)
     cursor = cnx.cursor()
-    updatestates = "INSERT INTO pricesTime(statec,number,datec,priceregular,pricepremium,pricediesel,nregular,npremium,ndiesel) SELECT tmp.state, tmp.numberplaces ,tmp. today, tmp.pricer, tmp.pricep, tmp.pricep, tmp.numberr, tmp.numberp, tmp.numberd FROM ( SELECT places.state AS state, COUNT(*) AS numberplaces, CURDATE() AS today, SUM(regular) AS pricer, SUM(premium) AS pricep, SUM(diesel) AS priced, COUNT(regular) AS numberr, COUNT(premium) AS numberp, COUNT(diesel) AS numberd FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE state is not null GROUP BY places.state ) AS tmp ON DUPLICATE KEY UPDATE priceregular = tmp.pricer, pricepremium = tmp.pricep, pricediesel = tmp.priced, nregular = tmp.numberr, npremium = tmp.numberp, ndiesel = tmp.numberd"
+    updatestates = "INSERT INTO pricesTime(statec,number,datec,priceregular,pricepremium,pricediesel,nregular,npremium,ndiesel) SELECT tmp.state, tmp.numberplaces ,tmp. today, tmp.pricer, tmp.pricep, tmp.pricep, tmp.numberr, tmp.numberp, tmp.numberd FROM ( SELECT places.state AS state, COUNT(*) AS numberplaces, TIMEZONE('America/Mexico_City',NOW())::DATE AS today, SUM(regular) AS pricer, SUM(premium) AS pricep, SUM(diesel) AS priced, COUNT(regular) AS numberr, COUNT(premium) AS numberp, COUNT(diesel) AS numberd FROM places LEFT JOIN prices ON places.place_id = prices.prices_place_id WHERE state is not null GROUP BY places.state ) AS tmp ON CONFLICT (statec,datec) DO UPDATE SET priceregular = EXCLUDED.priceregular, pricepremium = EXCLUDED.pricepremium, pricediesel = EXCLUDED.pricediesel, nregular = EXCLUDED.nregular, npremium = EXCLUDED.npremium, ndiesel = EXCLUDED.ndiesel"
     cursor.execute(updatestates)
-    query1 = ("INSERT INTO places(place_id,name,cre_id,x,y,state) VALUES (%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE name = %s , cre_id = %s , x = %s , y = %s , state = %s ")
-    queryr = ("INSERT INTO prices( prices_place_id , regular ) VALUES ( %s , %s ) ON DUPLICATE KEY UPDATE regular = %s ")
-    queryp = ("INSERT INTO prices( prices_place_id , premium ) VALUES ( %s , %s ) ON DUPLICATE KEY UPDATE premium = %s ")
-    queryd = ("INSERT INTO prices( prices_place_id , diesel ) VALUES ( %s , %s ) ON DUPLICATE KEY UPDATE diesel = %s ")
+    query1 = ("INSERT INTO places(place_id,name,cre_id,x,y,state) VALUES (%s,%s,%s,%s,%s,%s) ON CONFLICT (place_id) DO UPDATE SET name = %s , cre_id = %s , x = %s , y = %s , state = %s ")
+    queryr = ("INSERT INTO prices( prices_place_id , regular ) VALUES ( %s , %s ) ON CONFLICT ( prices_place_id ) DO UPDATE SET regular = %s ")
+    queryp = ("INSERT INTO prices( prices_place_id , premium ) VALUES ( %s , %s ) ON CONFLICT ( prices_place_id ) DO UPDATE SET premium = %s ")
+    queryd = ("INSERT INTO prices( prices_place_id , diesel ) VALUES ( %s , %s ) ON CONFLICT ( prices_place_id ) DO UPDATE SET diesel = %s ")
 
-    os.chdir(ProyectPATH)
+
     for file in glob.glob("*0.xml"):
         tree = ET.parse(file)
         root = tree.getroot()
