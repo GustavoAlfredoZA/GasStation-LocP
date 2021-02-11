@@ -24,6 +24,7 @@ class GasSpider(scrapy.Spider):
     name = "A"
     start_urls = ['https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-finales-de-gasolina-y-diesel']
     allowed_domains = ['datos.gob.mx']
+    DOWNLOADER_MIDDLEWARES = {'myproject.middlewares.CustomDownloaderMiddleware': 543}
     def parse(self, response):
         i=0
         for sel in response.xpath('/html/body/div[2]/div[3]/div/div/div/div/div[2]/div[1]/div/div[3]/ul/div[1]/a'):

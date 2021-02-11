@@ -18,6 +18,7 @@ import requests
 import pandas as pd
 #import googlemaps
 from itertools import tee
+import os
 
 convtime = lambda s: '{:01}:{:02}:{:02}'.format(int(s//3600), int(s%3600//60), int(s%60))
 
