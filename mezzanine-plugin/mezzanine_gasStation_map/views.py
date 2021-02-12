@@ -8,9 +8,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.utils import timezone
 import json
-
 import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import openrouteservice
@@ -18,8 +16,10 @@ import requests
 import pandas as pd
 #import googlemaps
 from itertools import tee
+import psycopg2
 import os
 
+matplotlib.use('Agg')
 convtime = lambda s: '{:01}:{:02}:{:02}'.format(int(s//3600), int(s%3600//60), int(s%60))
 
 #def index(request):
@@ -31,7 +31,6 @@ class map(View):
     def __init__(self, arg):
         super(map, self).__init__()
         self.arg = arg
-
 
 
 class map_View(View):
@@ -63,8 +62,7 @@ class map_View(View):
     #    return render(request, self.template_name,{'form':form})
 
     def post(self, request,*args, **kwargs):
-        PATH_FILE = '/home/vdelaluz/public_html/gicc/static/cursos/2020-II/quantics/'
-        PATH_URL = '/static/cursos/2020-II/quantics/'
+
         if 'execute_form_plot' in request.POST:
             form = self.form_class(request.POST)
             if form.is_valid():
@@ -149,8 +147,8 @@ class map_View(View):
                 ax.legend()
                 ax.set_ylim(bottom=min(min(aregular,apremium,adiesel))-1)
                 fig.tight_layout()
-                fig.savefig(PATH_FILE+"/plotTime.png",dpi=150)
-                urlpic = PATH_URL+"plotTime.png"
+                fig.savefig(static("plotTime.png"),dpi=150)
+                urlpic = static("plotTime.png")
 
                 dlist=[ str(day) for day in datesq2 ]
                 fig2, ax2 = plt.subplots(figsize=(8,5))
@@ -166,8 +164,8 @@ class map_View(View):
                 ax2.legend()
                 ax2.grid()
                 fig2.tight_layout()
-                fig2.savefig(PATH_FILE+"/img/plotTime2.png",dpi=150)
-                urlpic2 = PATH_URL+"/img/plotTime2.png"
+                fig2.savefig(static("/img/plotTime2.png"),dpi=150)
+                urlpic2 = static("/img/plotTime2.png")
 
                 return render(request, 'mezzanine_gasStation_map/plot.html' , {'urlpic': urlpic, 'urlpic2': urlpic2})
             else:
@@ -197,8 +195,7 @@ class map_View(View):
                     places = []
                     loclist = []
                     glist = ""
-                    with open('/home/vdelaluz/git/GasStation-LocP/key.json') as json_file:
-                        keys = json.load(json_file)
+                    keys = os.getenv('ORS', 'postgresql:///gasstationdb')
 
                     for a in cursor:
                         place = { 'type' : 'Feature' , 'geometry' : { 'type' : 'Point' , 'coordinates' : [ a[3] , a[4] ] }}
@@ -262,7 +259,7 @@ class map_View(View):
                 #print(places)
                 doc={ 'type' : 'FeatureCollection' , 'features' : places }
                 print(doc)
-                with open(PATH_FILE+'/js/tmp.json', 'w') as outfile:
+                with open(static('/js/tmp.json'), 'w') as outfile:
                     json.dump(doc, outfile, indent=4, sort_keys=True)
                 return render(request, 'mezzanine_gasStation_map/request.html')
             else:
