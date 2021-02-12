@@ -127,9 +127,10 @@ class map_View(View):
                 else:
                     cnx.close()
 
-                snames=['' for i in range(32)]
+                snames=['']*32
                 print(snames)
                 slist=[['AG','Aguascalientes'],['BC','Baja California'],['BS','Baja California Sur'],['CM','Campeche'],['CS','Chiapas'],['CH','Chihuahua'],['DF','Ciudad de México'],['CO','Coahuila'],['CL','Colima'],['DG','Durango'],['GJ','Guanajuato'],['GR','Guerrero'],['HG','Hidalgo'],['JA','Jalisco'],['MX','Estado de México'],['MI','Michoacán'],['MO','Morelos'],['NA','Nayarit'],['NL','Nuevo Leon'],['OA','Oaxaca'],['PU','Puebla'],['QT','Querétaro'],['QR','Quintana Roo'],['SL','San Luis Potosí'],['SI','Sinaloa'],['SO','Sonora'],['TB','Tabasco'],['TM','Tamaulipas'],['TL','Tlaxcala'],['VE','Veracruz'],['YU','Yucatan'],['ZA','Zacatecas']]
+                print(states)
                 for sl in slist:
                     snames[states.index(sl[0])]=sl[1]
                     if(stateq2 == sl[0]):
