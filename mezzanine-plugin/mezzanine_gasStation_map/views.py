@@ -259,7 +259,7 @@ class map_View(View):
                 #print(places)
                 doc={ 'type' : 'FeatureCollection' , 'features' : places }
                 print(doc)
-                with open(static('/js/tmp.json'), 'w') as outfile:
+                with open(static('mezzanine_gasStation_map/js/tmp.json'), 'w') as outfile:
                     json.dump(doc, outfile, indent=4, sort_keys=True)
                 return render(request, 'mezzanine_gasStation_map/request.html')
             else:
