@@ -78,14 +78,9 @@ try:
                 query2 = queryp
             else:
                 query2 = queryd
-
             cursor.execute(query2,data_query2)
-
-
-
     cnx.commit()
-    subprocess.call("mv *.xml backup/", shell=True)
-
+    
 except psycopg2.Error as err:
     print(err)
 else:
