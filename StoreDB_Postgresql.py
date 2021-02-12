@@ -12,6 +12,7 @@ import shapely.geometry as sg
 import shapely.ops as so
 import subprocess
 import psycopg2
+import urllib3
 
 with open('mexicostatesprod.json') as statesgeojson:
     states = json.load(statesgeojson)
@@ -44,42 +45,42 @@ try:
     queryp = ("INSERT INTO prices( prices_place_id , premium ) VALUES ( %s , %s ) ON CONFLICT ( prices_place_id ) DO UPDATE SET premium = %s ")
     queryd = ("INSERT INTO prices( prices_place_id , diesel ) VALUES ( %s , %s ) ON CONFLICT ( prices_place_id ) DO UPDATE SET diesel = %s ")
 
+    http = urllib3.PoolManager()
+    places = http.request('GET', 'https://publicacionexterna.azurewebsites.net/publicaciones/places')
+    tree = ET.parse(places.data)
+    root = tree.getroot()
+    for GasStation in root:
+        id = GasStation.get('place_id')
+        name = GasStation.find('name').text
+        cre_id = GasStation.find('cre_id').text
+        location = GasStation.find('location')
+        x = location.find('x').text
+        y = location.find('y').text
+        state = searchstate(float(x),float(y),allStates)
+        data_query = ( id , name , cre_id , x , y , state , name , cre_id , x , y , state)
+        cursor.execute(query1,data_query)
 
-    for file in glob.glob("*0.xml"):
-        tree = ET.parse(file)
-        root = tree.getroot()
-        for GasStation in root:
+    http = urllib3.PoolManager()
+    prices = http.request('GET', 'https://publicacionexterna.azurewebsites.net/publicaciones/prices')
+    tree = ET.parse(prices.data)
+    root = tree.getroot()
+    for place in root:
+        id = place.get('place_id')
+        P = [0,0,0]
+        for gas_price in place.iter('gas_price'):
 
-            id = GasStation.get('place_id')
-            name = GasStation.find('name').text
-            cre_id = GasStation.find('cre_id').text
-            location = GasStation.find('location')
-            x = location.find('x').text
-            y = location.find('y').text
-            state = searchstate(float(x),float(y),allStates)
-            data_query = ( id , name , cre_id , x , y , state , name , cre_id , x , y , state)
-            cursor.execute(query1,data_query)
+            type = gas_price.attrib['type']
+            price = gas_price.text
+            data_query2 = (id,price,price)
+            if(type == 'regular'):
+                query2 = queryr
+            elif(type == 'premium'):
+                query2 = queryp
+            else:
+                query2 = queryd
 
+            cursor.execute(query2,data_query2)
 
-    for file in glob.glob("*1.xml"):
-        tree = ET.parse(file)
-        root = tree.getroot()
-        for place in root:
-            id = place.get('place_id')
-            P = [0,0,0]
-            for gas_price in place.iter('gas_price'):
-
-                type = gas_price.attrib['type']
-                price = gas_price.text
-                data_query2 = (id,price,price)
-                if(type == 'regular'):
-                    query2 = queryr
-                elif(type == 'premium'):
-                    query2 = queryp
-                else:
-                    query2 = queryd
-
-                cursor.execute(query2,data_query2)
 
 
     cnx.commit()
